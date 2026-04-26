@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BDI — Depression Screen — Ammcore Clinical Assessments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy: #031869; --navy-deep: #020e47; --teal: #4F7C82; --teal-bright: #2abed9; --grey-bg: #f2f2f2; --grey-border: #e0e4ef; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+    body { font-family: 'Lato', sans-serif; font-size: 1.6rem; background: var(--grey-bg); color: #2c2c2c; }
+
+    .top-bar { background: var(--navy); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .top-bar-left { display: flex; align-items: center; gap: 12px; }
+    .top-bar-left img { height: 32px; background: #fff; border-radius: 5px; padding: 3px; }
+    .top-bar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; }
+    .top-bar-sub { font-size: 1.2rem; color: rgba(255,255,255,0.6); }
+    .btn-print { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #fff; border-radius: 4px; padding: 8px 18px; font-family: 'Lato', sans-serif; font-size: 1.3rem; font-weight: 700; cursor: pointer; }
+
+    .container { max-width: 780px; margin: 32px auto 80px; padding: 0 20px; }
+
+    .intro-card { background: var(--navy); border-radius: 10px; padding: 32px 36px; color: #fff; margin-bottom: 24px; }
+    .intro-card h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+    .intro-card p { font-size: 1.5rem; line-height: 1.75; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .badge { background: rgba(42,190,217,0.15); border: 1px solid rgba(42,190,217,0.3); color: var(--teal-bright); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+
+    .card { background: #fff; border: 1px solid var(--grey-border); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .card-head { background: var(--navy); padding: 14px 24px; }
+    .card-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; }
+    .card-body { padding: 24px; }
+
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field-group label { display: block; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .field-group input { width: 100%; padding: 10px 14px; border: 1px solid var(--grey-border); border-radius: 6px; font-family: 'Lato', sans-serif; font-size: 1.5rem; }
+    .field-group input:focus { outline: none; border-color: var(--teal); }
+
+    .scale-instructions { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6px; padding: 14px 18px; font-size: 1.4rem; line-height: 1.6; color: #78350f; margin-bottom: 20px; }
+
+    /* BDI uses statement groups - different layout */
+    .bdi-item { border: 1px solid var(--grey-border); border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+    .bdi-item-head { background: #f8f9fb; padding: 10px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--grey-border); }
+    .bdi-item-num { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .bdi-item-topic { font-size: 1.35rem; font-weight: 700; color: var(--navy); }
+
+    .bdi-option { display: flex; align-items: flex-start; gap: 14px; padding: 12px 18px; cursor: pointer; transition: background 0.15s; }
+    .bdi-option:hover { background: #f0f4ff; }
+    .bdi-option input[type="radio"] { width: 18px; height: 18px; accent-color: var(--navy); flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+    .bdi-option-score { font-size: 1.3rem; font-weight: 700; color: var(--teal); min-width: 18px; }
+    .bdi-option-text { font-size: 1.4rem; line-height: 1.5; color: #374151; }
+
+    .score-card { background: var(--navy); border-radius: 10px; padding: 28px 32px; text-align: center; margin: 24px 0; }
+    .score-number { font-family: 'Cormorant Garamond', serif; font-size: 5.5rem; font-weight: 700; color: #fff; line-height: 1; }
+    .score-label { font-size: 1.3rem; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    .score-max { font-size: 1.2rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+    .score-interp { margin-top: 14px; font-size: 1.5rem; font-weight: 700; padding: 8px 20px; border-radius: 20px; display: inline-block; }
+    .interp-min { background: rgba(22,163,74,0.2); color: #4ade80; }
+    .interp-mild { background: rgba(251,191,36,0.2); color: #fcd34d; }
+    .interp-mod { background: rgba(251,146,60,0.2); color: #fb923c; }
+    .interp-sev { background: rgba(239,68,68,0.2); color: #fca5a5; }
+
+    .crisis-note { background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2); border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 1.4rem; color: #7f1d1d; line-height: 1.6; display: none; }
+
+    .submit-area { text-align: center; margin-top: 28px; }
+    .btn-submit { background: var(--teal); color: #fff; border: none; border-radius: 8px; padding: 16px 48px; font-family: 'Lato', sans-serif; font-size: 1.6rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+    .btn-submit:hover { background: var(--teal-bright); }
+    .submit-note { font-size: 1.3rem; color: #9ca3af; margin-top: 10px; }
+
+    .success-card { background: #fff; border-radius: 10px; border: 2px solid #16a34a; padding: 40px; text-align: center; display: none; }
+    .success-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; color: var(--navy); margin-bottom: 12px; }
+    .success-card p { font-size: 1.5rem; color: #4b5563; line-height: 1.7; margin-bottom: 12px; }
+    .back-link { display: inline-block; margin-top: 16px; background: var(--navy); color: #fff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.4rem; }
+
+    @media (max-width: 540px) { .detail-grid { grid-template-columns: 1fr; } }
+    @media print { .top-bar, .score-card, .submit-area, .btn-print { display: none !important; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+    <div>
+      <div class="top-bar-title">BDI</div>
+      <div class="top-bar-sub">Beck Depression Inventory</div>
+    </div>
+  </div>
+  <button class="btn-print" onclick="window.print()">Print</button>
+</div>
+
+<div class="container">
+
+  <div class="intro-card">
+    <h1>Depression Screen</h1>
+    <p>This questionnaire asks about how you have been feeling over the <strong>past two weeks</strong>, including today. For each group of statements, please select the one that best describes how you have been feeling.</p>
+    <p>If more than one statement in a group seems to apply equally, select the highest numbered one. There are no right or wrong answers.</p>
+    <div class="badges">
+      <span class="badge">21 questions</span>
+      <span class="badge">~5 minutes</span>
+      <span class="badge">Past two weeks</span>
+    </div>
+  </div>
+
+  <form id="scaleForm">
+    <input type="hidden" id="_subject" name="_subject" value="BDI Submission">
+    <input type="hidden" name="scale" value="BDI — Beck Depression Inventory">
+
+    <div class="card">
+      <div class="card-head"><h2>Your Details</h2></div>
+      <div class="card-body">
+        <div class="detail-grid">
+          <div class="field-group">
+            <label>Full Name *</label>
+            <input type="text" id="patient_name" name="patient_name" placeholder="Your full name" required>
+          </div>
+          <div class="field-group">
+            <label>Date of Birth *</label>
+            <input type="text" name="patient_dob" placeholder="DD/MM/YYYY" required>
+          </div>
+          <div class="field-group">
+            <label>Assessment Date</label>
+            <input type="text" name="assessment_date" placeholder="DD/MM/YYYY">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Questionnaire</h2></div>
+      <div class="card-body">
+        <div class="scale-instructions">
+          <strong>Instructions:</strong> For each group of statements below, select the single statement that best describes how you have been feeling over the <strong>past two weeks</strong>, including today.
+        </div>
+
+        <div class="crisis-note" id="crisisNote">
+          <strong>We noticed your response to one of the questions.</strong> If you are currently experiencing thoughts of harming yourself, please contact a mental health professional urgently. You can call <strong>NHS 111 and select the mental health option</strong>, contact the <strong>Samaritans on 116 123</strong>, or attend your nearest A&amp;E. Your safety is important to us.
+        </div>
+
+        <div id="itemsContainer"></div>
+      </div>
+    </div>
+
+    <div class="score-card">
+      <div class="score-number" id="scoreDisplay">—</div>
+      <div class="score-label">Total Score</div>
+      <div class="score-max">out of 63</div>
+      <div class="score-interp" id="scoreInterp"></div>
+    </div>
+
+    <input type="hidden" id="total_score" name="total_score">
+    <input type="hidden" id="interpretation" name="interpretation">
+
+    <div class="submit-area">
+      <button type="submit" class="btn-submit">Submit Questionnaire →</button>
+      <div class="submit-note">Your responses will be sent securely to the Ammcore clinical team.</div>
+    </div>
+  </form>
+
+  <div class="success-card" id="successCard">
+    <h2>Thank you — questionnaire received.</h2>
+    <p>Your BDI responses have been sent securely to the Ammcore clinical team.</p>
+    <p>Please return to the questionnaire list and complete the remaining questionnaires.</p>
+    <a class="back-link" href="scales.html">← Back to all questionnaires</a>
+  </div>
+
+</div>
+
+<script>
+  const ENDPOINT = 'https://formspree.io/f/xdayzkwb';
+
+  const ITEMS = [
+    {
+      topic: 'Sadness',
+      options: [
+        'I do not feel sad.',
+        'I feel sad much of the time.',
+        'I am sad all the time.',
+        'I am so sad or unhappy that I cannot stand it.'
+      ]
+    },
+    {
+      topic: 'Pessimism',
+      options: [
+        'I am not discouraged about my future.',
+        'I feel more discouraged about my future than I used to.',
+        'I do not expect things to work out well for me.',
+        'I feel my future is hopeless and will only get worse.'
+      ]
+    },
+    {
+      topic: 'Past Failure',
+      options: [
+        'I do not feel like a failure.',
+        'I have failed more than I should have.',
+        'As I look back, I see a lot of failures.',
+        'I feel I am a total failure as a person.'
+      ]
+    },
+    {
+      topic: 'Loss of Pleasure',
+      options: [
+        'I get as much pleasure as I ever did from things I enjoy.',
+        'I don\'t enjoy things as much as I used to.',
+        'I get very little pleasure from things that used to give me pleasure.',
+        'I can\'t get any pleasure from things I used to enjoy.'
+      ]
+    },
+    {
+      topic: 'Guilty Feelings',
+      options: [
+        'I don\'t feel particularly guilty.',
+        'I feel guilty over many things I have done or should have done.',
+        'I feel quite guilty most of the time.',
+        'I feel guilty all of the time.'
+      ]
+    },
+    {
+      topic: 'Punishment Feelings',
+      options: [
+        'I don\'t feel I am being punished.',
+        'I feel I may be punished.',
+        'I expect to be punished.',
+        'I feel I am being punished.'
+      ]
+    },
+    {
+      topic: 'Self-Dislike',
+      options: [
+        'I feel the same about myself as ever.',
+        'I have lost confidence in myself.',
+        'I am disappointed in myself.',
+        'I dislike myself.'
+      ]
+    },
+    {
+      topic: 'Self-Criticalness',
+      options: [
+        'I don\'t criticise or blame myself more than usual.',
+        'I am more critical of myself than I used to be.',
+        'I criticise myself for all of my faults.',
+        'I blame myself for everything bad that happens.'
+      ]
+    },
+    {
+      topic: 'Suicidal Thoughts',
+      isSuicidal: true,
+      options: [
+        'I don\'t have any thoughts of harming myself.',
+        'I have thoughts of harming myself but would not carry them out.',
+        'I would like to harm myself.',
+        'I would harm myself if I had the opportunity.'
+      ]
+    },
+    {
+      topic: 'Crying',
+      options: [
+        'I don\'t cry any more than usual.',
+        'I cry more than I used to.',
+        'I cry over every little thing.',
+        'I feel like crying but cannot.'
+      ]
+    },
+    {
+      topic: 'Agitation',
+      options: [
+        'I am not more restless or wound up than usual.',
+        'I feel more restless or wound up than usual.',
+        'I am so restless or agitated that it\'s hard to stay still.',
+        'I am so restless or agitated that I have to keep moving or doing something.'
+      ]
+    },
+    {
+      topic: 'Loss of Interest',
+      options: [
+        'I have not lost interest in other people or activities.',
+        'I am less interested in other people or things than before.',
+        'I have lost most of my interest in other people or things.',
+        'It\'s hard to get interested in anything.'
+      ]
+    },
+    {
+      topic: 'Indecisiveness',
+      options: [
+        'I make decisions about as well as ever.',
+        'I find it more difficult to make decisions than usual.',
+        'I have much greater difficulty in making decisions than usual.',
+        'I have trouble making any decisions at all.'
+      ]
+    },
+    {
+      topic: 'Worthlessness',
+      options: [
+        'I do not feel I am worthless.',
+        'I don\'t consider myself as worthwhile and useful as I used to.',
+        'I feel more worthless as compared to others.',
+        'I feel utterly worthless.'
+      ]
+    },
+    {
+      topic: 'Loss of Energy',
+      options: [
+        'I have as much energy as ever.',
+        'I have less energy than I used to have.',
+        'I don\'t have enough energy to do very much.',
+        'I don\'t have enough energy to do anything.'
+      ]
+    },
+    {
+      topic: 'Changes in Sleep',
+      options: [
+        'I have not experienced any change in my sleeping.',
+        'I sleep somewhat more or less than usual.',
+        'I sleep a lot more or less than usual.',
+        'I sleep most of the day, or I wake up 1–2 hours early and can\'t get back to sleep.'
+      ]
+    },
+    {
+      topic: 'Irritability',
+      options: [
+        'I am not more irritable than usual.',
+        'I am more irritable than usual.',
+        'I am much more irritable than usual.',
+        'I am irritable all the time.'
+      ]
+    },
+    {
+      topic: 'Changes in Appetite',
+      options: [
+        'I have not experienced any change in my appetite.',
+        'My appetite is somewhat less or more than usual.',
+        'My appetite is much less or more than usual.',
+        'I have no appetite at all, or I crave food all the time.'
+      ]
+    },
+    {
+      topic: 'Concentration Difficulty',
+      options: [
+        'I can concentrate as well as ever.',
+        'I can\'t concentrate as well as usual.',
+        'It\'s hard to keep my mind on anything for very long.',
+        'I find I can\'t concentrate on anything at all.'
+      ]
+    },
+    {
+      topic: 'Fatigue',
+      options: [
+        'I am not more tired than usual.',
+        'I get tired more easily than I used to.',
+        'I am too tired to do a lot of things I used to do.',
+        'I am too tired to do most of the things I used to do.'
+      ]
+    },
+    {
+      topic: 'Loss of Interest in Sex',
+      options: [
+        'I have not noticed any recent change in my interest in sex.',
+        'I am less interested in sex than I used to be.',
+        'I am much less interested in sex now.',
+        'I have lost interest in sex completely.'
+      ]
+    }
+  ];
+
+  const container = document.getElementById('itemsContainer');
+
+  ITEMS.forEach((item, i) => {
+    const num = i + 1;
+    const el = document.createElement('div');
+    el.className = 'bdi-item';
+    let html = `<div class="bdi-item-head"><div class="bdi-item-num">${num}</div><div class="bdi-item-topic">${item.topic}</div></div>`;
+    item.options.forEach((text, score) => {
+      html += `<label class="bdi-option"><input type="radio" name="q${num}" value="${score}" data-item="${num}" ${item.isSuicidal ? 'data-suicidal="true"' : ''} required><span class="bdi-option-score">${score}</span><span class="bdi-option-text">${text}</span></label>`;
+    });
+    el.innerHTML = html;
+    container.appendChild(el);
+  });
+
+  function calcScore() {
+    let total = 0, answered = 0, crisis = false;
+    for (let i = 1; i <= 21; i++) {
+      const sel = document.querySelector(`input[name="q${i}"]:checked`);
+      if (!sel) continue;
+      answered++;
+      const v = parseInt(sel.value);
+      total += v;
+      if (sel.dataset.suicidal && v >= 2) crisis = true;
+    }
+    document.getElementById('crisisNote').style.display = crisis ? 'block' : 'none';
+    if (answered === 0) { document.getElementById('scoreDisplay').textContent = '—'; document.getElementById('scoreInterp').textContent = ''; return; }
+    document.getElementById('scoreDisplay').textContent = total;
+    document.getElementById('total_score').value = total;
+    let text = '', cls = '';
+    if (total <= 13) { text = 'Minimal depression (0–13)'; cls = 'interp-min'; }
+    else if (total <= 19) { text = 'Mild depression (14–19)'; cls = 'interp-mild'; }
+    else if (total <= 28) { text = 'Moderate depression (20–28)'; cls = 'interp-mod'; }
+    else { text = 'Severe depression (29–63)'; cls = 'interp-sev'; }
+    document.getElementById('scoreInterp').textContent = text;
+    document.getElementById('scoreInterp').className = 'score-interp ' + cls;
+    document.getElementById('interpretation').value = text;
+  }
+
+  document.addEventListener('change', e => { if (e.target.type === 'radio') calcScore(); });
+
+  document.getElementById('scaleForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('patient_name').value || 'Unknown';
+    document.getElementById('_subject').value = `BDI — ${name}`;
+    const data = new FormData(this);
+    try {
+      const res = await fetch(ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) {
+        document.getElementById('scaleForm').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+        window.scrollTo(0, 0);
+      } else { alert('Submission failed. Please try again or contact booking@ammcoreassessments.co.uk'); }
+    } catch { alert('Could not connect. Please check your internet connection.'); }
+  });
+</script>
+</body>
+</html>

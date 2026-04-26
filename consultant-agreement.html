@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="brand_assets/ammcore_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/ammcore_logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultant Agreement — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869; --navy-deep: #020e47; --navy-mid: #0a2690;
+      --teal: #4F7C82; --teal-light: #6A9BA2; --teal-bright: #2abed9;
+      --grey-bg: #f2f2f2; --grey-light: #F8F9FB; --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c; --white: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; font-size: 1.6rem; line-height: 1.8; color: var(--charcoal); background: var(--grey-bg); }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+
+    /* NAV */
+    .site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(3,24,105,0.1); box-shadow: 0 1px 16px rgba(3,24,105,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .site-logo { display: flex; align-items: center; gap: 12px; }
+    .site-logo img { height: 44px; width: auto; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text .logo-name { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 1.7rem; color: #031869; letter-spacing: 0.12em; text-transform: uppercase; }
+    .logo-text .logo-sub { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 1.05rem; color: var(--teal); letter-spacing: 0.18em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 1.35rem; color: #031869; padding: 6px 14px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #4F7C82; background: rgba(3,24,105,0.04); }
+    .nav-links .btn-nav { background: var(--teal); color: #fff; padding: 8px 20px; border-radius: 4px; font-weight: 700; }
+    .nav-links .btn-nav:hover { background: var(--teal-bright); }
+
+    /* HERO */
+    .page-hero { margin-top: 72px; background: var(--navy); padding: 56px 0 48px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(42,190,217,0.08) 0%, transparent 70%); }
+    .page-hero-inner { position: relative; z-index: 2; }
+    .breadcrumb { font-size: 1.3rem; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
+    .breadcrumb a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.9); }
+    .breadcrumb span { margin: 0 8px; }
+    .page-hero h1 { font-size: clamp(3.2rem, 5vw, 5.6rem); font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 10px; }
+    .page-hero p { font-size: 1.4rem; color: rgba(255,255,255,0.8); }
+
+    /* PRINT BUTTON BAR */
+    .print-bar { background: var(--white); border-bottom: 1px solid var(--grey-border); padding: 16px 0; }
+    .print-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .print-bar p { font-size: 1.4rem; color: #666; }
+    .print-bar p strong { color: var(--navy); }
+    .btn-print {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 28px; background: var(--navy); color: #fff;
+      font-family: 'Lato', sans-serif; font-size: 1.4rem; font-weight: 700;
+      border: none; border-radius: 4px; cursor: pointer; letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-print:hover { background: var(--navy-mid); transform: translateY(-1px); }
+    .btn-print svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* PLACEHOLDER NOTICE */
+    .placeholder-notice {
+      background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.25);
+      border-left: 4px solid #c0392b; border-radius: 4px; padding: 16px 20px; margin-bottom: 0;
+    }
+    .placeholder-notice p { font-size: 1.35rem; color: #7a1f14; margin: 0; }
+    .placeholder-notice strong { color: #7a1f14; }
+
+    /* DOCUMENT */
+    .doc-body { padding: 48px 0 80px; }
+    .doc-content { background: var(--white); border-radius: 8px; border: 1px solid var(--grey-border); max-width: 860px; margin: 0 auto; overflow: hidden; }
+
+    /* DOCUMENT HEADER */
+    .doc-header { padding: 48px 56px 36px; border-bottom: 2px solid var(--navy); }
+    .doc-header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 28px; }
+    .doc-logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .doc-logo-wrap img { height: 40px; width: auto; }
+    .doc-logo-text .doc-logo-name { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--navy); letter-spacing: 0.12em; text-transform: uppercase; display: block; }
+    .doc-logo-text .doc-logo-sub { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 1rem; color: var(--teal); letter-spacing: 0.18em; text-transform: uppercase; display: block; }
+    .doc-ref { text-align: right; }
+    .doc-ref p { font-size: 1.3rem; color: #888; line-height: 1.6; }
+    .doc-ref strong { color: var(--navy); font-weight: 700; }
+    .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .doc-subtitle { font-size: 1.4rem; color: #777; }
+
+    /* PARTIES BOX */
+    .parties-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--grey-border); border-radius: 6px; overflow: hidden; margin: 28px 56px 0; }
+    .party { padding: 22px 24px; }
+    .party:first-child { border-right: 1px solid var(--grey-border); }
+    .party-label { font-family: 'Lato', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .party p { font-size: 1.4rem; color: #555; line-height: 1.6; }
+    .party strong { color: var(--navy); font-weight: 700; }
+
+    /* DOCUMENT BODY */
+    .doc-sections { padding: 40px 56px 56px; }
+    .doc-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--grey-border); }
+    .doc-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .doc-section h2 { font-size: 2.2rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.2; }
+    .doc-section p { font-size: 1.5rem; color: #444; line-height: 1.8; margin-bottom: 10px; }
+    .doc-section p:last-child { margin-bottom: 0; }
+    .doc-section ul { margin: 8px 0 10px 20px; }
+    .doc-section ul li { font-size: 1.5rem; color: #444; line-height: 1.7; margin-bottom: 7px; }
+    .doc-section strong { color: var(--navy); font-weight: 700; }
+
+    /* PLACEHOLDER HIGHLIGHT IN DOCUMENT */
+    .tbd { background: rgba(192,57,43,0.1); color: #7a1f14; font-weight: 700; padding: 1px 6px; border-radius: 3px; font-style: italic; }
+
+    /* FILL-IN LINES */
+    .fill-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .fill-table td { padding: 10px 0; vertical-align: bottom; }
+    .fill-table .fill-label { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); padding-right: 16px; white-space: nowrap; width: 1%; padding-bottom: 14px; }
+    .fill-line { border: none; border-bottom: 1.5px solid #333; display: block; width: 100%; min-height: 28px; }
+
+    /* SIGNATURE SECTION */
+    .sig-section { margin-top: 8px; }
+    .sig-section-title { font-family: 'Lato', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--grey-border); }
+    .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .sig-col-title { font-family: 'Lato', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 20px; }
+    .sig-row-item { margin-bottom: 22px; }
+    .sig-row-item .sig-row-label { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #888; margin-bottom: 8px; display: block; }
+    .sig-row-item .sig-line { border: none; border-bottom: 1.5px solid #333; display: block; width: 100%; min-height: 32px; }
+    .sig-row-item .sig-line.tall { min-height: 56px; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy-deep); padding: 48px 0 0; color: rgba(255,255,255,0.9); font-size: 1.4rem; }
+    .footer-full { padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-full p { font-size: 1.35rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 700px; }
+    .footer-bottom { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-legal { font-size: 1.25rem; color: rgba(255,255,255,0.35); }
+    .footer-legal-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal-links a { font-size: 1.25rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      /* Hide everything screen-only */
+      .site-header, .page-hero, .print-bar, .site-footer, .placeholder-notice { display: none !important; }
+
+      body { background: #fff !important; font-size: 11pt; color: #000; margin: 0; }
+      html { font-size: 62.5%; }
+
+      .doc-body { padding: 0; }
+      .wrap { max-width: 100%; padding: 0; }
+      .doc-content { border: none; border-radius: 0; max-width: 100%; box-shadow: none; }
+
+      .doc-header { padding: 32px 48px 24px; border-bottom: 2pt solid #031869; }
+      .doc-sections { padding: 28px 48px 48px; }
+      .parties-wrap { margin: 20px 48px 0; }
+
+      .doc-title { font-size: 28pt; }
+      .doc-section h2 { font-size: 16pt; }
+      .doc-section p, .doc-section ul li { font-size: 11pt; }
+
+      .sig-row-item .sig-line, .fill-line { border-bottom: 1pt solid #000; }
+
+      /* Page break control */
+      .doc-section { page-break-inside: avoid; }
+      .sig-section { page-break-inside: avoid; }
+      .parties-wrap { page-break-inside: avoid; }
+
+      /* Show placeholder text for print */
+      .tbd::before { content: '['; }
+      .tbd::after { content: ']'; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav-inner">
+        <a href="index.html" class="site-logo">
+          <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+          <div class="logo-text">
+            <span class="logo-name">Ammcore</span>
+            <span class="logo-sub">Clinical Assessments</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Assessments</a></li>
+          <li><a href="index.html#process">How It Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#contact" class="btn-nav">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="page-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>&rsaquo;</span>Consultant Agreement</div>
+        <h1>Consultant Agreement</h1>
+        <p>Ammcore Clinical Assessments &mdash; A trading name of Ammcore Consulting Ltd</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINT BAR (hidden when printing) -->
+  <div class="print-bar">
+    <div class="wrap">
+      <div class="print-bar-inner">
+        <p>Read the agreement below, then <strong>print or save as PDF</strong> to sign and return privately to <strong>info@ammcoreassessments.co.uk</strong></p>
+        <button class="btn-print" onclick="window.print()">
+          <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Print / Save as PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="wrap">
+
+      <div class="doc-content">
+
+        <!-- DOCUMENT HEADER -->
+        <div class="doc-header">
+          <div class="doc-header-top">
+            <div class="doc-logo-wrap">
+              <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+              <div class="doc-logo-text">
+                <span class="doc-logo-name">Ammcore</span>
+                <span class="doc-logo-sub">Clinical Assessments</span>
+              </div>
+            </div>
+            <div class="doc-ref">
+              <p><strong>Document:</strong> Consultant Services Agreement</p>
+              <p><strong>Version:</strong> 1.0</p>
+              <p><strong>Date:</strong> <span id="docDate"></span></p>
+            </div>
+          </div>
+          <div class="doc-title">Consultant Services Agreement</div>
+          <div class="doc-subtitle">Ammcore Clinical Assessments &mdash; Ammcore Consulting Ltd &bull; Company No. 10661995</div>
+        </div>
+
+        <!-- PARTIES -->
+        <div class="parties-wrap">
+          <div class="party">
+            <div class="party-label">Company</div>
+            <p><strong>Ammcore Clinical Assessments</strong><br>
+            A trading name of Ammcore Consulting Ltd<br>
+            Company No. 10661995<br>
+            73 Park Lane, Croydon, Surrey, CR0 1JG<br>
+            info@ammcoreassessments.co.uk</p>
+          </div>
+          <div class="party">
+            <div class="party-label">The Consultant</div>
+            <p>A suitably qualified and registered clinician whose details are confirmed by signature in Section 11 of this Agreement.</p>
+          </div>
+        </div>
+
+        <!-- SECTIONS -->
+        <div class="doc-sections">
+
+          <div class="doc-section">
+            <h2>1. Introduction</h2>
+            <p>This Agreement sets out the terms under which the Consultant will provide professional clinical services to Ammcore Clinical Assessments. Both parties agree to be bound by these terms upon signing.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>2. Purpose</h2>
+            <p>The Consultant will provide professional oversight, review, and consultation on clinical assessments conducted by Ammcore Clinical Assessments. This may include:</p>
+            <ul>
+              <li>Reviewing structured ADHD and autism assessment reports</li>
+              <li>Providing professional guidance on clinical interpretation and report drafting</li>
+              <li>Co-signing or endorsing reports where applicable</li>
+              <li>Advising on complex cases, clinical queries, or escalations</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>3. Scope of Work</h2>
+            <p>The Consultant agrees to:</p>
+            <ul>
+              <li>Conduct all reviews solely within their professional competence and registration scope</li>
+              <li>Provide timely feedback to ensure assessment reports are accurate and clinically sound</li>
+              <li>Apply recognised diagnostic frameworks including DSM-5, ICD-11, and appropriate assessment tools (DIVA, ADOS, ADI-R) where relevant</li>
+              <li>Operate on a flexible, case-by-case basis as agreed with Ammcore Clinical Assessments</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>4. Responsibilities</h2>
+            <p><strong>Consultant Responsibilities:</strong></p>
+            <ul>
+              <li>Maintain current professional registration and comply with all applicable regulatory body requirements</li>
+              <li>Maintain strict confidentiality of all patient information accessed in the course of this Agreement</li>
+              <li>Notify Ammcore Clinical Assessments promptly of any conflicts of interest, limitations, or changes to registration status</li>
+              <li>Maintain their own professional indemnity insurance adequate for the scope of services provided</li>
+            </ul>
+            <p><strong>Ammcore Clinical Assessments Responsibilities:</strong></p>
+            <ul>
+              <li>Provide accurate assessment materials, reports, and relevant background information for review</li>
+              <li>Ensure secure methods of data transfer and communication</li>
+              <li>Compensate the Consultant in accordance with Section 6</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>5. Confidentiality &amp; Data Protection</h2>
+            <ul>
+              <li>Both parties shall comply with UK GDPR and all applicable professional confidentiality obligations</li>
+              <li>The Consultant's access to patient data is strictly limited to clinical review purposes under this Agreement</li>
+              <li>The Consultant shall not disclose, copy, or retain identifiable patient information beyond what is required for the specific review</li>
+              <li>This confidentiality obligation survives the termination of this Agreement</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>6. Fees &amp; Payment</h2>
+            <p>The Consultant shall be remunerated per completed assessment at the following rates:</p>
+            <ul>
+              <li><strong>Assessing Clinician — Standard pathway:</strong> £200 per assessment</li>
+              <li><strong>Assessing Clinician — Express pathway:</strong> £225 per assessment</li>
+              <li><strong>Consultant Reviewer — Standard pathway:</strong> £300 per assessment</li>
+              <li><strong>Consultant Reviewer — Express pathway:</strong> £325 per assessment</li>
+            </ul>
+            <ul style="margin-top:10px;">
+              <li>Invoices shall be submitted by the Consultant and paid within <strong>14 working days</strong> of receipt</li>
+              <li>No additional expenses or reimbursements shall be paid unless expressly agreed in writing in advance</li>
+              <li>The Consultant is responsible for their own tax and National Insurance obligations as an independent contractor</li>
+              <li>Rates may be reviewed by mutual written agreement with a minimum of <strong>4 weeks'</strong> notice</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>7. Independent Contractor Status</h2>
+            <p>The Consultant is engaged as an independent contractor and not as an employee of Ammcore Consulting Ltd. Nothing in this Agreement shall create or imply a relationship of employment, agency, or partnership between the parties.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>8. Indemnity</h2>
+            <ul>
+              <li>The Consultant shall maintain professional indemnity insurance sufficient to cover the scope of services outlined in this Agreement and shall provide evidence of such insurance upon request</li>
+              <li>Ammcore Consulting Ltd's company indemnity covers actions conducted under its instruction; the Consultant remains personally responsible for their own professional conduct and clinical decisions</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>9. Termination</h2>
+            <p>Either party may terminate this Agreement by giving <strong>4 weeks'</strong> written notice to the other party.</p>
+            <ul>
+              <li>Termination does not extinguish the obligation to maintain confidentiality over existing patient information</li>
+              <li>Any outstanding reviews or reports at the point of termination shall be completed or appropriately handed over, as agreed between the parties</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h2>10. Governing Law</h2>
+            <p>This Agreement is governed by the laws of England and Wales. Any disputes arising from or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+          </div>
+
+          <div class="doc-section">
+            <h2>11. Signatures</h2>
+            <p>By signing below, both parties confirm they have read, understood, and agree to the terms of this Consultant Services Agreement.</p>
+
+            <!-- Consultant Details Fill-in -->
+            <p style="font-family:'Lato',sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin:24px 0 16px;">Consultant Details</p>
+            <table class="fill-table">
+              <tr>
+                <td class="fill-label">Full Name</td>
+                <td><span class="fill-line"></span></td>
+              </tr>
+              <tr>
+                <td class="fill-label">Professional Title</td>
+                <td><span class="fill-line"></span></td>
+              </tr>
+              <tr>
+                <td class="fill-label">Registration Body</td>
+                <td><span class="fill-line"></span></td>
+              </tr>
+              <tr>
+                <td class="fill-label">Registration No.</td>
+                <td><span class="fill-line"></span></td>
+              </tr>
+              <tr>
+                <td class="fill-label">Email Address</td>
+                <td><span class="fill-line"></span></td>
+              </tr>
+            </table>
+
+            <!-- Signature Grid -->
+            <div class="sig-section" style="margin-top:32px;">
+              <div class="sig-section-title">Signatures</div>
+              <div class="sig-grid">
+                <div class="sig-col">
+                  <div class="sig-col-title">For Ammcore Clinical Assessments</div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Signature</span>
+                    <span class="sig-line tall"></span>
+                  </div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Full Name</span>
+                    <span class="sig-line"></span>
+                  </div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Title / Position</span>
+                    <span class="sig-line"></span>
+                  </div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Date</span>
+                    <span class="sig-line"></span>
+                  </div>
+                </div>
+                <div class="sig-col">
+                  <div class="sig-col-title">Consultant</div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Signature</span>
+                    <span class="sig-line tall"></span>
+                  </div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Full Name</span>
+                    <span class="sig-line"></span>
+                  </div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Registration No.</span>
+                    <span class="sig-line"></span>
+                  </div>
+                  <div class="sig-row-item">
+                    <span class="sig-row-label">Date</span>
+                    <span class="sig-line"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-size:1.35rem;color:#888;margin-top:28px;line-height:1.6;">Once signed, please return a copy of this document to <strong style="color:var(--navy);">info@ammcoreassessments.co.uk</strong>. Ammcore Clinical Assessments will countersign and return a fully executed copy for your records.</p>
+          </div>
+
+        </div><!-- /doc-sections -->
+      </div><!-- /doc-content -->
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-full">
+        <p>Ammcore Clinical Assessments is a trading name of Ammcore Consulting Ltd, registered in England and Wales. Company Registration Number: 10661995. Registered Office: 73 Park Lane, Croydon, Surrey, England, CR0 1JG. All clinical assessment services are delivered in accordance with applicable UK professional and data protection standards.</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Ammcore Consulting Ltd. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="clinical-disclaimer.html">Clinical Disclaimer</a>
+          <a href="complaints.html">Complaints Procedure</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set today's date in the document header
+    const d = new Date();
+    const formatted = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    document.getElementById('docDate').textContent = formatted;
+  </script>
+
+</body>
+</html>

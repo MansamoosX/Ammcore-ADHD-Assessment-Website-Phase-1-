@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structured Clinical Interview Guide — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+      --grey-bg: #f2f2f2;
+      --grey-light: #F8F9FB;
+      --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c;
+      --white: #ffffff;
+      --red: #c0392b;
+      --red-light: #fdf0ee;
+      --amber: #b45309;
+      --amber-light: #fffbeb;
+      --green: #1a6b3c;
+      --green-light: #eaf5ee;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: var(--grey-bg);
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .top-bar-left img {
+      height: 36px;
+      width: auto;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
+    }
+
+    .top-bar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .top-bar-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1px;
+    }
+
+    .btn-print {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 9px 22px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-print:hover { background: var(--teal-bright); }
+
+    .btn-report {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+      padding: 9px 22px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-block;
+    }
+    .btn-report:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+
+    .top-bar-actions { display: flex; align-items: center; gap: 10px; }
+
+    /* ─── CONTAINER ─── */
+    .container {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    /* ─── INTRO CARD ─── */
+    .intro-card {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+
+    .intro-card h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .intro-card p {
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .intro-badges {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .intro-badge {
+      background: rgba(42,190,217,0.15);
+      border: 1px solid rgba(42,190,217,0.3);
+      color: var(--teal-bright);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* ─── TIMING BAR ─── */
+    .timing-bar {
+      background: var(--white);
+      border: 1px solid var(--grey-border);
+      border-radius: 8px;
+      padding: 18px 28px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .timing-segment {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      border-right: 1px solid var(--grey-border);
+    }
+
+    .timing-segment:last-child { border-right: none; }
+
+    .timing-mins {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .timing-label {
+      font-size: 1.2rem;
+      color: #888;
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    /* ─── SECTION CARD ─── */
+    .guide-section {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--grey-border);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .section-head {
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-head.navy { background: var(--navy); }
+    .section-head.teal { background: var(--teal); }
+    .section-head.deep { background: var(--navy-deep); }
+    .section-head.red { background: var(--red); }
+    .section-head.amber { background: var(--amber); }
+
+    .section-head-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-num {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .section-head h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .section-time {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .section-body { padding: 0; }
+
+    /* ─── QUESTION BLOCK ─── */
+    .q-block {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .q-block:last-child { border-bottom: none; }
+
+    .q-label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .q-main {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .q-probes {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .q-probes li {
+      font-size: 1.45rem;
+      color: #555;
+      padding: 4px 0 4px 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .q-probes li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 1.2rem;
+    }
+
+    .q-note {
+      margin-top: 10px;
+      background: var(--amber-light);
+      border-left: 3px solid var(--amber);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      font-size: 1.35rem;
+      color: var(--amber);
+      line-height: 1.5;
+    }
+
+    .q-risk {
+      margin-top: 10px;
+      background: var(--red-light);
+      border-left: 3px solid var(--red);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      font-size: 1.35rem;
+      color: var(--red);
+      line-height: 1.5;
+    }
+
+    .q-tip {
+      margin-top: 10px;
+      background: var(--green-light);
+      border-left: 3px solid var(--green);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      font-size: 1.35rem;
+      color: var(--green);
+      line-height: 1.5;
+    }
+
+    /* ─── DSM BOX ─── */
+    .dsm-box {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 0 28px 20px;
+    }
+
+    .dsm-box h3 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .dsm-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .dsm-col h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .dsm-col ul {
+      list-style: none;
+    }
+
+    .dsm-col ul li {
+      font-size: 1.35rem;
+      color: #555;
+      padding: 3px 0 3px 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .dsm-col ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+    }
+
+    /* ─── SCRIPT BOX ─── */
+    .script-box {
+      background: rgba(3,24,105,0.04);
+      border: 1px solid rgba(3,24,105,0.1);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-top: 10px;
+      font-size: 1.45rem;
+      color: var(--navy);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .script-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.5;
+      margin-bottom: 6px;
+      font-style: normal;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 600px) {
+      html { font-size: 56%; }
+
+      /* Top bar */
+      .top-bar { padding: 10px 14px; flex-wrap: wrap; gap: 8px; }
+      .top-bar-left img { height: 28px; }
+      .top-bar-title { font-size: 1.6rem; }
+      .top-bar-sub { display: none; }
+      .top-bar-actions { gap: 6px; }
+      .btn-report, .btn-print {
+        padding: 7px 12px;
+        font-size: 1.2rem;
+      }
+
+      /* Container */
+      .container { margin: 16px auto 48px; padding: 0 12px; }
+
+      /* Intro card */
+      .intro-card { padding: 20px 16px; border-radius: 6px; }
+      .intro-card h1 { font-size: 2.4rem; margin-bottom: 8px; }
+      .intro-card p { font-size: 1.4rem; }
+      .intro-badges { gap: 6px; margin-top: 12px; }
+      .intro-badge { font-size: 1.05rem; padding: 4px 10px; }
+
+      /* Timing bar — scroll horizontally */
+      .timing-bar {
+        padding: 12px 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        gap: 0;
+        margin-bottom: 16px;
+      }
+      .timing-segment { padding: 6px 10px; min-width: 52px; }
+      .timing-mins { font-size: 2rem; }
+      .timing-label { font-size: 1rem; }
+
+      /* Section cards */
+      .guide-section { margin-bottom: 14px; border-radius: 6px; }
+      .section-head { padding: 12px 14px; }
+      .section-head h2 { font-size: 1.2rem; letter-spacing: 0.06em; }
+      .section-time { font-size: 1.1rem; }
+      .section-num { width: 24px; height: 24px; font-size: 1.1rem; }
+
+      /* Question blocks */
+      .q-block { padding: 14px 14px; }
+      .q-label { font-size: 1.1rem; }
+      .q-main { font-size: 1.5rem; }
+      .q-probes li { font-size: 1.35rem; }
+      .q-note, .q-risk, .q-tip { font-size: 1.3rem; padding: 9px 12px; }
+      .script-box { font-size: 1.35rem; padding: 12px 14px; }
+
+      /* DSM box — stack columns */
+      .dsm-box { margin: 0 0 14px; padding: 14px 14px; }
+      .dsm-cols { grid-template-columns: 1fr; gap: 14px; }
+      .dsm-col ul li { font-size: 1.3rem; }
+    }
+
+    /* ─── PRINT STYLES ─── */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      body { font-family: 'Lato', sans-serif; font-size: 10pt; background: #fff; color: #000; }
+
+      .top-bar, .btn-print { display: none !important; }
+
+      .container { max-width: 100%; margin: 0; padding: 0; }
+
+      .intro-card {
+        background: #031869 !important;
+        padding: 16pt !important;
+        margin-bottom: 12pt !important;
+        border-radius: 4pt !important;
+      }
+
+      .intro-card h1 { font-size: 18pt !important; }
+      .intro-card p { font-size: 10pt !important; }
+
+      .timing-bar { padding: 10pt 16pt !important; margin-bottom: 12pt !important; }
+      .timing-mins { font-size: 16pt !important; }
+      .timing-label { font-size: 8pt !important; }
+
+      .guide-section {
+        margin-bottom: 10pt !important;
+        border: 1pt solid #e0e4ef !important;
+        page-break-inside: avoid;
+      }
+
+      .section-head { padding: 8pt 14pt !important; }
+      .section-head h2 { font-size: 9pt !important; }
+
+      .q-block { padding: 10pt 14pt !important; }
+      .q-main { font-size: 10pt !important; }
+      .q-probes li { font-size: 9pt !important; }
+      .q-note, .q-risk, .q-tip { font-size: 9pt !important; padding: 6pt 10pt !important; }
+
+      .script-box { font-size: 9pt !important; padding: 8pt 12pt !important; }
+
+      .dsm-box { margin: 0 14pt 10pt !important; padding: 10pt 14pt !important; }
+      .dsm-col ul li { font-size: 9pt !important; }
+
+      @page { margin: 15mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+      <div>
+        <div class="top-bar-title">Structured Clinical Interview Guide</div>
+        <div class="top-bar-sub">ADHD Diagnostic Assessment — Clinician Reference</div>
+      </div>
+    </div>
+    <div class="top-bar-actions">
+      <a class="btn-report" href="adhd-report-form.html" target="_blank">Open Report Form ↗</a>
+      <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- INTRO -->
+    <div class="intro-card">
+      <h1>ADHD Diagnostic Assessment<br>Structured Interview Guide</h1>
+      <p>This guide provides a standardised framework for conducting ADHD diagnostic assessments at Ammcore Clinical Assessments. Follow each section in order. Use the probe questions to explore each domain thoroughly. Do not skip sections — every patient receives the same standard of assessment regardless of presentation.</p>
+      <div class="intro-badges">
+        <span class="intro-badge">DSM-5 Aligned</span>
+        <span class="intro-badge">DIVA 5.0 Framework</span>
+        <span class="intro-badge">ICD-11 Compatible</span>
+        <span class="intro-badge">90 Minutes</span>
+        <span class="intro-badge">Confidential</span>
+      </div>
+    </div>
+
+    <!-- TIMING BAR -->
+    <div class="timing-bar">
+      <div class="timing-segment">
+        <div class="timing-mins">5</div>
+        <div class="timing-label">Opening &<br>Consent</div>
+      </div>
+      <div class="timing-segment">
+        <div class="timing-mins">10</div>
+        <div class="timing-label">Presenting<br>Complaint</div>
+      </div>
+      <div class="timing-segment">
+        <div class="timing-mins">25</div>
+        <div class="timing-label">DIVA Interview<br>(Inattention)</div>
+      </div>
+      <div class="timing-segment">
+        <div class="timing-mins">20</div>
+        <div class="timing-label">DIVA Interview<br>(Hyperactivity)</div>
+      </div>
+      <div class="timing-segment">
+        <div class="timing-mins">15</div>
+        <div class="timing-label">History &<br>Background</div>
+      </div>
+      <div class="timing-segment">
+        <div class="timing-mins">10</div>
+        <div class="timing-label">Risk Screen &<br>MSE</div>
+      </div>
+      <div class="timing-segment">
+        <div class="timing-mins">5</div>
+        <div class="timing-label">Close &<br>Next Steps</div>
+      </div>
+    </div>
+
+    <!-- SECTION 1: OPENING -->
+    <div class="guide-section">
+      <div class="section-head navy">
+        <div class="section-head-left">
+          <div class="section-num">1</div>
+          <h2>Opening — Consent &amp; Identity</h2>
+        </div>
+        <div class="section-time">~5 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Step 1 — Identity Verification</div>
+          <div class="q-main">Ask the patient to show photo ID to the camera before the session begins.</div>
+          <div class="script-box">
+            <div class="script-label">Say to patient</div>
+            "Before we begin, I just need to confirm your identity — could you hold your photo ID up to the camera for me? A passport or driving licence is fine."
+          </div>
+          <div class="q-note">Record the type of ID shown in the pre-assessment checklist and diagnostic report.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Step 2 — Capacity &amp; Consent</div>
+          <div class="q-main">Confirm the patient understands the nature and purpose of the assessment and consents to proceed.</div>
+          <div class="script-box">
+            <div class="script-label">Say to patient</div>
+            "Today I'll be conducting a diagnostic assessment for ADHD. This will involve me asking you a range of questions about your experiences, your history, and how things affect your day-to-day life. Everything you share is confidential. The session will last around 90 minutes. Do you have any questions before we start, and are you happy to proceed?"
+          </div>
+          <div class="q-note">If the patient has not signed the clinical disclaimer, obtain verbal consent now and record it in the diagnostic report under Capacity &amp; Consent.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Step 3 — Set the Tone</div>
+          <div class="q-main">Reassure the patient before moving into clinical questioning.</div>
+          <div class="script-box">
+            <div class="script-label">Say to patient</div>
+            "There are no right or wrong answers — I'm simply here to understand your experiences as clearly as possible. Please take your time, and feel free to tell me if you'd like me to rephrase anything or if you need a moment."
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2: PRESENTING COMPLAINT -->
+    <div class="guide-section">
+      <div class="section-head navy">
+        <div class="section-head-left">
+          <div class="section-num">2</div>
+          <h2>Presenting Complaint</h2>
+        </div>
+        <div class="section-time">~10 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Opening Question</div>
+          <div class="q-main">"What has brought you to seek an assessment today?"</div>
+          <ul class="q-probes">
+            <li>How long have you been aware of these difficulties?</li>
+            <li>Was there a specific moment or event that prompted you to seek help?</li>
+            <li>Has anyone else — a partner, friend, employer — commented on these difficulties?</li>
+            <li>How are these difficulties affecting your daily life right now?</li>
+          </ul>
+          <div class="q-tip">Let the patient speak freely for the first 2–3 minutes. Do not interrupt. Note the themes they raise unprompted — these are the most diagnostically significant.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Main Concerns</div>
+          <div class="q-main">"What would you say are your three biggest day-to-day challenges?"</div>
+          <ul class="q-probes">
+            <li>At work or in education</li>
+            <li>In relationships or socially</li>
+            <li>With managing yourself — organisation, time, tasks</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DSM-5 REFERENCE -->
+    <div class="guide-section">
+      <div class="section-head teal">
+        <div class="section-head-left">
+          <div class="section-num">★</div>
+          <h2>DSM-5 Criteria Reference — Keep Visible Throughout</h2>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="dsm-box" style="margin:20px 28px;">
+          <h3>DSM-5 Diagnostic Criteria for ADHD</h3>
+          <p style="font-size:1.35rem;color:#555;margin-bottom:16px;">Requires ≥6 symptoms (≥5 for adults 17+) in either or both domains, present for ≥6 months, onset before age 12, present in ≥2 settings, causing functional impairment.</p>
+          <div class="dsm-cols">
+            <div class="dsm-col">
+              <h4>Inattention Symptoms</h4>
+              <ul>
+                <li>Fails to give close attention to detail / makes careless mistakes</li>
+                <li>Difficulty sustaining attention in tasks or play</li>
+                <li>Does not seem to listen when spoken to directly</li>
+                <li>Does not follow through on instructions / fails to finish tasks</li>
+                <li>Difficulty organising tasks and activities</li>
+                <li>Avoids tasks requiring sustained mental effort</li>
+                <li>Loses things necessary for tasks</li>
+                <li>Easily distracted by extraneous stimuli</li>
+                <li>Forgetful in daily activities</li>
+              </ul>
+            </div>
+            <div class="dsm-col">
+              <h4>Hyperactivity / Impulsivity Symptoms</h4>
+              <ul>
+                <li>Fidgets with hands/feet or squirms in seat</li>
+                <li>Leaves seat when expected to remain seated</li>
+                <li>Runs or climbs in inappropriate situations (in adults: feeling restless)</li>
+                <li>Unable to play or engage in leisure activities quietly</li>
+                <li>Often "on the go" or acts as if "driven by a motor"</li>
+                <li>Talks excessively</li>
+                <li>Blurts out answers before question is completed</li>
+                <li>Difficulty waiting their turn</li>
+                <li>Interrupts or intrudes on others</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: INATTENTION -->
+    <div class="guide-section">
+      <div class="section-head navy">
+        <div class="section-head-left">
+          <div class="section-num">3</div>
+          <h2>Inattention Domain — DIVA 5.0</h2>
+        </div>
+        <div class="section-time">~25 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Framing — Say This First</div>
+          <div class="script-box">
+            <div class="script-label">Say to patient</div>
+            "I'm going to ask you about a range of specific experiences. For each one, I'd like to know whether it applies to you now as an adult, and also whether it was something you experienced as a child — say, before the age of 12."
+          </div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 1</div>
+          <div class="q-main">"Do you often fail to give close attention to detail, or make careless mistakes in your work, studies, or other activities?"</div>
+          <ul class="q-probes">
+            <li>Can you give me a recent example?</li>
+            <li>Does this happen even when the stakes are high?</li>
+            <li>Do others point out your errors more than you notice them yourself?</li>
+            <li>Was this the case at school as a child?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 2</div>
+          <div class="q-main">"Do you have difficulty keeping your attention on tasks or activities for a sustained period — such as reading, meetings, or conversations?"</div>
+          <ul class="q-probes">
+            <li>How long can you typically focus before your mind wanders?</li>
+            <li>Does this change if you find something interesting — can you hyperfocus?</li>
+            <li>What strategies have you developed to cope with this?</li>
+            <li>Did teachers comment on your concentration as a child?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 3</div>
+          <div class="q-main">"Do people often say you don't seem to be listening when they speak to you directly?"</div>
+          <ul class="q-probes">
+            <li>Do you find your mind is elsewhere even when you want to listen?</li>
+            <li>Do you miss parts of conversations and have to ask people to repeat themselves?</li>
+            <li>Has this caused problems in relationships or at work?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 4</div>
+          <div class="q-main">"Do you often start tasks but struggle to follow through and finish them?"</div>
+          <ul class="q-probes">
+            <li>Is this across all types of tasks, or specific ones?</li>
+            <li>Do you tend to move on to new things before completing what you started?</li>
+            <li>How does this affect you at work or at home?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 5</div>
+          <div class="q-main">"Do you have difficulty organising tasks, activities, or your time?"</div>
+          <ul class="q-probes">
+            <li>Do you struggle to prioritise what needs to be done first?</li>
+            <li>Do you miss deadlines or appointments?</li>
+            <li>Is your living or working environment organised or chaotic?</li>
+            <li>Do you rely heavily on lists, alarms, or other people to stay on track?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 6</div>
+          <div class="q-main">"Do you avoid or put off tasks that require a lot of mental effort, like paperwork, reports, or admin?"</div>
+          <ul class="q-probes">
+            <li>How long do you tend to put things off?</li>
+            <li>Does this happen even when the consequences are serious?</li>
+            <li>What happens when a deadline is approaching — do you manage to complete it?</li>
+          </ul>
+          <div class="q-note">Note the difference between avoidance due to difficulty and avoidance due to disinterest — both are relevant but may indicate different profiles.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 7</div>
+          <div class="q-main">"Do you frequently lose or misplace things you need — keys, phone, wallet, documents?"</div>
+          <ul class="q-probes">
+            <li>How often does this happen?</li>
+            <li>Has it ever caused significant problems?</li>
+            <li>Have you developed any systems to prevent it?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 8</div>
+          <div class="q-main">"Are you easily distracted by things around you — sounds, movement, other people?"</div>
+          <ul class="q-probes">
+            <li>What types of distraction affect you most?</li>
+            <li>Do your own thoughts distract you as much as external things?</li>
+            <li>Do you have to work in specific conditions to concentrate?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Inattention — Item 9</div>
+          <div class="q-main">"Are you forgetful in daily activities — forgetting appointments, errands, returning calls, paying bills?"</div>
+          <ul class="q-probes">
+            <li>How often does this happen in a typical week?</li>
+            <li>Has forgetting things caused problems in relationships or work?</li>
+            <li>Do you forget things even when you've just been told?</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 4: HYPERACTIVITY -->
+    <div class="guide-section">
+      <div class="section-head navy">
+        <div class="section-head-left">
+          <div class="section-num">4</div>
+          <h2>Hyperactivity &amp; Impulsivity Domain — DIVA 5.0</h2>
+        </div>
+        <div class="section-time">~20 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Hyperactivity — Item 1</div>
+          <div class="q-main">"Do you fidget — tapping your hands or feet, bouncing your leg, or finding it hard to sit still?"</div>
+          <ul class="q-probes">
+            <li>Is this something others notice about you?</li>
+            <li>Does it get worse in certain situations — meetings, waiting rooms, long journeys?</li>
+            <li>Were you like this as a child?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Hyperactivity — Item 2</div>
+          <div class="q-main">"Do you find it difficult to stay in your seat when you're expected to — at work, in meetings, at social occasions?"</div>
+          <ul class="q-probes">
+            <li>Do you make excuses to get up and move around?</li>
+            <li>As a child, were you frequently told to sit down or stay in your seat?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Hyperactivity — Item 3</div>
+          <div class="q-main">"As an adult, do you feel an inner sense of restlessness — like you can't switch off or slow down?"</div>
+          <ul class="q-probes">
+            <li>How would you describe it — physical, mental, or both?</li>
+            <li>Does it affect your ability to relax or wind down in the evenings?</li>
+            <li>Do others describe you as always being "on the go"?</li>
+          </ul>
+          <div class="q-tip">In adults, physical hyperactivity often presents as internal restlessness rather than overt physical movement. Explore this carefully.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Hyperactivity — Item 4</div>
+          <div class="q-main">"Do you find it hard to relax or engage in quiet leisure activities?"</div>
+          <ul class="q-probes">
+            <li>Can you sit and watch a film, read a book, or just rest without needing to do something else?</li>
+            <li>Do you tend to multitask even when you don't need to?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Hyperactivity — Item 5</div>
+          <div class="q-main">"Do people describe you as always being busy, always doing something — like you're driven by a motor?"</div>
+          <ul class="q-probes">
+            <li>Do you take on too many things at once?</li>
+            <li>Do you feel uncomfortable doing nothing?</li>
+            <li>What happens when you're forced to wait — in a queue, at an appointment?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Hyperactivity — Item 6</div>
+          <div class="q-main">"Do you talk excessively — more than others in most situations?"</div>
+          <ul class="q-probes">
+            <li>Do you often speak before thinking?</li>
+            <li>Do others tell you that you dominate conversations?</li>
+            <li>Do you find it hard to stop talking even when you know you should?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Impulsivity — Item 7</div>
+          <div class="q-main">"Do you often blurt out answers or comments before someone has finished speaking?"</div>
+          <ul class="q-probes">
+            <li>Do you finish other people's sentences?</li>
+            <li>Do you often say things and immediately regret them?</li>
+            <li>Has this caused problems in relationships or at work?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Impulsivity — Item 8</div>
+          <div class="q-main">"Do you find it difficult to wait your turn — in conversations, queues, or situations where patience is needed?"</div>
+          <ul class="q-probes">
+            <li>How do you feel when you have to wait?</li>
+            <li>Do you become frustrated or agitated quickly?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Impulsivity — Item 9</div>
+          <div class="q-main">"Do you act impulsively — making decisions or doing things without thinking them through first?"</div>
+          <ul class="q-probes">
+            <li>Can you give me an example — spending, relationships, career decisions?</li>
+            <li>Have impulsive decisions caused significant problems for you?</li>
+            <li>Do you often feel regret after acting impulsively?</li>
+          </ul>
+          <div class="q-note">Explore impulsivity across multiple domains — financial, sexual, substance use, relationships, and risk-taking behaviours. Each is clinically significant and should be recorded sensitively.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 5: CHILDHOOD ONSET -->
+    <div class="guide-section">
+      <div class="section-head teal">
+        <div class="section-head-left">
+          <div class="section-num">5</div>
+          <h2>Childhood Onset — DSM-5 Criterion B</h2>
+        </div>
+        <div class="section-time">Part of sections 3 &amp; 4</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Key Criterion</div>
+          <div class="q-main">Symptoms must have been present before age 12. Explore this for every domain above.</div>
+          <ul class="q-probes">
+            <li>Were these difficulties present at primary school? Secondary school?</li>
+            <li>What did teachers say about you — in reports or in person?</li>
+            <li>Did you get into trouble at school? For what?</li>
+            <li>Did family members notice anything different about you as a child?</li>
+            <li>Did you struggle more than other children with sitting still, concentrating, or following instructions?</li>
+          </ul>
+          <div class="q-tip">School reports from the intake form are invaluable here. Reference them if available — "I can see from your school reports that..."</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Informant Corroboration</div>
+          <div class="q-main">If an informant form was received, reference key points during this section.</div>
+          <div class="script-box">
+            <div class="script-label">If informant available</div>
+            "I can see from the information provided by [informant name] that [key observation]. Does that match with how you remember things?"
+          </div>
+          <div class="q-note">If no informant information was received, note this in the report. It does not invalidate the assessment but should be documented.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 6: HISTORY -->
+    <div class="guide-section">
+      <div class="section-head navy">
+        <div class="section-head-left">
+          <div class="section-num">6</div>
+          <h2>History &amp; Background</h2>
+        </div>
+        <div class="section-time">~15 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Psychiatric History</div>
+          <div class="q-main">"Have you ever been diagnosed with any mental health condition, or received any psychiatric treatment?"</div>
+          <ul class="q-probes">
+            <li>Have you ever been hospitalised for mental health reasons?</li>
+            <li>Have you experienced depression, anxiety, bipolar disorder, or any other condition?</li>
+            <li>Are you currently receiving any mental health support?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Medical History</div>
+          <div class="q-main">"Do you have any current or past medical or surgical conditions?"</div>
+          <ul class="q-probes">
+            <li>Are you taking any regular medications?</li>
+            <li>Do you have any known allergies — particularly to medications?</li>
+            <li>Have you had any significant surgeries or hospital admissions?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Substance Use</div>
+          <div class="q-main">"Can you tell me about your use of alcohol and any other substances?"</div>
+          <ul class="q-probes">
+            <li>How often do you drink alcohol, and how much typically?</li>
+            <li>Do you use cannabis, or any other recreational substances?</li>
+            <li>Have you ever felt that substance use has been a problem for you?</li>
+          </ul>
+          <div class="q-note">Ask sensitively and without judgement. Substance use is common in undiagnosed ADHD as a coping mechanism and is clinically important to document.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Family History</div>
+          <div class="q-main">"Is there any family history of ADHD, autism, or other mental health conditions?"</div>
+          <ul class="q-probes">
+            <li>Do any siblings, parents, or close relatives have similar difficulties to you?</li>
+            <li>Have any family members been formally diagnosed?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Developmental &amp; Social History</div>
+          <div class="q-main">"Tell me a bit about your background — growing up, school, and work."</div>
+          <ul class="q-probes">
+            <li>Were there any complications at birth or early developmental concerns?</li>
+            <li>How did you get on at school — academically and socially?</li>
+            <li>What has your work history looked like?</li>
+            <li>What is your current living situation?</li>
+            <li>Are you in a relationship? How have relationships been for you?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Sleep</div>
+          <div class="q-main">"How is your sleep?"</div>
+          <ul class="q-probes">
+            <li>Do you have difficulty getting to sleep? Staying asleep?</li>
+            <li>How many hours do you typically get?</li>
+            <li>Is your mind active at night — racing thoughts, images?</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Driving</div>
+          <div class="q-main">"Do you drive, and if so, do you feel your difficulties affect your ability to drive safely?"</div>
+          <ul class="q-probes">
+            <li>Any accidents, near misses, or points on your licence?</li>
+          </ul>
+          <div class="q-note">DVLA requires disclosure if ADHD affects driving ability. Record the patient's response and include in the report.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 7: MSE & RISK -->
+    <div class="guide-section">
+      <div class="section-head red">
+        <div class="section-head-left">
+          <div class="section-num">7</div>
+          <h2>Mental State Examination &amp; Risk Screen</h2>
+        </div>
+        <div class="section-time">~10 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Mental State Examination</div>
+          <div class="q-main">Observe and record throughout the session. Do not leave this to the end.</div>
+          <ul class="q-probes">
+            <li><strong>Appearance:</strong> Dress, grooming, eye contact</li>
+            <li><strong>Behaviour:</strong> Engagement, cooperation, rapport</li>
+            <li><strong>Speech:</strong> Rate, volume, pressure, coherence</li>
+            <li><strong>Mood:</strong> Patient's report of their mood</li>
+            <li><strong>Affect:</strong> Observed emotional tone — congruent, reactive, flat</li>
+            <li><strong>Thought process:</strong> Logical, tangential, circumstantial, flight of ideas</li>
+            <li><strong>Thought content:</strong> Main themes, preoccupations</li>
+            <li><strong>Perceptual disturbances:</strong> Hallucinations, illusions — present/absent</li>
+            <li><strong>Insight:</strong> Awareness of difficulties and their impact</li>
+            <li><strong>Cognition:</strong> Apparent memory, concentration during the session</li>
+          </ul>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Risk to Self</div>
+          <div class="q-main">"Sometimes when people are struggling, they can have thoughts of harming themselves or not wanting to be here. Have you experienced anything like that?"</div>
+          <ul class="q-probes">
+            <li>Have you ever had thoughts of suicide or self-harm?</li>
+            <li>Are you having any thoughts like that currently?</li>
+            <li>Have you ever acted on those thoughts?</li>
+          </ul>
+          <div class="q-risk">If the patient discloses current suicidal ideation or active self-harm: do not proceed with the assessment. Provide crisis resources immediately (NHS 111 mental health option / 999 / A&E). Contact the clinical lead. Document everything.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Risk to Others</div>
+          <div class="q-main">"Have you ever had thoughts of harming anyone else, or has anyone ever been concerned about your behaviour towards others?"</div>
+          <div class="q-risk">If any risk to others is disclosed: escalate immediately to the clinical lead before concluding the session.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Safeguarding</div>
+          <div class="q-main">Consider throughout the session whether any safeguarding concerns arise — for the patient or others, including children.</div>
+          <div class="q-risk">If a safeguarding concern is identified: escalate immediately. Do not wait until after the session.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 8: CLOSE -->
+    <div class="guide-section">
+      <div class="section-head teal">
+        <div class="section-head-left">
+          <div class="section-num">8</div>
+          <h2>Closing the Session</h2>
+        </div>
+        <div class="section-time">~5 mins</div>
+      </div>
+      <div class="section-body">
+
+        <div class="q-block">
+          <div class="q-label">Invite Final Thoughts</div>
+          <div class="q-main">"Is there anything else you'd like to share that we haven't covered, or anything you feel is important for me to know?"</div>
+          <div class="q-tip">Patients often disclose the most clinically significant information at this point. Allow enough time for a genuine response.</div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">Explain Next Steps</div>
+          <div class="script-box">
+            <div class="script-label">Say to patient</div>
+            "Thank you so much for your time today — you've been really open and that helps enormously. Your report will be reviewed by our consultant clinician and delivered to you securely within [7 / 3] working days. If you have any questions in the meantime, please don't hesitate to contact us at info@ammcoreassessments.co.uk. We'll be in touch soon."
+          </div>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">After the Session</div>
+          <div class="q-main">Complete the following immediately after the call ends:</div>
+          <ul class="q-probes">
+            <li>Open the ADHD Diagnostic Report form and complete all sections while the session is fresh</li>
+            <li>Record all rating scale scores (ASRS, DIVA, WURS-25, WFIRS, AQ-10, BDI, BAI)</li>
+            <li>Complete the Post-Assessment section of the Pre-Assessment Checklist</li>
+            <li>Print report as PDF (use Print / Save PDF button in the report form) and email to <a href="mailto:booking@ammcoreassessments.co.uk?subject=ADHD%20Report%20for%20Review%20%E2%80%94%20[Patient%20Name]" style="color:var(--teal-bright);">booking@ammcoreassessments.co.uk</a> for consultant review — do not send to patient directly</li>
+          </ul>
+          <div class="q-note">Aim to have the report drafted within 24 hours. The Standard deadline is 7 working days and Express is 3 working days from the assessment date.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /container -->
+
+</body>
+</html>

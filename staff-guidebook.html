@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinician Staff Guidebook — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+      --grey-bg: #f2f2f2;
+      --grey-light: #F8F9FB;
+      --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c;
+      --white: #ffffff;
+      --red: #c0392b;
+      --red-light: #fdf0ee;
+      --amber: #b45309;
+      --amber-light: #fffbeb;
+      --green: #1a6b3c;
+      --green-light: #eaf5ee;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: var(--grey-bg);
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .top-bar-left img {
+      height: 36px;
+      width: auto;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
+    }
+
+    .top-bar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .top-bar-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1px;
+    }
+
+    .top-bar-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-print {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 9px 22px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-print:hover { background: var(--teal-bright); }
+
+    /* ─── LAYOUT ─── */
+    .page-wrap {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    /* ─── SIDEBAR NAV ─── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 88px;
+    }
+
+    .sidebar-inner {
+      background: var(--white);
+      border: 1px solid var(--grey-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .sidebar-head {
+      background: var(--navy);
+      padding: 14px 18px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .sidebar-nav { list-style: none; }
+
+    .sidebar-nav li a {
+      display: block;
+      padding: 11px 18px;
+      font-size: 1.35rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--grey-border);
+      transition: background 0.15s, color 0.15s;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav li:last-child a { border-bottom: none; }
+    .sidebar-nav li a:hover { background: var(--grey-light); color: var(--navy); }
+    .sidebar-nav li a.active { background: var(--navy); color: #fff; font-weight: 700; }
+
+    .sidebar-nav .nav-num {
+      display: inline-block;
+      width: 20px;
+      font-size: 1.1rem;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    /* ─── MAIN CONTENT ─── */
+    .main-content { flex: 1; min-width: 0; }
+
+    /* ─── COVER ─── */
+    .cover {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 48px;
+      margin-bottom: 28px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,190,217,0.12) 0%, transparent 70%);
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background: rgba(192,57,43,0.2);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #ff8a80;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .cover p {
+      font-size: 1.55rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .cover-meta-item {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .cover-meta-item strong {
+      display: block;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.35rem;
+      margin-bottom: 2px;
+    }
+
+    /* ─── SECTION CARD ─── */
+    .guide-section {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--grey-border);
+      margin-bottom: 24px;
+      overflow: hidden;
+      scroll-margin-top: 100px;
+    }
+
+    .section-head {
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-head.navy { background: var(--navy); }
+    .section-head.teal { background: var(--teal); }
+    .section-head.deep { background: var(--navy-deep); }
+    .section-head.red { background: var(--red); }
+    .section-head.amber { background: var(--amber); }
+
+    .section-num {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .section-head h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .section-body { padding: 28px; }
+
+    /* ─── CONTENT ELEMENTS ─── */
+    .body-text {
+      font-size: 1.55rem;
+      color: var(--charcoal);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .body-text:last-child { margin-bottom: 0; }
+
+    h3.sub-head {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--grey-border);
+    }
+
+    h3.sub-head:first-child { margin-top: 0; }
+
+    .bullet-list {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+
+    .bullet-list li {
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      padding: 5px 0 5px 22px;
+      position: relative;
+      line-height: 1.6;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .bullet-list li:last-child { border-bottom: none; }
+
+    .bullet-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* CALLOUT BOXES */
+    .callout {
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      font-size: 1.45rem;
+      line-height: 1.6;
+    }
+
+    .callout-red {
+      background: var(--red-light);
+      border-left: 4px solid var(--red);
+      color: var(--red);
+    }
+
+    .callout-amber {
+      background: var(--amber-light);
+      border-left: 4px solid var(--amber);
+      color: var(--amber);
+    }
+
+    .callout-green {
+      background: var(--green-light);
+      border-left: 4px solid var(--green);
+      color: var(--green);
+    }
+
+    .callout-navy {
+      background: rgba(3,24,105,0.05);
+      border-left: 4px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .callout strong { display: block; margin-bottom: 4px; font-size: 1.3rem; letter-spacing: 0.05em; }
+
+    /* TABLE */
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 1.45rem;
+    }
+
+    .guide-table th {
+      background: var(--grey-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--grey-border);
+    }
+
+    .guide-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .guide-table tr:last-child td { border-bottom: none; }
+    .guide-table tr:nth-child(even) td { background: var(--grey-light); }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--grey-border); margin: 22px 0; }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 16px 0;
+    }
+
+    .contact-card strong {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .contact-card p {
+      font-size: 1.45rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* STEP LIST */
+    .step-list { list-style: none; counter-reset: step-counter; }
+
+    .step-list li {
+      counter-increment: step-counter;
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--grey-border);
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .step-list li:last-child { border-bottom: none; }
+
+    .step-list li::before {
+      content: counter(step-counter);
+      background: var(--navy);
+      color: #fff;
+      border-radius: 50%;
+      width: 26px; height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { font-family: 'Lato', sans-serif; font-size: 10pt; background: #fff; }
+      .top-bar, .sidebar, .btn-print { display: none !important; }
+      .page-wrap { display: block; padding: 0; }
+      .main-content { width: 100%; }
+      .cover { background: #031869 !important; padding: 24pt !important; margin-bottom: 16pt !important; }
+      .cover h1 { font-size: 20pt !important; }
+      .guide-section { margin-bottom: 12pt !important; page-break-inside: avoid; }
+      .section-head { padding: 8pt 14pt !important; }
+      .section-body { padding: 14pt !important; }
+      .body-text { font-size: 10pt !important; }
+      .bullet-list li { font-size: 10pt !important; }
+      .guide-table th, .guide-table td { font-size: 9pt !important; padding: 6pt 10pt !important; }
+      @page { margin: 15mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+      <div>
+        <div class="top-bar-title">Clinician Staff Guidebook</div>
+        <div class="top-bar-sub">Ammcore Clinical Assessments — Internal Use Only</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-head">Contents</div>
+        <ul class="sidebar-nav">
+          <li><a href="#welcome"><span class="nav-num">1</span> Welcome</a></li>
+          <li><a href="#who-we-are"><span class="nav-num">2</span> Who We Are</a></li>
+          <li><a href="#your-role"><span class="nav-num">3</span> Your Role</a></li>
+          <li><a href="#standards"><span class="nav-num">4</span> Clinical Standards</a></li>
+          <li><a href="#pipeline"><span class="nav-num">5</span> The Patient Pipeline</a></li>
+          <li><a href="#tools"><span class="nav-num">6</span> Tools & Resources</a></li>
+          <li><a href="#communications"><span class="nav-num">7</span> Communications</a></li>
+          <li><a href="#risk"><span class="nav-num">8</span> Risk & Escalation</a></li>
+          <li><a href="#data"><span class="nav-num">9</span> Data & Confidentiality</a></li>
+          <li><a href="#conduct"><span class="nav-num">10</span> Professional Conduct</a></li>
+          <li><a href="#contacts"><span class="nav-num">11</span> Key Contacts</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="main-content">
+
+      <!-- COVER -->
+      <div class="cover">
+        <div class="cover-badge">Confidential — Internal Use Only</div>
+        <h1>Clinician Staff Guidebook</h1>
+        <p>Welcome to Ammcore Clinical Assessments. This guidebook sets out everything you need to know to conduct assessments to our standard — consistently, safely, and with the care our patients deserve.</p>
+        <div class="cover-meta">
+          <div class="cover-meta-item">
+            <strong>Version</strong>
+            1.0
+          </div>
+          <div class="cover-meta-item">
+            <strong>Issued by</strong>
+            Ammcore Clinical Assessments
+          </div>
+          <div class="cover-meta-item">
+            <strong>Applies to</strong>
+            All clinicians
+          </div>
+          <div class="cover-meta-item">
+            <strong>Classification</strong>
+            Confidential
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 1: WELCOME -->
+      <div class="guide-section" id="welcome">
+        <div class="section-head navy">
+          <div class="section-num">1</div>
+          <h2>Welcome</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">Welcome to Ammcore Clinical Assessments. We are glad to have you as part of our clinical team.</p>
+          <p class="body-text">Ammcore Clinical Assessments was founded on a simple belief: that people who need clarity about their mental health should not have to wait years to get it. We provide private, clinician-led ADHD diagnostic assessments that are rigorous, compassionate, and accessible. Every patient who comes to us has made a significant decision to invest in understanding themselves better — and it is our job to honour that.</p>
+          <p class="body-text">This guidebook exists to ensure that every clinician at Ammcore delivers to the same standard. It is not optional reading — it is the foundation of how we operate. Please read it in full before conducting your first assessment, and return to it whenever you need guidance.</p>
+          <div class="callout callout-navy">
+            <strong>Our Promise to Every Patient</strong>
+            Every patient receives the same high standard of clinical care — regardless of which clinician conducts their assessment, which service they have purchased, or what their background is.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: WHO WE ARE -->
+      <div class="guide-section" id="who-we-are">
+        <div class="section-head navy">
+          <div class="section-num">2</div>
+          <h2>Who We Are</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">Ammcore Clinical Assessments is a clinical subsidiary of Ammcore Consulting Ltd. We specialise in private ADHD diagnostic assessments for adults, conducted remotely via secure video. We operate under UK clinical governance standards and handle all patient data in accordance with UK GDPR.</p>
+
+          <h3 class="sub-head">Our Services</h3>
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Total Fee</th>
+                <th>Booking Fee</th>
+                <th>Balance</th>
+                <th>Report Turnaround</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Standard Assessment</strong></td>
+                <td>£799</td>
+                <td>£99 (at triage booking)</td>
+                <td>£700 (before assessment)</td>
+                <td>7 working days</td>
+              </tr>
+              <tr>
+                <td><strong>Express Assessment</strong></td>
+                <td>£899</td>
+                <td>£99 (at triage booking)</td>
+                <td>£800 (before assessment)</td>
+                <td>3 working days</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-head">Our Diagnostic Framework</h3>
+          <ul class="bullet-list">
+            <li>DSM-5 criteria for ADHD — primary diagnostic framework</li>
+            <li>ICD-11 compatible — reports reference both where relevant</li>
+            <li>DIVA 5.0 — structured diagnostic interview for ADHD in adults</li>
+            <li>ASRS v1.1, WURS-25, WFIRS — validated rating scales</li>
+            <li>AQ-10, Beck Depression Inventory, Beck Anxiety Inventory — comorbidity screening</li>
+            <li>All reports reviewed by a consultant clinician before delivery</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION 3: YOUR ROLE -->
+      <div class="guide-section" id="your-role">
+        <div class="section-head teal">
+          <div class="section-num">3</div>
+          <h2>Your Role as a Clinician</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">As an Ammcore clinician, your role is to conduct thorough, standardised ADHD diagnostic assessments and produce clear, accurate written reports. You are the patient's primary clinical contact during the assessment and your conduct, care, and clinical judgement directly reflects the Ammcore standard.</p>
+
+          <h3 class="sub-head">What You Are Responsible For</h3>
+          <ul class="bullet-list">
+            <li>Reviewing all pre-assessment documentation before each session</li>
+            <li>Completing the Pre-Assessment Clinician Checklist before every assessment</li>
+            <li>Conducting the assessment using the Structured Clinical Interview Guide</li>
+            <li>Administering and recording all required rating scales</li>
+            <li>Completing the ADHD Diagnostic Report form following each session</li>
+            <li>Submitting the report for consultant review — never sending directly to the patient</li>
+            <li>Escalating any risk concerns immediately during or after the session</li>
+            <li>Maintaining patient confidentiality at all times</li>
+          </ul>
+
+          <h3 class="sub-head">What You Are Not Responsible For</h3>
+          <ul class="bullet-list">
+            <li>Chasing or confirming patient payments — this is handled by admin</li>
+            <li>Sending the final report to the patient — this is handled after consultant sign-off</li>
+            <li>Booking or rescheduling patient appointments — patients manage this via Calendly</li>
+            <li>Marketing, patient acquisition, or website content</li>
+          </ul>
+
+          <div class="callout callout-amber">
+            <strong>Important</strong>
+            If you are ever unsure whether something falls within your remit, contact the clinical lead before acting. It is always better to ask than to assume.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: CLINICAL STANDARDS -->
+      <div class="guide-section" id="standards">
+        <div class="section-head teal">
+          <div class="section-num">4</div>
+          <h2>Clinical Standards</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">The following standards are non-negotiable. Every assessment conducted at Ammcore must meet all of them, without exception.</p>
+
+          <h3 class="sub-head">Assessment Standards</h3>
+          <ul class="bullet-list">
+            <li><strong>Use the structured interview guide.</strong> Do not conduct assessments from memory or improvise the structure. The guide exists to ensure every patient is assessed to the same standard.</li>
+            <li><strong>Administer all required rating scales.</strong> DIVA 5.0, ASRS v1.1, WURS-25, WFIRS, AQ-10, BDI, and BAI are required for every assessment. Do not omit any without clinical justification documented in the report.</li>
+            <li><strong>Identity must be verified.</strong> Every patient must show photo ID before the assessment begins. No exceptions.</li>
+            <li><strong>Consent must be confirmed.</strong> Verbal consent must be obtained and recorded even if the written disclaimer has been signed.</li>
+            <li><strong>90 minutes minimum.</strong> Assessments must not be rushed. If more time is needed, take it. If the patient is significantly late, contact admin before proceeding.</li>
+          </ul>
+
+          <h3 class="sub-head">Report Standards</h3>
+          <ul class="bullet-list">
+            <li><strong>Use the Ammcore Diagnostic Report form.</strong> Do not create your own format. The standardised form ensures consistency across all reports.</li>
+            <li><strong>Draft within 24 hours.</strong> Complete your report draft while the session is fresh. Memory fades quickly — do not leave it.</li>
+            <li><strong>Be specific and evidence-based.</strong> Every diagnostic conclusion must be supported by the patient's own words and the rating scale scores. Avoid vague generalisations.</li>
+            <li><strong>Never send directly to the patient.</strong> All reports must be reviewed by a consultant clinician before delivery. This is a mandatory quality and safety control.</li>
+            <li><strong>Meet the deadline.</strong> Standard reports within 7 working days. Express reports within 3 working days from the date of assessment.</li>
+          </ul>
+
+          <h3 class="sub-head">Conduct Standards</h3>
+          <ul class="bullet-list">
+            <li>Maintain a professional, neutral, and compassionate tone throughout every session</li>
+            <li>Do not express personal opinions about the patient's situation, lifestyle, or choices</li>
+            <li>Do not speculate about diagnoses before the assessment is complete</li>
+            <li>Do not make promises about outcomes — the report will speak for itself</li>
+            <li>Do not communicate with patients outside of the agreed channels</li>
+          </ul>
+
+          <div class="callout callout-red">
+            <strong>Zero Tolerance</strong>
+            Breaches of clinical standards, confidentiality, or professional conduct will be treated as serious matters and may result in the immediate termination of your engagement with Ammcore Clinical Assessments.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5: PIPELINE -->
+      <div class="guide-section" id="pipeline">
+        <div class="section-head navy">
+          <div class="section-num">5</div>
+          <h2>The Patient Pipeline</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">Understanding the full patient journey helps you understand where your role fits. Here is the end-to-end pipeline:</p>
+
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>What Happens</th>
+                <th>Who Handles It</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Enquiry</strong></td>
+                <td>Patient finds the website or is referred. May contact info@ with questions.</td>
+                <td>Admin</td>
+              </tr>
+              <tr>
+                <td><strong>2. Triage Booking</strong></td>
+                <td>Patient pays £99 via Stripe and books a Saturday triage slot via Calendly.</td>
+                <td>Automated / Patient</td>
+              </tr>
+              <tr>
+                <td><strong>3. Intake Form</strong></td>
+                <td>Patient completes the online intake form (submitted via Formspree to booking@).</td>
+                <td>Patient</td>
+              </tr>
+              <tr>
+                <td><strong>4. Pre-Triage Review</strong></td>
+                <td>Clinician reviews intake form, ASRS score, risk flags, and supporting documents before Saturday.</td>
+                <td><strong>Clinician</strong></td>
+              </tr>
+              <tr>
+                <td><strong>5. Saturday Triage</strong></td>
+                <td>15–20 minute screening call. Clinician confirms suitability and service type.</td>
+                <td><strong>Clinician</strong></td>
+              </tr>
+              <tr>
+                <td><strong>6. Triage Outcome Email</strong></td>
+                <td>Admin sends Suitable or Not Suitable outcome email to patient from booking@ Gmail draft templates.</td>
+                <td><strong>Admin</strong></td>
+              </tr>
+              <tr>
+                <td><strong>7. Balance Payment</strong></td>
+                <td>Patient pays £700 (Standard) or £800 (Express) via Stripe link in the Suitable email.</td>
+                <td>Patient / Automated</td>
+              </tr>
+              <tr>
+                <td><strong>8. Full Assessment Booking</strong></td>
+                <td>Patient is auto-redirected to book their Sunday full assessment via Calendly after payment.</td>
+                <td>Automated / Patient</td>
+              </tr>
+              <tr>
+                <td><strong>9. Pre-Assessment Checklist</strong></td>
+                <td>Clinician completes the Pre-Assessment Checklist before the Sunday assessment.</td>
+                <td><strong>Clinician</strong></td>
+              </tr>
+              <tr>
+                <td><strong>10. Full Assessment</strong></td>
+                <td>90-minute structured clinical interview via Google Meet on Sunday.</td>
+                <td><strong>Clinician</strong></td>
+              </tr>
+              <tr>
+                <td><strong>11. Report</strong></td>
+                <td>Clinician drafts report, submits for consultant review, report delivered to patient.</td>
+                <td><strong>Clinician</strong> + Admin</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 6: TOOLS -->
+      <div class="guide-section" id="tools">
+        <div class="section-head teal">
+          <div class="section-num">6</div>
+          <h2>Tools &amp; Resources</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">The following resources are available to you. Keep these open and accessible during every assessment session.</p>
+
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Resource</th>
+                <th>Purpose</th>
+                <th>URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pre-Assessment Checklist</strong></td>
+                <td>Complete before every session. Verifies all admin, documents, and risk items.</td>
+                <td>ammcoreassessments.co.uk/pre-assessment-checklist.html</td>
+              </tr>
+              <tr>
+                <td><strong>Structured Interview Guide</strong></td>
+                <td>The clinical framework for conducting every assessment. Follow in order.</td>
+                <td>ammcoreassessments.co.uk/clinical-interview-guide.html</td>
+              </tr>
+              <tr>
+                <td><strong>ADHD Diagnostic Report Form</strong></td>
+                <td>Auto-saving report form. Complete after every assessment.</td>
+                <td>ammcoreassessments.co.uk/adhd-report-form.html</td>
+              </tr>
+              <tr>
+                <td><strong>Clinician Triage Guide</strong></td>
+                <td>Reference for triage calls — suitability criteria, exclusion flags, and decision framework.</td>
+                <td>ammcoreassessments.co.uk/clinician-triage-guide.html</td>
+              </tr>
+              <tr>
+                <td><strong>Formspree Submissions</strong></td>
+                <td>Patient intake form submissions delivered to booking@ammcoreassessments.co.uk</td>
+                <td>Check email inbox</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-head">Rating Scales — Required for Every Assessment</h3>
+          <ul class="bullet-list">
+            <li><strong>DIVA 5.0</strong> — Diagnostic Interview for ADHD in Adults (primary structured interview)</li>
+            <li><strong>ASRS v1.1</strong> — Adult ADHD Self-Reporting Scale (already completed by patient in intake form)</li>
+            <li><strong>WURS-25</strong> — Wender Utah Rating Scale (childhood symptom retrospective)</li>
+            <li><strong>WFIRS</strong> — Weiss Functional Impairment Rating Scale</li>
+            <li><strong>AQ-10</strong> — Autism Spectrum Quotient (comorbidity screening)</li>
+            <li><strong>Beck Depression Inventory (BDI)</strong> — comorbidity screening</li>
+            <li><strong>Beck Anxiety Inventory (BAI)</strong> — comorbidity screening</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION 7: COMMUNICATIONS -->
+      <div class="guide-section" id="communications">
+        <div class="section-head navy">
+          <div class="section-num">7</div>
+          <h2>Communications with Patients</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">All communication with patients must go through the Ammcore email system. Do not communicate with patients using personal email addresses, personal phone numbers, or any other personal channel.</p>
+
+          <h3 class="sub-head">Email Addresses</h3>
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Address</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>booking@ammcoreassessments.co.uk</strong></td>
+                <td>All clinical communications — intake form submissions, outcome emails, document requests, patient correspondence</td>
+              </tr>
+              <tr>
+                <td><strong>info@ammcoreassessments.co.uk</strong></td>
+                <td>General enquiries, business liaison, admin — not for clinical correspondence</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-head">Communication Standards</h3>
+          <ul class="bullet-list">
+            <li>Always use the Gmail draft templates for outcome emails — do not write from scratch</li>
+            <li>Personalise every email — replace all placeholders before sending</li>
+            <li>Maintain a professional, warm, and clear tone in all written communication</li>
+            <li>Do not discuss diagnostic outcomes or clinical findings via email — the report is the appropriate channel</li>
+            <li>Respond to any patient queries forwarded to you by admin within 1 working day</li>
+          </ul>
+
+          <div class="callout callout-amber">
+            <strong>GP Letters</strong>
+            If a patient's GP contact details are known, a GP letter should accompany or follow the report. If details are not known, advise the patient to either provide their GP's email address or forward the report themselves. Do not chase GP details directly — route this through admin.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 8: RISK & ESCALATION -->
+      <div class="guide-section" id="risk">
+        <div class="section-head red">
+          <div class="section-num">8</div>
+          <h2>Risk &amp; Escalation Policy</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">Patient safety is the highest priority at Ammcore Clinical Assessments. The following policy must be followed without exception whenever a risk concern arises.</p>
+
+          <h3 class="sub-head">Risk Levels</h3>
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Presentation</th>
+                <th>Immediate Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong style="color:var(--red);">HIGH</strong></td>
+                <td>Current suicidal ideation with intent or plan; active self-harm; immediate risk to others</td>
+                <td>Stop the session. Provide emergency numbers immediately. Contact clinical lead. Do not leave the patient alone on screen if risk is immediate.</td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--amber);">MEDIUM</strong></td>
+                <td>Historical suicidal ideation or self-harm; passive thoughts of death without intent; significant distress</td>
+                <td>Continue with care. Provide crisis resources at the end of the session. Document fully. Notify clinical lead same day.</td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--green);">LOW</strong></td>
+                <td>No active risk. Historical disclosures that are resolved and stable.</td>
+                <td>Document in report. No immediate escalation required.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="sub-head">What to Say to a Patient in Crisis</h3>
+          <div class="callout callout-navy">
+            "I can hear that you're going through something very difficult right now, and I want to make sure you're safe. Before we go any further, I need to make sure you have the right support available to you. Please contact NHS 111 and select the mental health option — they can help you right now. If you feel you are in immediate danger, please call 999 or go to your nearest A&E. Would it be okay if I stayed on the call with you for a moment while you do that?"
+          </div>
+
+          <h3 class="sub-head">Crisis Resources — Provide to Patient</h3>
+          <ul class="bullet-list">
+            <li><strong>NHS 111</strong> — Call 111, select mental health option (24/7)</li>
+            <li><strong>999 / A&E</strong> — Immediate life-threatening emergencies</li>
+            <li><strong>Samaritans</strong> — 116 123 (free, 24/7)</li>
+            <li><strong>Crisis text line</strong> — Text SHOUT to 85258</li>
+          </ul>
+
+          <h3 class="sub-head">Escalation Steps</h3>
+          <ol class="step-list">
+            <li>Assess the risk level using the table above.</li>
+            <li>Provide the patient with appropriate crisis resources.</li>
+            <li>Contact the clinical lead immediately — by phone if HIGH risk, by email if MEDIUM risk.</li>
+            <li>Document the full disclosure, your assessment, and every action taken in the diagnostic report and checklist.</li>
+            <li>Do not proceed with the assessment until the clinical lead has been consulted on HIGH risk cases.</li>
+            <li>Follow up with the clinical lead after the session to confirm the escalation has been logged.</li>
+          </ol>
+
+          <h3 class="sub-head">Safeguarding</h3>
+          <p class="body-text">If at any point during an assessment you identify a safeguarding concern — regarding the patient or any other person, including children — you must escalate immediately to the clinical lead. Do not wait until the end of the session. Safeguarding concerns take priority over the assessment.</p>
+
+          <div class="callout callout-red">
+            <strong>Non-Negotiable</strong>
+            Risk escalation is never optional. If you are uncertain whether something constitutes a risk, escalate. It is always better to escalate unnecessarily than to miss a genuine concern.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 9: DATA -->
+      <div class="guide-section" id="data">
+        <div class="section-head deep">
+          <div class="section-num">9</div>
+          <h2>Data Protection &amp; Confidentiality</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">All patient data is subject to UK GDPR. As a clinician working with Ammcore, you are a data processor and are legally required to handle patient information in accordance with data protection law.</p>
+
+          <h3 class="sub-head">Your Obligations</h3>
+          <ul class="bullet-list">
+            <li>Only access patient data that is necessary for the assessment you are conducting</li>
+            <li>Do not store patient data on personal devices, personal email accounts, or personal cloud storage</li>
+            <li>Do not share patient data with anyone other than the clinical lead and consultant reviewer</li>
+            <li>Do not discuss patient cases in any setting where you could be overheard</li>
+            <li>Report any suspected data breach to the clinical lead immediately</li>
+            <li>Use only Ammcore-approved systems for storing or transmitting patient data</li>
+          </ul>
+
+          <h3 class="sub-head">Confidentiality</h3>
+          <p class="body-text">Everything a patient shares during an assessment is confidential. There are three exceptions where confidentiality may be broken:</p>
+          <ul class="bullet-list">
+            <li>The patient provides consent for information to be shared</li>
+            <li>There is a serious and immediate risk of harm to the patient or another person</li>
+            <li>You are required to disclose information by law</li>
+          </ul>
+          <p class="body-text">In all three cases, you must inform the clinical lead before taking action.</p>
+
+          <div class="callout callout-amber">
+            <strong>Report Storage</strong>
+            Completed reports must be submitted via the agreed secure channel to admin. Do not email final reports from personal accounts. Do not retain copies of reports on personal devices beyond what is necessary for review purposes.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 10: CONDUCT -->
+      <div class="guide-section" id="conduct">
+        <div class="section-head teal">
+          <div class="section-num">10</div>
+          <h2>Professional Conduct</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">As an Ammcore clinician you represent the organisation in every interaction. The following standards of conduct are expected at all times.</p>
+
+          <h3 class="sub-head">During Assessments</h3>
+          <ul class="bullet-list">
+            <li>Be punctual — join the call on time. If you are delayed, notify admin immediately.</li>
+            <li>Be appropriately presented — treat remote assessments with the same professionalism as in-person appointments.</li>
+            <li>Be in a quiet, private location with no risk of interruption for the full 90 minutes.</li>
+            <li>Do not multitask during the assessment. Give the patient your full attention.</li>
+            <li>Do not eat, drink (other than water), or use your phone during the session.</li>
+          </ul>
+
+          <h3 class="sub-head">Boundaries</h3>
+          <ul class="bullet-list">
+            <li>Maintain professional boundaries at all times — do not form personal relationships with patients.</li>
+            <li>Do not accept gifts, payments, or any other benefit from patients directly.</li>
+            <li>If a patient contacts you personally outside of Ammcore channels, redirect them to booking@ammcoreassessments.co.uk and notify admin.</li>
+            <li>Do not discuss your personal life, opinions, or circumstances with patients.</li>
+          </ul>
+
+          <h3 class="sub-head">Self-Care</h3>
+          <p class="body-text">Clinical work, particularly with patients in distress, can be emotionally demanding. If you find that a case or a session has affected you, please reach out to the clinical lead. Supervision and support are available. You cannot deliver good clinical care if you are not well yourself.</p>
+
+          <div class="callout callout-green">
+            <strong>Supervision</strong>
+            Regular clinical supervision is part of maintaining your professional standards. If you have concerns about a case, a patient, or your own wellbeing, raise them with the clinical lead. No concern is too small.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 11: CONTACTS -->
+      <div class="guide-section" id="contacts">
+        <div class="section-head deep">
+          <div class="section-num">11</div>
+          <h2>Key Contacts</h2>
+        </div>
+        <div class="section-body">
+          <p class="body-text">The following contacts are your first point of call for any questions, concerns, or escalations.</p>
+
+          <div class="contact-card">
+            <strong>General &amp; Clinical Queries</strong>
+            <p>For questions about the assessment process, patient queries, scheduling, or anything operational.<br>
+            <strong>Email:</strong> booking@ammcoreassessments.co.uk</p>
+          </div>
+
+          <div class="contact-card">
+            <strong>Patient &amp; General Enquiries</strong>
+            <p>For general questions about the business or liaising with external parties.<br>
+            <strong>Email:</strong> info@ammcoreassessments.co.uk</p>
+          </div>
+
+          <div class="contact-card">
+            <strong>Risk &amp; Safeguarding Escalation</strong>
+            <p>Contact the clinical lead immediately for any risk or safeguarding concern arising during or after an assessment. Contact details will be provided to you directly by admin on commencement.</p>
+          </div>
+
+          <div class="contact-card">
+            <strong>Patient Crisis Resources</strong>
+            <p>
+              NHS 111 (mental health option) — 24/7<br>
+              Samaritans — 116 123 (free, 24/7)<br>
+              Crisis text — Text SHOUT to 85258<br>
+              Emergency — 999 / A&E
+            </p>
+          </div>
+
+          <div class="callout callout-navy" style="margin-top:24px;">
+            <strong>A Final Word</strong>
+            Thank you for being part of Ammcore Clinical Assessments. The work you do genuinely changes people's lives — giving them answers, language for their experiences, and a path forward. We ask a great deal of our clinicians because our patients deserve nothing less. We are glad to have you with us.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-content -->
+  </div><!-- /page-wrap -->
+
+  <script>
+    // Highlight active sidebar link on scroll
+    const sections = document.querySelectorAll('.guide-section[id], .cover');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>

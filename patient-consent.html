@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="brand_assets/ammcore_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/ammcore_logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Consent Form — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#031869;--navy-deep:#020e47;--navy-mid:#0a2690;--teal:#4F7C82;--teal-light:#6A9BA2;--teal-bright:#2abed9;--grey-bg:#f2f2f2;--grey-light:#F8F9FB;--grey-border:#e0e4ef;--charcoal:#2c2c2c;--white:#ffffff;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:62.5%;scroll-behavior:smooth;}
+    body{font-family:'Lato',sans-serif;font-size:1.6rem;line-height:1.8;color:var(--charcoal);background:var(--grey-bg);}
+    h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--navy);}
+    a{text-decoration:none;color:inherit;}
+    .wrap{max-width:1300px;margin:0 auto;padding:0 30px;}
+    .site-header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(8px);border-bottom:1px solid rgba(3,24,105,0.1);box-shadow:0 1px 16px rgba(3,24,105,0.06);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
+    .site-logo{display:flex;align-items:center;gap:12px;}
+    .site-logo img{height:44px;width:auto;}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1;}
+    .logo-text .logo-name{font-family:'Lato',sans-serif;font-weight:900;font-size:1.7rem;color:#031869;letter-spacing:0.12em;text-transform:uppercase;}
+    .logo-text .logo-sub{font-family:'Lato',sans-serif;font-weight:300;font-size:1.05rem;color:var(--teal);letter-spacing:0.18em;text-transform:uppercase;}
+    .nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+    .nav-links a{font-size:1.35rem;color:#031869;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:#4F7C82;background:rgba(3,24,105,0.04);}
+    .nav-links .btn-nav{background:var(--teal);color:#fff;padding:8px 20px;border-radius:4px;font-weight:700;}
+    .nav-links .btn-nav:hover{background:var(--teal-bright);}
+    .page-hero{margin-top:72px;background:var(--navy);padding:64px 0 56px;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(42,190,217,0.08) 0%,transparent 70%);}
+    .page-hero-inner{position:relative;z-index:2;}
+    .breadcrumb{font-size:1.3rem;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+    .breadcrumb a{color:rgba(255,255,255,0.5);transition:color 0.2s;}
+    .breadcrumb a:hover{color:rgba(255,255,255,0.9);}
+    .breadcrumb span{margin:0 8px;}
+    .page-hero h1{font-size:clamp(3.2rem,5vw,5.6rem);font-weight:600;color:#fff;line-height:1.15;margin-bottom:12px;}
+    .page-hero .effective{font-size:1.4rem;color:rgba(255,255,255,0.55);}
+    .doc-body{padding:64px 0 90px;}
+    .doc-content{background:var(--white);border-radius:8px;padding:56px;border:1px solid var(--grey-border);max-width:860px;margin:0 auto;}
+    .doc-section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--grey-border);}
+    .doc-section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+    .doc-section h2{font-size:2.4rem;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.2;}
+    .doc-section p{font-size:1.55rem;color:#555;line-height:1.8;margin-bottom:12px;}
+    .doc-section p:last-child{margin-bottom:0;}
+    .doc-section ul{margin:10px 0 10px 20px;}
+    .doc-section ul li{font-size:1.55rem;color:#555;line-height:1.7;margin-bottom:8px;}
+    .doc-section strong{color:var(--navy);font-weight:700;}
+    /* Consent form */
+    .consent-section{background:var(--grey-light);border-radius:8px;border:1px solid var(--grey-border);padding:32px;margin-bottom:24px;}
+    .consent-section h3{font-size:2rem;margin-bottom:8px;}
+    .checkbox-group{display:flex;align-items:flex-start;gap:14px;margin-top:16px;}
+    .checkbox-group input[type=checkbox]{width:20px;height:20px;flex-shrink:0;margin-top:2px;accent-color:var(--navy);cursor:pointer;}
+    .checkbox-group label{font-size:1.5rem;color:var(--charcoal);line-height:1.6;cursor:pointer;}
+    .form-group{margin-bottom:20px;}
+    .form-group label{display:block;font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;}
+    .form-group input,.form-group textarea{width:100%;background:var(--white);border:1px solid var(--grey-border);border-radius:4px;padding:12px 16px;font-family:'Lato',sans-serif;font-size:1.5rem;color:var(--charcoal);outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+    .form-group input:focus,.form-group textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(79,124,130,0.12);}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .sig-block{margin-top:36px;padding-top:36px;border-top:1px solid var(--grey-border);}
+    .sig-block h3{font-size:2rem;margin-bottom:20px;}
+    .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
+    .sig-item label{display:block;font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;}
+    .sig-item input{width:100%;border:none;border-bottom:2px solid var(--grey-border);padding:8px 0;font-family:'Lato',sans-serif;font-size:1.5rem;background:transparent;outline:none;color:var(--charcoal);}
+    .sig-item input:focus{border-bottom-color:var(--teal);}
+    .submit-btn{width:100%;background:var(--navy);color:#fff;font-family:'Lato',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:18px;border:none;border-radius:4px;cursor:pointer;margin-top:8px;transition:background 0.2s,transform 0.15s;}
+    .submit-btn:hover{background:var(--navy-mid);transform:translateY(-1px);}
+    .submit-btn:active{transform:translateY(0);}
+    .site-footer{background:var(--navy-deep);padding:48px 0 0;color:rgba(255,255,255,0.65);font-size:1.4rem;}
+    .footer-full{padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .footer-full p{font-size:1.35rem;color:rgba(255,255,255,0.45);line-height:1.7;max-width:700px;}
+    .footer-bottom{padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .footer-legal{font-size:1.25rem;color:rgba(255,255,255,0.35);}
+    .footer-legal-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .footer-legal-links a{font-size:1.25rem;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+    .footer-legal-links a:hover{color:rgba(255,255,255,0.8);}
+    @media(max-width:700px){.form-row,.sig-grid{grid-template-columns:1fr;}.doc-content{padding:28px;}}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav-inner">
+        <a href="index.html" class="site-logo">
+          <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+          <div class="logo-text">
+            <span class="logo-name">Ammcore</span>
+            <span class="logo-sub">Clinical Assessments</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Assessments</a></li>
+          <li><a href="index.html#process">How It Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#contact" class="btn-nav">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="page-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>&rsaquo;</span>Patient Consent Form</div>
+        <h1>Patient Consent Form</h1>
+        <p class="effective">Ammcore Clinical Assessments &mdash; A trading name of Ammcore Consulting Ltd</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="wrap">
+      <div class="doc-content">
+        <p style="font-size:1.55rem;color:#555;margin-bottom:40px;line-height:1.8;">Please read each section carefully and confirm your consent by completing and submitting this form. Your submission will be recorded alongside your assessment record.</p>
+
+        <form id="consentForm">
+
+          <!-- Personal Info -->
+          <div class="doc-section">
+            <h2>1. Personal Information</h2>
+            <p>Please confirm your details below. By providing this information you confirm you do so voluntarily for the purpose of conducting a private neurodevelopmental assessment.</p>
+            <div style="margin-top:24px;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="Jane" required>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Smith" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Date of Birth</label>
+                  <input type="date" required>
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" placeholder="jane@example.com" required>
+                </div>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c1" required>
+              <label for="c1">I understand that my information will include personal identifying details, relevant medical and mental health history, developmental, educational and occupational history, assessment responses, and any supporting documentation I provide.</label>
+            </div>
+          </div>
+
+          <!-- Purpose -->
+          <div class="doc-section">
+            <h2>2. Purpose of Assessment</h2>
+            <p>I understand that the assessment is:</p>
+            <ul>
+              <li>A diagnostic and informational evaluation of ADHD, autism, or related neurodevelopmental traits</li>
+              <li>Intended to generate a written report summarising findings and recommendations</li>
+              <li>Not a substitute for medical treatment, prescription, or formal healthcare advice</li>
+            </ul>
+            <div class="checkbox-group" style="margin-top:20px;">
+              <input type="checkbox" id="c2" required>
+              <label for="c2">I confirm I understand the purpose and scope of this assessment as described above.</label>
+            </div>
+          </div>
+
+          <!-- Video -->
+          <div class="doc-section">
+            <h2>3. Use of Video Consultations</h2>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c3" required>
+              <label for="c3">I consent to assessments being conducted remotely via secure video platform. I will ensure I am in a private and safe environment. I understand that I am responsible for providing suitable equipment (camera, microphone, stable internet connection).</label>
+            </div>
+          </div>
+
+          <!-- Report -->
+          <div class="doc-section">
+            <h2>4. Report Delivery</h2>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c4" required>
+              <label for="c4">I understand that the report will be delivered electronically, that Ammcore Clinical Assessments cannot guarantee its acceptance by employers, schools, or healthcare providers, and that it is based on the information I have provided and professional interpretation.</label>
+            </div>
+          </div>
+
+          <!-- Data -->
+          <div class="doc-section">
+            <h2>5. Confidentiality and Data Protection</h2>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c5" required>
+              <label for="c5">I consent to my information being collected, stored, and processed in accordance with UK GDPR. I understand that my information may be shared only with those directly involved in the assessment, or as legally required, and will be retained only for as long as required by law and professional guidance.</label>
+            </div>
+          </div>
+
+          <!-- Disclaimer -->
+          <div class="doc-section">
+            <h2>6. Clinical Disclaimer</h2>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c6" required>
+              <label for="c6">I have read and understood the <a href="clinical-disclaimer.html" style="color:var(--teal);text-decoration:underline;">Clinical Disclaimer</a>, which explains the purpose, scope, and limitations of the assessment and report. I acknowledge that the assessment is for information only and does not constitute medical advice or treatment.</label>
+            </div>
+          </div>
+
+          <!-- Fees -->
+          <div class="doc-section">
+            <h2>7. Fees and Payment</h2>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c7" required>
+              <label for="c7">I acknowledge that the £99 booking fee is non-refundable and will be deducted from the full assessment fee. I agree to pay the full assessment fee prior to receiving the report and understand that cancellation and no-show policies in the <a href="terms.html" style="color:var(--teal);text-decoration:underline;">Terms &amp; Conditions</a> apply.</label>
+            </div>
+          </div>
+
+          <!-- Consent to proceed -->
+          <div class="doc-section">
+            <h2>8. Consent to Proceed</h2>
+            <div class="checkbox-group">
+              <input type="checkbox" id="c8" required>
+              <label for="c8">By submitting this form I confirm that I have read and understood this consent form, the Terms &amp; Conditions, and the Clinical Disclaimer. I voluntarily agree to proceed with the assessment. I understand my rights regarding data access, correction, and complaints.</label>
+            </div>
+
+            <div class="sig-block">
+              <h3>Declaration</h3>
+              <div class="sig-grid">
+                <div class="sig-item">
+                  <label>Patient Name</label>
+                  <input type="text" placeholder="Full legal name">
+                </div>
+                <div class="sig-item">
+                  <label>Date of Birth</label>
+                  <input type="date">
+                </div>
+                <div class="sig-item">
+                  <label>Date Submitted</label>
+                  <input type="date" id="todayDate">
+                </div>
+                <div class="sig-item">
+                  <label>Clinician (office use)</label>
+                  <input type="text" placeholder="To be completed by clinician">
+                </div>
+              </div>
+              <button type="submit" class="submit-btn">Submit Consent Form</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-full">
+        <p>Ammcore Clinical Assessments is a trading name of Ammcore Consulting Ltd, registered in England and Wales. Company Registration Number: 10661995. Registered Office: 73 Park Lane, Croydon, Surrey, England, CR0 1JG. All clinical assessment services are delivered in accordance with applicable UK professional and data protection standards.</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Ammcore Consulting Ltd. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="clinical-disclaimer.html">Clinical Disclaimer</a>
+          <a href="complaints.html">Complaints Procedure</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Pre-fill today's date
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('todayDate').value = today;
+
+    document.getElementById('consentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const allChecked = [...this.querySelectorAll('input[type=checkbox]')].every(cb => cb.checked);
+      if (allChecked) {
+        alert('Thank you. Your consent form has been submitted. A member of our team will be in touch shortly.');
+      }
+    });
+  </script>
+
+</body>
+</html>

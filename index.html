@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="brand_assets/ammcore_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/ammcore_logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ammcore Clinical Assessments — Private ADHD Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-mid: #0a2690;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-light: #6A9BA2;
+      --teal-bright: #2abed9;
+      --gold: #b8973a;
+      --grey-bg: #f2f2f2;
+      --grey-light: #F8F9FB;
+      --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: var(--grey-bg);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { max-width: 100%; }
+
+    .wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(3,24,105,0.1);
+      box-shadow: 0 1px 16px rgba(3,24,105,0.06);
+      transition: background 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text .logo-name {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 1.7rem;
+      color: var(--navy);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .logo-text .logo-sub {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--teal);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--navy);
+      padding: 6px 14px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--teal); background: rgba(3,24,105,0.04); }
+
+    .nav-links .btn-nav {
+      background: var(--teal);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .nav-links .btn-nav:hover {
+      background: var(--teal-bright);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      height: 80vh;
+      max-height: 800px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 72px;
+    }
+
+    /* Animated neural network background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(42, 190, 217, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(79, 124, 130, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(10, 38, 144, 0.4) 0%, transparent 60%);
+      animation: heroShift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroShift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-3%, 2%) scale(1.05); }
+    }
+
+    /* Neural dots */
+    .neural-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(42, 190, 217, 0.3);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.15); }
+    }
+
+    /* Grid lines overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(42,190,217,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,190,217,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      color: #fff;
+      max-width: 900px;
+      padding: 0 30px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+      border: 1px solid rgba(42, 190, 217, 0.4);
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 28px;
+      background: rgba(42, 190, 217, 0.07);
+    }
+
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 6vw, 7.2rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--teal-bright);
+    }
+
+    .hero-content p {
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.95);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 16px 36px;
+      border-radius: 4px;
+      border: 2px solid var(--teal);
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease, color 0.3s ease;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      border-radius: 100%;
+      background: var(--navy-deep);
+      transform: translate(150%, 150%) scale(2.5);
+      transition: transform 0.7s ease;
+    }
+    .btn-primary:hover { transform: scale(1.04); }
+    .btn-primary:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      padding: 16px 36px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.3s ease;
+    }
+    .btn-outline::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      border-radius: 100%;
+      background: rgba(255,255,255,0.12);
+      transform: translate(150%, 150%) scale(2.5);
+      transition: transform 0.7s ease;
+    }
+    .btn-outline:hover { transform: scale(1.04); border-color: rgba(255,255,255,0.8); }
+    .btn-outline:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-outline:active { transform: scale(0.97); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      z-index: 4;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--navy-deep);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .trust-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.95);
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      padding: 8px 32px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .trust-item:last-child { border-right: none; }
+
+    .trust-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--teal-bright);
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTIONS SHARED ─── */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(3rem, 4vw, 4.8rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 1.7rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    /* ─── ABOUT SECTION ─── */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-card {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 48px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,190,217,0.15) 0%, transparent 70%);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.8rem;
+      font-weight: 700;
+      color: var(--teal-bright);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+    }
+
+    .about-text .section-body { max-width: 100%; }
+
+    .about-text ul {
+      margin-top: 28px;
+      list-style: none;
+    }
+
+    .about-text ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--grey-border);
+      font-size: 1.6rem;
+      color: var(--charcoal);
+    }
+
+    .about-text ul li:last-child { border-bottom: none; }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--teal);
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #process {
+      background: var(--grey-bg);
+    }
+
+    #process .section-title,
+    #process .section-label { text-align: center; }
+
+    #process .section-intro {
+      text-align: center;
+      font-size: 1.7rem;
+      color: #666;
+      max-width: 580px;
+      margin: 0 auto 60px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      left: calc(16.6% + 20px);
+      right: calc(16.6% + 20px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-bright), var(--teal));
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .step-num {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 2;
+      border: 3px solid var(--teal);
+      box-shadow: 0 0 0 6px var(--grey-bg);
+    }
+
+    .step h3 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+
+    .step p {
+      font-size: 1.5rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--white);
+    }
+
+    #services .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      gap: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--grey-light);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--grey-border);
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 12px 40px rgba(3,24,105,0.1);
+      transform: translateY(-3px);
+    }
+
+    .service-card-inner {
+      padding: 48px;
+    }
+
+    .service-card.primary {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy-mid);
+    }
+
+    .service-card.primary .service-tag {
+      background: rgba(42,190,217,0.15);
+      color: var(--teal-bright);
+      border-color: rgba(42,190,217,0.3);
+    }
+
+    .service-card.primary h3 { color: #fff; }
+    .service-card.primary p { color: rgba(255,255,255,0.95); }
+
+    .service-tag {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(79,124,130,0.08);
+      border: 1px solid rgba(79,124,130,0.2);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .service-card p {
+      font-size: 1.55rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.45rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .service-card.secondary .service-features li {
+      border-bottom-color: var(--grey-border);
+      color: var(--charcoal);
+    }
+
+    .service-features li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-bright);
+      flex-shrink: 0;
+    }
+
+    .service-card.secondary {
+      background: var(--grey-light);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: rgba(3,24,105,0.08);
+      color: var(--navy);
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(3,24,105,0.15);
+      margin-top: auto;
+    }
+
+    /* ─── WHY CHOOSE US ─── */
+    #why {
+      background: var(--white);
+    }
+
+    #why .section-label { color: var(--teal); }
+    #why .section-title { color: var(--navy); }
+
+    #why .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    #why .section-body {
+      color: #666;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      background: transparent;
+      border-radius: 8px;
+      overflow: visible;
+    }
+
+    .why-card {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 8px;
+      padding: 36px 32px;
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .why-card:hover {
+      box-shadow: 0 8px 28px rgba(3,24,105,0.09);
+      transform: translateY(-2px);
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(3,24,105,0.06);
+      border: 1px solid rgba(3,24,105,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .why-icon svg {
+      width: 26px;
+      height: 26px;
+      color: var(--teal);
+    }
+
+    .why-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .why-card p {
+      font-size: 1.5rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ─── CTA ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-bright) 100%);
+      padding: 80px 0;
+    }
+
+    #cta .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .cta-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .cta-text p {
+      font-size: 1.7rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--teal);
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 18px 42px;
+      border-radius: 4px;
+      border: 2px solid #fff;
+      white-space: nowrap;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease, color 0.4s ease;
+    }
+    .btn-white::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      border-radius: 100%;
+      background: var(--navy);
+      transform: translate(150%, 150%) scale(2.5);
+      transition: transform 0.7s ease;
+    }
+
+    .btn-white:hover { transform: scale(1.04); color: #fff; }
+    .btn-white:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-white:active { transform: scale(0.97); }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info .section-body { max-width: 100%; }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--grey-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--teal);
+    }
+
+    .contact-detail-text strong {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-text span {
+      font-size: 1.5rem;
+      color: #666;
+    }
+
+    .contact-form {
+      background: var(--grey-light);
+      border-radius: 8px;
+      padding: 48px;
+      border: 1px solid var(--grey-border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--grey-border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(79,124,130,0.12);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 8px;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .form-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      border-radius: 100%;
+      background: var(--teal);
+      transform: translate(150%, 150%) scale(2.5);
+      transition: transform 0.7s ease;
+    }
+    .form-submit:hover { transform: scale(1.02); }
+    .form-submit:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .form-submit:active { transform: scale(0.98); }
+
+    /* Book Express button */
+    .btn-express {
+      display: inline-block;
+      background: #fff;
+      color: var(--teal);
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 16px 32px;
+      border-radius: 4px;
+      border: 2px solid #fff;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease, color 0.4s ease;
+    }
+    .btn-express::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      border-radius: 100%;
+      background: var(--navy-deep);
+      transform: translate(150%, 150%) scale(2.5);
+      transition: transform 0.7s ease;
+    }
+    .btn-express:hover { transform: scale(1.04); color: #fff; }
+    .btn-express:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-express:active { transform: scale(0.97); }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--navy-deep);
+      padding: 64px 0 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.4rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand .logo-text .logo-name { font-size: 1.5rem; color: #fff; }
+    .footer-brand .logo-text .logo-sub { font-size: 1rem; color: var(--teal-light); }
+
+    .footer-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo-wrap img { height: 36px; width: auto; }
+
+    .footer-logo-wrap .logo-name {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--navy);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      display: block;
+    }
+
+    .footer-logo-wrap .logo-sub {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--teal);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .footer-brand p {
+      margin-top: 16px;
+      font-size: 1.35rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .footer-col h4 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.4rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal-links a {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ─── LAYOUT CLASSES for inline-grid sections ─── */
+    .hero-cols { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .nhs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .autism-row { display: grid; grid-template-columns: 2fr 1fr; }
+
+    /* ─── RESPONSIVE ─── */
+
+    /* Tablet: 768px–900px */
+    @media (max-width: 900px) {
+      .wrap { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex !important; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .why-grid { grid-template-columns: 1fr; }
+      #cta .wrap { flex-direction: column; text-align: center; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-steps::before { display: none; }
+      #services .section-header { flex-direction: column; align-items: flex-start; }
+      /* Inline-styled grids collapse to 1 column */
+      .nhs-grid { grid-template-columns: 1fr; gap: 40px !important; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .autism-row { grid-template-columns: 1fr; }
+      .autism-placeholder { display: none; }
+      /* Hero: stack vertically, hide decorative SVG */
+      #hero { height: auto; min-height: 75vh; padding: 60px 0; }
+      .hero-cols { flex-direction: column !important; align-items: center !important; }
+      .hero-cols > div[aria-hidden="true"] { display: none !important; }
+      .hero-content { max-width: 100% !important; text-align: center; }
+      .hero-ctas { justify-content: center !important; }
+      .service-card-inner { padding: 36px; }
+      /* Stats: prevent DSM-5 overflow */
+      .stat-number { font-size: 3.6rem; }
+    }
+
+    /* Mobile: up to 600px */
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 56px 0; }
+
+      /* Nav */
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 72px; left: 0; right: 0;
+        background: #fff;
+        padding: 20px 16px;
+        border-top: 1px solid rgba(3,24,105,0.08);
+        box-shadow: 0 8px 24px rgba(3,24,105,0.08);
+        z-index: 99;
+      }
+      .nav-links.open li { width: 100%; }
+      .nav-links.open a { display: block; padding: 12px 0; font-size: 1.5rem; border-bottom: 1px solid rgba(3,24,105,0.06); }
+      .nav-links.open .btn-nav { text-align: center; margin-top: 8px; border-radius: 4px; }
+      .nav-toggle { display: flex !important; }
+      .logo-text .logo-sub { display: none; }
+
+      /* Hero */
+      #hero { min-height: 80vh; padding: 40px 0; }
+      .hero-cols { padding: 0 16px !important; }
+      .hero-content h1 { font-size: 3.2rem; line-height: 1.2; }
+      .hero-content p { font-size: 1.55rem; }
+      .hero-badge { font-size: 1.1rem; }
+      .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; }
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-outline { text-align: center; width: 100%; }
+
+      /* Process */
+      .process-steps { grid-template-columns: 1fr; gap: 28px; }
+
+      /* Services/pricing */
+      .autism-placeholder { display: none; }
+      .service-card-inner { padding: 28px 20px; }
+
+      /* NHS section CTA box */
+      .nhs-grid > div:last-child { padding: 32px 24px !important; }
+
+      /* Stats */
+      .stat-number { font-size: 3.2rem; }
+      .stat-grid { gap: 20px; }
+
+      /* Forms */
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px 20px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .footer-legal-links { flex-direction: column; gap: 8px; }
+
+      /* Section headers */
+      .section-label { font-size: 1.1rem; }
+      h2 { font-size: clamp(2.4rem, 7vw, 3.6rem); }
+    }
+
+    /* Small mobile: up to 400px */
+    @media (max-width: 400px) {
+      .hero-content h1 { font-size: 2.8rem; }
+      .nav-inner { height: 64px; }
+      #hero { margin-top: 64px; }
+      .site-header .nav-inner { height: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav-inner">
+        <a href="index.html" class="site-logo">
+          <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+          <div class="logo-text">
+            <span class="logo-name">Ammcore</span>
+            <span class="logo-sub">Clinical Assessments</span>
+          </div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Assessments</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="btn-nav">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <!-- Neural dots -->
+    <div class="neural-dot" style="width:8px;height:8px;top:22%;left:18%;animation-delay:0s;"></div>
+    <div class="neural-dot" style="width:5px;height:5px;top:55%;left:8%;animation-delay:0.8s;"></div>
+    <div class="neural-dot" style="width:10px;height:10px;top:35%;left:82%;animation-delay:1.2s;"></div>
+    <div class="neural-dot" style="width:6px;height:6px;top:70%;left:72%;animation-delay:0.4s;"></div>
+    <div class="neural-dot" style="width:8px;height:8px;top:15%;left:60%;animation-delay:1.6s;"></div>
+    <div class="neural-dot" style="width:4px;height:4px;top:80%;left:30%;animation-delay:0.6s;"></div>
+    <div class="neural-dot" style="width:7px;height:7px;top:45%;left:92%;animation-delay:2s;"></div>
+
+    <!-- Hero two-column layout -->
+    <div class="hero-cols" style="position:relative;z-index:4;width:100%;max-width:1300px;padding:0 30px;">
+      <div class="hero-content" style="text-align:left;max-width:580px;padding:0;">
+        <div class="hero-badge">Private Clinical Assessments &mdash; UK</div>
+        <h1>Understanding your mind <em>changes</em> everything</h1>
+        <p style="margin-left:0;">Comprehensive, clinician-led ADHD assessments delivered with care, precision, and clarity.</p>
+        <div class="hero-ctas" style="justify-content:flex-start;">
+          <a href="https://buy.stripe.com/3cI6oH4GB3al9Ysgsf6sw00" target="_blank" class="btn-primary">Book an Assessment</a>
+          <a href="#process" class="btn-outline">How It Works</a>
+        </div>
+      </div>
+
+      <!-- Neural/brain decorative SVG — echoes the DNA helix in the reference -->
+      <div style="flex-shrink:0;width:380px;height:380px;position:relative;opacity:0.55;" aria-hidden="true">
+        <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <!-- Outer circle rings -->
+          <circle cx="190" cy="190" r="170" stroke="rgba(42,190,217,0.18)" stroke-width="1"/>
+          <circle cx="190" cy="190" r="130" stroke="rgba(42,190,217,0.12)" stroke-width="1"/>
+          <circle cx="190" cy="190" r="90" stroke="rgba(42,190,217,0.1)" stroke-width="1"/>
+          <!-- Central node -->
+          <circle cx="190" cy="190" r="14" fill="rgba(42,190,217,0.3)" stroke="rgba(42,190,217,0.6)" stroke-width="1.5"/>
+          <circle cx="190" cy="190" r="6" fill="rgba(42,190,217,0.8)"/>
+          <!-- Orbital nodes and connecting lines -->
+          <!-- Top -->
+          <line x1="190" y1="190" x2="190" y2="60" stroke="rgba(42,190,217,0.25)" stroke-width="1"/>
+          <circle cx="190" cy="60" r="8" fill="rgba(42,190,217,0.2)" stroke="rgba(42,190,217,0.5)" stroke-width="1.5"/>
+          <!-- Top-right -->
+          <line x1="190" y1="190" x2="303" y2="113" stroke="rgba(42,190,217,0.25)" stroke-width="1"/>
+          <circle cx="303" cy="113" r="8" fill="rgba(42,190,217,0.2)" stroke="rgba(42,190,217,0.5)" stroke-width="1.5"/>
+          <!-- Right -->
+          <line x1="190" y1="190" x2="340" y2="220" stroke="rgba(42,190,217,0.2)" stroke-width="1"/>
+          <circle cx="340" cy="220" r="6" fill="rgba(42,190,217,0.15)" stroke="rgba(42,190,217,0.4)" stroke-width="1"/>
+          <!-- Bottom-right -->
+          <line x1="190" y1="190" x2="290" y2="300" stroke="rgba(42,190,217,0.2)" stroke-width="1"/>
+          <circle cx="290" cy="300" r="9" fill="rgba(42,190,217,0.2)" stroke="rgba(42,190,217,0.5)" stroke-width="1.5"/>
+          <!-- Bottom -->
+          <line x1="190" y1="190" x2="145" y2="340" stroke="rgba(42,190,217,0.2)" stroke-width="1"/>
+          <circle cx="145" cy="340" r="6" fill="rgba(42,190,217,0.15)" stroke="rgba(42,190,217,0.4)" stroke-width="1"/>
+          <!-- Bottom-left -->
+          <line x1="190" y1="190" x2="77" y2="297" stroke="rgba(42,190,217,0.2)" stroke-width="1"/>
+          <circle cx="77" cy="297" r="8" fill="rgba(42,190,217,0.2)" stroke="rgba(42,190,217,0.5)" stroke-width="1.5"/>
+          <!-- Left -->
+          <line x1="190" y1="190" x2="40" y2="190" stroke="rgba(42,190,217,0.2)" stroke-width="1"/>
+          <circle cx="40" cy="190" r="6" fill="rgba(42,190,217,0.15)" stroke="rgba(42,190,217,0.4)" stroke-width="1"/>
+          <!-- Top-left -->
+          <line x1="190" y1="190" x2="77" y2="83" stroke="rgba(42,190,217,0.25)" stroke-width="1"/>
+          <circle cx="77" cy="83" r="9" fill="rgba(42,190,217,0.2)" stroke="rgba(42,190,217,0.5)" stroke-width="1.5"/>
+          <!-- Secondary connections between nodes -->
+          <line x1="190" y1="60" x2="303" y2="113" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="303" y1="113" x2="340" y2="220" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="340" y1="220" x2="290" y2="300" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="290" y1="300" x2="145" y2="340" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="145" y1="340" x2="77" y2="297" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="77" y1="297" x2="40" y2="190" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="40" y1="190" x2="77" y2="83" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="77" y1="83" x2="190" y2="60" stroke="rgba(42,190,217,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+          <!-- Inner orbit nodes -->
+          <circle cx="190" cy="100" r="5" fill="rgba(79,124,130,0.4)" stroke="rgba(79,124,130,0.6)" stroke-width="1"/>
+          <circle cx="269" cy="143" r="5" fill="rgba(79,124,130,0.4)" stroke="rgba(79,124,130,0.6)" stroke-width="1"/>
+          <circle cx="269" cy="237" r="5" fill="rgba(79,124,130,0.4)" stroke="rgba(79,124,130,0.6)" stroke-width="1"/>
+          <circle cx="190" cy="280" r="5" fill="rgba(79,124,130,0.4)" stroke="rgba(79,124,130,0.6)" stroke-width="1"/>
+          <circle cx="111" cy="237" r="5" fill="rgba(79,124,130,0.4)" stroke="rgba(79,124,130,0.6)" stroke-width="1"/>
+          <circle cx="111" cy="143" r="5" fill="rgba(79,124,130,0.4)" stroke="rgba(79,124,130,0.6)" stroke-width="1"/>
+          <!-- Inner connections -->
+          <line x1="190" y1="190" x2="190" y2="100" stroke="rgba(79,124,130,0.2)" stroke-width="1"/>
+          <line x1="190" y1="190" x2="269" y2="143" stroke="rgba(79,124,130,0.2)" stroke-width="1"/>
+          <line x1="190" y1="190" x2="269" y2="237" stroke="rgba(79,124,130,0.2)" stroke-width="1"/>
+          <line x1="190" y1="190" x2="190" y2="280" stroke="rgba(79,124,130,0.2)" stroke-width="1"/>
+          <line x1="190" y1="190" x2="111" y2="237" stroke="rgba(79,124,130,0.2)" stroke-width="1"/>
+          <line x1="190" y1="190" x2="111" y2="143" stroke="rgba(79,124,130,0.2)" stroke-width="1"/>
+          <!-- Animated pulse ring -->
+          <circle cx="190" cy="190" r="22" fill="none" stroke="rgba(42,190,217,0.4)" stroke-width="1.5">
+            <animate attributeName="r" values="14;28;14" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="wrap">
+      <div class="trust-items">
+        <div class="trust-item">
+          <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Qualified Clinicians
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Detailed Written Reports
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.882v6.236a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          Remote &amp; In-Person
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          UK GDPR Compliant
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+          Fast Turnaround
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-card">
+            <div class="section-label" style="color:var(--teal-bright);">Who We Are</div>
+            <h3 style="font-size:2.8rem;color:#fff;line-height:1.2;margin-bottom:16px;">A clinical subsidiary of Ammcore Consulting Ltd</h3>
+            <p style="font-size:1.5rem;color:rgba(255,255,255,0.95);line-height:1.7;">Ammcore Clinical Assessments was founded to bridge the gap between the need for specialist neurodevelopmental evaluation and accessible, high-quality private clinical services.</p>
+            <div class="stat-grid">
+              <div class="stat-item">
+                <div class="stat-number">£99</div>
+                <div class="stat-label">Booking fee, deducted from total assessment cost</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">7<span style="font-size:2rem;">day</span></div>
+                <div class="stat-label">Typical report delivery following assessment</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Clinician-reviewed assessment reports</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">DSM-5</div>
+                <div class="stat-label">ICD-11 aligned diagnostic frameworks used</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">Clinical rigour.<br>Human understanding.</h2>
+          <p class="section-body">We know that seeking an ADHD assessment takes courage. Our clinicians are trained not just to assess, but to listen — ensuring you leave with clarity, regardless of outcome.</p>
+          <ul>
+            <li>
+              <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Structured clinical interviews using validated tools (DIVA, Conners)
+            </li>
+            <li>
+              <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Consultant clinician review and oversight on every report
+            </li>
+            <li>
+              <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Clear, actionable written report delivered securely
+            </li>
+            <li>
+              <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Optional follow-up support sessions available
+            </li>
+            <li>
+              <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              All data handled in accordance with UK GDPR
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-intro">From booking to receiving your report, we've designed every step to be straightforward, supportive, and transparent.</p>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Pay &amp; Book Triage</h3>
+          <p>Pay the £99 non-refundable booking fee, then book your Saturday triage slot via our secure booking system. You will receive a confirmation email with a link to your intake form.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Complete Intake Form</h3>
+          <p>Complete your patient intake form at least 24 hours before your triage. This must be submitted in advance — your triage appointment cannot proceed without it.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Saturday Triage</h3>
+          <p>Attend a short 15–20 minute screening call on Saturday. Your clinician will confirm suitability and book your Sunday full assessment slot on the call.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Sunday Assessment</h3>
+          <p>Your full structured clinical interview takes place on Sunday — remotely via secure video. Your clinician uses validated ADHD diagnostic tools and a thorough developmental history.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <h3>Receive Your Report</h3>
+          <p>Your comprehensive written report is delivered securely — within 7 working days (Standard) or 3 working days (Express) — summarising findings, diagnostic outcome, and tailored recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NHS WAITING TIMES / FREE CONSULTATION NUDGE -->
+  <section id="why-private" style="background:var(--navy);padding:72px 0;">
+    <div class="wrap">
+      <div class="nhs-grid">
+
+        <!-- Left: NHS wait context -->
+        <div>
+          <div class="section-label" style="color:var(--teal-bright);">The Reality of NHS Waiting Times</div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,4vw,4.4rem);font-weight:600;color:#fff;line-height:1.15;margin-bottom:20px;">Most people wait <em style="color:var(--teal-bright);font-style:italic;">years</em> for an NHS assessment.</h2>
+          <p style="font-size:1.6rem;color:rgba(255,255,255,0.95);line-height:1.8;margin-bottom:24px;">NHS waiting lists for adult ADHD assessments in England currently run between <strong style="color:#fff;">2 and 7 years</strong> in many areas — and are growing. For many people, that means years of struggling at work, in relationships, and with daily life without any answers or support.</p>
+          <p style="font-size:1.6rem;color:rgba(255,255,255,0.95);line-height:1.8;">A private assessment with Ammcore Clinical Assessments can typically be arranged <strong style="color:#fff;">within weeks</strong> — giving you clarity, a formal report, and a path forward without the prolonged wait.</p>
+
+          <div style="display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;">
+            <div style="background:rgba(42,190,217,0.1);border:1px solid rgba(42,190,217,0.25);border-radius:8px;padding:20px 28px;text-align:center;min-width:130px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--teal-bright);line-height:1;">2–7</div>
+              <div style="font-size:1.3rem;color:rgba(255,255,255,0.85);margin-top:4px;line-height:1.4;">years average<br>NHS wait</div>
+            </div>
+            <div style="background:rgba(42,190,217,0.1);border:1px solid rgba(42,190,217,0.25);border-radius:8px;padding:20px 28px;text-align:center;min-width:130px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--teal-bright);line-height:1;">Weeks</div>
+              <div style="font-size:1.3rem;color:rgba(255,255,255,0.85);margin-top:4px;line-height:1.4;">with Ammcore<br>Clinical</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Free consultation CTA -->
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:48px;">
+          <div style="width:56px;height:56px;background:rgba(42,190,217,0.15);border:1px solid rgba(42,190,217,0.3);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+            <svg width="28" height="28" fill="none" stroke="rgba(42,190,217,0.9)" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 3H3c-1.1 0-2 .9-2 2v14l4-4h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:#fff;margin-bottom:14px;line-height:1.2;">Not sure where to start?<br>Talk to us first.</h3>
+          <p style="font-size:1.55rem;color:rgba(255,255,255,0.95);line-height:1.75;margin-bottom:28px;">We understand that taking the step towards an assessment can feel daunting. Before you commit to anything, reach out to our team. We're happy to answer your questions, explain the process, and help you decide if an assessment is right for you — completely free of charge.</p>
+
+          <ul style="list-style:none;margin-bottom:32px;">
+            <li style="display:flex;align-items:flex-start;gap:12px;font-size:1.5rem;color:rgba(255,255,255,0.95);margin-bottom:14px;">
+              <svg width="18" height="18" fill="none" stroke="var(--teal-bright)" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:3px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              No obligation — ask us anything before you decide
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:12px;font-size:1.5rem;color:rgba(255,255,255,0.95);margin-bottom:14px;">
+              <svg width="18" height="18" fill="none" stroke="var(--teal-bright)" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:3px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              We'll explain exactly what the assessment involves
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:12px;font-size:1.5rem;color:rgba(255,255,255,0.95);margin-bottom:14px;">
+              <svg width="18" height="18" fill="none" stroke="var(--teal-bright)" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:3px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Friendly, confidential, and completely free
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:12px;font-size:1.5rem;color:rgba(255,255,255,0.95);">
+              <svg width="18" height="18" fill="none" stroke="var(--teal-bright)" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:3px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Typically replied to within 1 working day
+            </li>
+          </ul>
+
+          <a href="mailto:info@ammcoreassessments.co.uk" style="display:block;background:var(--teal);color:#fff;font-family:'Lato',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:0.06em;text-align:center;padding:17px 32px;border-radius:4px;border:2px solid var(--teal);transition:background 0.2s,transform 0.15s;">
+            Email Us Free &rarr; info@ammcoreassessments.co.uk
+          </a>
+          <p style="font-size:1.3rem;color:rgba(255,255,255,0.4);text-align:center;margin-top:14px;">No booking fee until you're ready</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Our Assessments</div>
+          <h2 class="section-title">Specialist clinical<br>evaluations</h2>
+        </div>
+        <p style="font-size:1.6rem;color:#666;max-width:380px;line-height:1.7;">All assessments are conducted by qualified clinicians using recognised UK and international diagnostic standards.</p>
+      </div>
+
+      <!-- Pricing tier cards: full width row -->
+      <div class="pricing-grid" style="gap:24px;margin-bottom:24px;">
+
+        <!-- Standard -->
+        <div style="background:var(--navy);border-radius:8px;padding:40px;color:#fff;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(42,190,217,0.12) 0%,transparent 70%);"></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:0;">
+            <span class="service-tag" style="background:rgba(42,190,217,0.15);color:var(--teal-bright);border-color:rgba(42,190,217,0.3);">Standard</span>
+            <span style="background:var(--teal-bright);color:#fff;font-family:'Lato',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Most Popular</span>
+          </div>
+          <div style="margin:20px 0 6px;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:5.2rem;font-weight:700;color:#fff;line-height:1;">£799</span>
+            <span style="font-size:1.4rem;color:rgba(255,255,255,0.75);margin-left:6px;">total</span>
+          </div>
+          <p style="font-size:1.3rem;color:rgba(255,255,255,0.75);margin-bottom:24px;">£99 booking fee paid at booking &mdash; £700 balance before assessment</p>
+          <ul class="service-features" style="margin-bottom:32px;">
+            <li>Structured clinical interview (approx. 90 minutes)</li>
+            <li>Developmental and personal history review</li>
+            <li>Validated rating scale questionnaires</li>
+            <li>Consultant-reviewed diagnostic report</li>
+            <li>GP letter included where relevant</li>
+            <li style="color:var(--teal-bright);font-weight:700;">Reports delivered within 7 working days</li>
+          </ul>
+          <a href="https://buy.stripe.com/3cI6oH4GB3al9Ysgsf6sw00" target="_blank" class="btn-primary" style="display:inline-block;">Book Standard &rarr;</a>
+
+        </div>
+
+        <!-- Fast Track -->
+        <div style="background:var(--teal);border-radius:8px;padding:40px;color:#fff;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.12) 0%,transparent 70%);"></div>
+          <span class="service-tag" style="background:rgba(255,255,255,0.2);color:#fff;border-color:rgba(255,255,255,0.35);">Express</span>
+          <div style="margin:20px 0 6px;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:5.2rem;font-weight:700;color:#fff;line-height:1;">£899</span>
+            <span style="font-size:1.4rem;color:rgba(255,255,255,0.9);margin-left:6px;">total</span>
+          </div>
+          <p style="font-size:1.3rem;color:rgba(255,255,255,0.9);margin-bottom:24px;">£99 booking fee paid at booking &mdash; £800 balance before assessment</p>
+          <ul class="service-features" style="margin-bottom:32px;">
+            <li>Priority appointment scheduling</li>
+            <li>Structured clinical interview (approx. 90 minutes)</li>
+            <li>Developmental and personal history review</li>
+            <li>Validated rating scale questionnaires</li>
+            <li>Consultant-reviewed diagnostic report</li>
+            <li>GP letter included where relevant</li>
+            <li style="color:#fff;font-weight:700;">Priority assessment &amp; report within 3 working days</li>
+            <li style="color:rgba(255,255,255,0.7);font-size:1.2rem;">Subject to clinician availability</li>
+          </ul>
+          <a href="https://buy.stripe.com/aFa9ATdd79yJeeI7VJ6sw01" target="_blank" class="btn-express">Book Express &rarr;</a>
+        </div>
+      </div>
+
+      <p style="font-size:1.35rem;color:#888;text-align:center;margin-bottom:40px;">The £99 booking fee is <strong style="color:var(--navy);">non-refundable</strong> under all circumstances. <a href="terms.html" style="color:var(--teal);text-decoration:underline;">See full Terms &amp; Conditions.</a></p>
+
+      <div class="autism-row" style="gap:24px;">
+        <!-- placeholder so Autism card lines up -->
+        <div class="autism-placeholder"></div>
+
+        <!-- Autism Card -->
+        <div class="service-card secondary">
+          <div class="service-card-inner" style="height:100%;display:flex;flex-direction:column;">
+            <span class="service-tag">Coming Soon</span>
+            <h3>Autism Assessment</h3>
+            <p>Building on our ADHD assessment expertise, we are developing a specialist pathway for comprehensive autism assessments for adults and young people.</p>
+            <ul class="service-features" style="flex:1;">
+              <li style="border-bottom-color:var(--grey-border);color:var(--charcoal);">ADI-R and ADOS-2 informed assessment</li>
+              <li style="border-bottom-color:var(--grey-border);color:var(--charcoal);">Qualified autism specialists</li>
+              <li style="border-bottom-color:var(--grey-border);color:var(--charcoal);">Full written diagnostic report</li>
+            </ul>
+            <span class="coming-soon-badge">Register Interest &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-label">Why Ammcore Clinical</div>
+        <h2 class="section-title">Built on expertise.<br>Driven by care.</h2>
+        <p class="section-body">We are part of the Ammcore group — a name established in specialist professional services. Our clinical division brings the same standard of excellence to healthcare.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3>Clinically Qualified</h3>
+          <p>Every assessment is led or reviewed by a qualified clinician registered with the appropriate UK professional body.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3>Transparent Process</h3>
+          <p>No hidden fees, no vague timelines. We tell you exactly what to expect, when to expect it, and what it costs.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3>Person-Centred</h3>
+          <p>We treat every patient as an individual. Our clinicians take time to understand your history, concerns, and goals.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3>Thorough Reporting</h3>
+          <p>Our reports are written to a high clinical standard — suitable for sharing with GPs, employers, schools, and other providers.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3>Secure &amp; Confidential</h3>
+          <p>All patient data is handled in strict accordance with UK GDPR. Your information is never sold or shared without consent.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3>Fast Turnaround</h3>
+          <p>We aim to deliver your completed report within approximately 7 working days of your assessment session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-text">
+        <h2>Ready to take the first step?</h2>
+        <p>Book your private ADHD assessment today. Clarity starts here.</p>
+      </div>
+      <a href="https://buy.stripe.com/3cI6oH4GB3al9Ysgsf6sw00" target="_blank" class="btn-white">Book an Assessment</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Start your assessment journey</h2>
+          <p class="section-body">Fill out the form and a member of our team will be in touch within 1–2 working days to discuss your needs and arrange a suitable appointment.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>General &amp; Pre-Assessment Enquiries</strong>
+              <a href="mailto:info@ammcoreassessments.co.uk" style="color:var(--teal);font-size:1.5rem;">info@ammcoreassessments.co.uk</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Bookings</strong>
+              <a href="mailto:booking@ammcoreassessments.co.uk" style="color:var(--teal);font-size:1.5rem;">booking@ammcoreassessments.co.uk</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Registered Address</strong>
+              <span>73 Park Lane, Croydon, Surrey, England, CR0 1JG</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3 style="font-size:2.4rem;margin-bottom:8px;">Book an Assessment</h3>
+          <p style="font-size:1.45rem;color:#777;margin-bottom:28px;line-height:1.6;">Not sure yet? <a href="mailto:info@ammcoreassessments.co.uk" style="color:var(--teal);font-weight:700;">Email us first</a> — no obligation, no pressure.</p>
+          <form id="contactForm" action="https://formspree.io/f/mnjolvoo" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="first_name" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="last_name" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="assessment">Assessment Type</label>
+              <select id="assessment" name="assessment_type">
+                <option value="">Please select...</option>
+                <optgroup label="ADHD Assessment — Adult">
+                  <option value="adhd-adult-standard">Standard — £799 (report within 7 working days)</option>
+                  <option value="adhd-adult-express">Express — £899 (priority booking &amp; report within 3 working days)</option>
+                </optgroup>
+                <optgroup label="ADHD Assessment — Young Person">
+                  <option value="adhd-young-standard">Standard — £799 (report within 7 working days)</option>
+                  <option value="adhd-young-express">Express — £899 (priority booking &amp; report within 3 working days)</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option value="autism">Autism Assessment (Register Interest)</option>
+                  <option value="unsure">Not sure — I'd like more information</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Additional Information</label>
+              <textarea id="message" name="message" placeholder="Tell us a little about what has brought you to seek an assessment..."></textarea>
+            </div>
+            <div id="contactSuccess" style="display:none;background:#f0faf4;border:1px solid #2ecc71;border-left:4px solid #2ecc71;border-radius:4px;padding:16px 20px;margin-bottom:16px;">
+              <p style="font-size:1.4rem;color:#1a7a40;font-weight:700;margin:0;">Message sent — we'll be in touch shortly.</p>
+            </div>
+            <button type="submit" class="form-submit">Submit Enquiry</button>
+          </form>
+          <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              const form = this;
+              fetch('https://formspree.io/f/mnjolvoo', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+              }).then(r => {
+                if (r.ok) {
+                  form.reset();
+                  document.getElementById('contactSuccess').style.display = 'block';
+                } else {
+                  alert('Something went wrong. Please email us directly at info@ammcoreassessments.co.uk');
+                }
+              }).catch(() => {
+                alert('Something went wrong. Please email us directly at info@ammcoreassessments.co.uk');
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+            <div>
+              <span class="logo-name">Ammcore</span>
+              <span class="logo-sub">Clinical Assessments</span>
+            </div>
+          </div>
+          <p>Ammcore Clinical Assessments is a trading name of Ammcore Consulting Ltd, registered in England and Wales. Company Registration Number: 10661995. Registered Office: 73 Park Lane, Croydon, Surrey, England, CR0 1JG.</p>
+          <p style="margin-top:12px;">All clinical assessment services are delivered in accordance with applicable UK professional and data protection standards.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Assessments</h4>
+          <ul>
+            <li><a href="#services">ADHD Assessment</a></li>
+            <li><a href="#services">Autism Assessment (Coming Soon)</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#contact">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="complaints.html">Complaints</a></li>
+            <li><a href="https://ammcore.com" target="_blank" rel="noopener">Ammcore Consulting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="clinical-disclaimer.html">Clinical Disclaimer</a></li>
+            <li><a href="complaints.html">Complaints Procedure</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Ammcore Consulting Ltd. Ammcore Clinical Assessments is a trading name of Ammcore Consulting Ltd.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="clinical-disclaimer.html">Clinical Disclaimer</a>
+          <a href="complaints.html">Complaints Procedure</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.style.boxShadow = '0 2px 24px rgba(3,24,105,0.12)';
+      } else {
+        header.style.boxShadow = '0 1px 16px rgba(3,24,105,0.06)';
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="brand_assets/ammcore_logo.png">
+  <link rel="apple-touch-icon" href="brand_assets/ammcore_logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Intake Form — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869; --navy-deep: #020e47; --navy-mid: #0a2690;
+      --teal: #4F7C82; --teal-light: #6A9BA2; --teal-bright: #2abed9;
+      --grey-bg: #f2f2f2; --grey-light: #F8F9FB; --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c; --white: #ffffff;
+      --error: #c0392b;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; font-size: 1.6rem; font-weight: 400; line-height: 1.8; color: var(--charcoal); background: var(--grey-bg); overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .wrap-nav { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+
+    /* NAV */
+    .site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(3,24,105,0.1); box-shadow: 0 1px 16px rgba(3,24,105,0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .site-logo { display: flex; align-items: center; gap: 12px; }
+    .site-logo img { height: 44px; width: auto; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text .logo-name { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 1.7rem; color: #031869; letter-spacing: 0.12em; text-transform: uppercase; }
+    .logo-text .logo-sub { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 1.05rem; color: var(--teal); letter-spacing: 0.18em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 1.35rem; color: #031869; padding: 6px 14px; border-radius: 4px; letter-spacing: 0.04em; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #4F7C82; background: rgba(3,24,105,0.04); }
+    .nav-links .btn-nav { background: var(--teal); color: #fff; padding: 8px 20px; border-radius: 4px; font-weight: 700; }
+    .nav-links .btn-nav:hover { background: var(--teal-bright); }
+
+    /* HERO */
+    .page-hero { margin-top: 72px; background: var(--navy); padding: 44px 0 40px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(42,190,217,0.08) 0%, transparent 70%); }
+    .page-hero-inner { position: relative; z-index: 2; }
+    .breadcrumb { font-size: 1.3rem; color: rgba(255,255,255,0.75); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.9); }
+    .breadcrumb span { margin: 0 8px; }
+    .page-hero h1 { font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 8px; }
+    .page-hero p { font-size: 1.45rem; color: rgba(255,255,255,0.85); }
+
+    /* TIMING BAR */
+    .timing-bar { background: rgba(79,124,130,0.1); border-bottom: 1px solid rgba(79,124,130,0.2); padding: 12px 0; }
+    .timing-bar-inner { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .timing-pill { display: flex; align-items: center; gap: 8px; font-size: 1.35rem; font-weight: 700; color: var(--teal); }
+    .timing-pill svg { width: 16px; height: 16px; stroke: var(--teal); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .timing-divider { width: 1px; height: 16px; background: var(--grey-border); }
+
+    /* PROGRESS */
+    .progress-wrap { padding: 28px 0 0; }
+    .progress-steps { display: flex; align-items: flex-start; position: relative; }
+    .progress-steps::before { content: ''; position: absolute; top: 14px; left: 14px; right: 14px; height: 2px; background: var(--grey-border); z-index: 0; }
+    .progress-bar-fill { position: absolute; top: 14px; left: 14px; height: 2px; background: var(--teal); z-index: 1; transition: width 0.4s ease; width: 0%; }
+    .step-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; z-index: 2; }
+    .step-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--grey-border); background: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #bbb; transition: all 0.3s; }
+    .step-item.active .step-dot { border-color: var(--teal); background: var(--teal); color: #fff; }
+    .step-item.done .step-dot { border-color: var(--teal); background: var(--teal); color: #fff; font-size: 0; }
+    .step-item.done .step-dot::after { content: '✓'; font-size: 1.2rem; }
+    .step-label { font-size: 1.05rem; font-weight: 700; color: #bbb; text-align: center; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.3s; line-height: 1.3; }
+    .step-item.active .step-label { color: var(--navy); }
+    .step-item.done .step-label { color: var(--teal); }
+
+    /* FORM LAYOUT */
+    .form-outer { padding: 32px 0 72px; }
+    .form-card { background: var(--white); border-radius: 8px; border: 1px solid var(--grey-border); overflow: hidden; }
+
+    /* SECTION HEAD */
+    .section-head { padding: 28px 40px 24px; border-bottom: 1px solid var(--grey-border); background: var(--grey-light); }
+    .section-tag { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+    .section-tag .req-tag { color: var(--error); margin-left: 8px; font-size: 1rem; }
+    .section-head h2 { font-size: 2.6rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .section-head p { font-size: 1.4rem; color: #777; }
+
+    /* FORM BODY */
+    .form-body { padding: 32px 40px; }
+
+    /* FIELDS */
+    .field { margin-bottom: 24px; }
+    .field:last-child { margin-bottom: 0; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .field-row:last-child { margin-bottom: 0; }
+    label.field-label { display: block; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: 0.02em; }
+    label.field-label .opt { font-weight: 400; color: #999; font-size: 1.2rem; }
+    input[type="text"], input[type="email"], input[type="date"], input[type="tel"], textarea, select {
+      width: 100%; padding: 11px 14px; border: 1.5px solid var(--grey-border); border-radius: 4px;
+      font-family: 'Lato', sans-serif; font-size: 1.5rem; color: var(--charcoal); background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(79,124,130,0.1); }
+    input.err, textarea.err { border-color: var(--error); }
+    textarea { resize: vertical; min-height: 88px; line-height: 1.6; }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--grey-border); margin: 28px 0; }
+
+    /* RADIO GROUPS — Never/Sometimes/Often and Yes/No */
+    .radio-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .radio-opt { display: none; }
+    .radio-opt-label {
+      padding: 9px 20px; border-radius: 4px; border: 1.5px solid var(--grey-border);
+      font-size: 1.35rem; font-weight: 700; color: #888; cursor: pointer;
+      background: var(--grey-light); transition: all 0.15s; user-select: none;
+    }
+    .radio-opt:checked + .radio-opt-label { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    /* SYMPTOM TABLE */
+    .symptom-block { border: 1px solid var(--grey-border); border-radius: 6px; overflow: hidden; margin-bottom: 20px; }
+    .symptom-block:last-child { margin-bottom: 0; }
+    .symptom-block-head { padding: 12px 20px; }
+    .symptom-block-head h4 { font-family: 'Lato', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; }
+    .symptom-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-top: 1px solid var(--grey-border); flex-wrap: wrap; }
+    .symptom-row:first-child { border-top: none; }
+    .symptom-row:nth-child(even) { background: var(--grey-light); }
+    .symptom-q { font-size: 1.4rem; color: #444; flex: 1; min-width: 200px; }
+
+    /* CONSENT */
+    .consent-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 18px; border: 1.5px solid var(--grey-border); border-radius: 6px;
+      margin-bottom: 10px; background: var(--grey-light); transition: border-color 0.2s, background 0.2s; cursor: pointer;
+    }
+    .consent-item:last-child { margin-bottom: 0; }
+    .consent-item input[type="checkbox"] { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--teal); flex-shrink: 0; cursor: pointer; }
+    .consent-item .consent-text { font-size: 1.4rem; color: #555; line-height: 1.6; }
+    .consent-item .consent-text strong { color: var(--navy); }
+    .consent-item.checked { border-color: var(--teal); background: rgba(79,124,130,0.04); }
+
+    /* SIGNATURE */
+    .sig-block { background: var(--grey-light); border: 1px solid var(--grey-border); border-radius: 6px; padding: 24px 28px; margin-top: 24px; }
+    .sig-block blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-style: italic; color: var(--navy); line-height: 1.5; margin-bottom: 20px; padding-left: 14px; border-left: 3px solid var(--teal); }
+    .sig-row { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 14px; }
+    .sig-row:last-child { margin-bottom: 0; }
+    .sig-row-label { font-size: 1.2rem; font-weight: 700; color: var(--navy); letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; min-width: 160px; }
+    .sig-row input { flex: 1; }
+
+    /* CONDITIONAL FIELD */
+    .conditional { display: none; margin-top: 12px; }
+    .conditional.show { display: block; }
+
+    /* FORM NAV */
+    .form-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-top: 1px solid var(--grey-border); background: var(--grey-light); }
+    .btn-back { padding: 12px 24px; border-radius: 4px; border: 1.5px solid var(--grey-border); font-family: 'Lato', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); background: var(--white); cursor: pointer; position: relative; z-index: 0; overflow: hidden; transition: transform 0.2s ease, color 0.4s ease; }
+    .btn-back::before { content: ''; position: absolute; inset: 0; z-index: -10; border-radius: 100%; background: var(--navy); transform: translate(150%, 150%) scale(2.5); transition: transform 0.7s ease; }
+    .btn-back:hover { transform: scale(1.04); color: #fff; border-color: var(--navy); }
+    .btn-back:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-back:active { transform: scale(0.97); }
+
+    .btn-next { padding: 12px 32px; border-radius: 4px; border: none; font-family: 'Lato', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; background: var(--teal); cursor: pointer; position: relative; z-index: 0; overflow: hidden; transition: transform 0.2s ease; }
+    .btn-next::before { content: ''; position: absolute; inset: 0; z-index: -10; border-radius: 100%; background: var(--navy-deep); transform: translate(150%, 150%) scale(2.5); transition: transform 0.7s ease; }
+    .btn-next:hover { transform: scale(1.04); }
+    .btn-next:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-next:active { transform: scale(0.97); }
+
+    .btn-submit { padding: 14px 40px; border-radius: 4px; border: none; font-family: 'Lato', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; background: var(--navy); cursor: pointer; letter-spacing: 0.04em; position: relative; z-index: 0; overflow: hidden; transition: transform 0.2s ease; }
+    .btn-submit::before { content: ''; position: absolute; inset: 0; z-index: -10; border-radius: 100%; background: var(--teal); transform: translate(150%, 150%) scale(2.5); transition: transform 0.7s ease; }
+    .btn-submit:hover { transform: scale(1.04); }
+    .btn-submit:hover::before { transform: translate(0%, 0%) scale(2.5); }
+    .btn-submit:active { transform: scale(0.97); }
+    .step-counter { font-size: 1.3rem; color: #999; font-weight: 700; }
+
+    /* STEPS */
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    /* ERROR */
+    .error-banner { background: rgba(192,57,43,0.07); border: 1px solid rgba(192,57,43,0.3); border-radius: 4px; padding: 12px 16px; margin-bottom: 16px; font-size: 1.35rem; color: var(--error); display: none; }
+    .error-banner.show { display: block; }
+
+    /* SUCCESS */
+    .success-panel { text-align: center; padding: 64px 40px; }
+    .check-wrap { width: 68px; height: 68px; background: #1a7a4a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+    .check-wrap svg { width: 32px; height: 32px; stroke: #fff; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .success-panel h2 { font-size: 3rem; margin-bottom: 12px; }
+    .success-panel p { font-size: 1.5rem; color: #666; max-width: 460px; margin: 0 auto 10px; }
+    .next-steps { background: var(--grey-light); border: 1px solid var(--grey-border); border-radius: 6px; padding: 24px 28px; margin: 28px auto 0; max-width: 500px; text-align: left; }
+    .next-steps h4 { font-family: 'Lato', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin-bottom: 14px; }
+    .next-steps ol { margin-left: 18px; }
+    .next-steps ol li { font-size: 1.4rem; color: #555; margin-bottom: 8px; line-height: 1.6; }
+    .btn-home { display: inline-block; margin-top: 28px; padding: 13px 32px; background: var(--teal); color: #fff; font-family: 'Lato', sans-serif; font-size: 1.45rem; font-weight: 700; border-radius: 4px; transition: background 0.2s; }
+    .btn-home:hover { background: var(--teal-bright); }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy-deep); padding: 48px 0 0; color: rgba(255,255,255,0.9); font-size: 1.4rem; }
+    .footer-full { padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-full p { font-size: 1.35rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 700px; }
+    .footer-bottom { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-legal { font-size: 1.25rem; color: rgba(255,255,255,0.35); }
+    .footer-legal-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal-links a { font-size: 1.25rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* Nav toggle for mobile */
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; }
+
+    @media(max-width: 700px) {
+      .wrap-nav { padding: 0 16px; }
+      .wrap { padding: 0 16px; }
+
+      /* Nav */
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 72px; left: 0; right: 0;
+        background: #fff; padding: 20px 16px;
+        border-top: 1px solid rgba(3,24,105,0.08);
+        box-shadow: 0 8px 24px rgba(3,24,105,0.08);
+        z-index: 99;
+      }
+      .nav-links.open li { width: 100%; }
+      .nav-links.open a { display: block; padding: 12px 0; font-size: 1.5rem; border-bottom: 1px solid rgba(3,24,105,0.06); }
+      .nav-links.open .btn-nav { text-align: center; margin-top: 8px; }
+      .nav-toggle { display: flex; }
+      .logo-text .logo-sub { display: none; }
+
+      /* Form */
+      .section-head { padding: 20px 20px 16px; }
+      .form-body { padding: 20px; }
+      .form-nav { padding: 14px 20px; flex-wrap: wrap; gap: 10px; }
+      .form-nav .btn-back, .form-nav .btn-next, .form-nav .btn-submit { flex: 1 1 auto; text-align: center; }
+      .field-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+      .field-row .field { margin-bottom: 20px; }
+      .step-label { display: none; }
+      .symptom-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .progress-bar-wrap { padding: 14px 16px; }
+      .timing-bar-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .page-hero h1 { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap-nav">
+      <nav class="nav-inner">
+        <a href="index.html" class="site-logo">
+          <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+          <div class="logo-text">
+            <span class="logo-name">Ammcore</span>
+            <span class="logo-sub">Clinical Assessments</span>
+          </div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Assessments</a></li>
+          <li><a href="index.html#process">How It Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#contact" class="btn-nav">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap-nav">
+      <div class="page-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>&rsaquo;</span>Patient Intake Form</div>
+        <h1>ADHD / Autism Assessment Intake Form</h1>
+        <p>To be completed before your scheduled consultation &mdash; takes 10&ndash;15 minutes</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMING BAR -->
+  <div class="timing-bar">
+    <div class="wrap-nav">
+      <div class="timing-bar-inner">
+        <div class="timing-pill">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          10–15 minutes to complete
+        </div>
+        <div class="timing-divider"></div>
+        <div class="timing-pill" style="color:var(--error);">
+          <svg viewBox="0 0 24 24" style="stroke:var(--error);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Must be submitted at least 24 hours before your appointment
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap">
+      <div class="progress-steps" id="progressSteps">
+        <div class="progress-bar-fill" id="progressFill"></div>
+        <div class="step-item active"><div class="step-dot"><span>1</span></div><div class="step-label">Personal</div></div>
+        <div class="step-item"><div class="step-dot"><span>2</span></div><div class="step-label">Consent</div></div>
+        <div class="step-item"><div class="step-dot"><span>3</span></div><div class="step-label">Reason</div></div>
+        <div class="step-item"><div class="step-dot"><span>4</span></div><div class="step-label">Childhood</div></div>
+        <div class="step-item"><div class="step-dot"><span>5</span></div><div class="step-label">Symptoms</div></div>
+        <div class="step-item"><div class="step-dot"><span>6</span></div><div class="step-label">Impact</div></div>
+        <div class="step-item"><div class="step-dot"><span>7</span></div><div class="step-label">Mental Health</div></div>
+        <div class="step-item"><div class="step-dot"><span>8</span></div><div class="step-label">Screening</div></div>
+        <div class="step-item"><div class="step-dot"><span>9</span></div><div class="step-label">Documents</div></div>
+        <div class="step-item"><div class="step-dot"><span>10</span></div><div class="step-label">Risk</div></div>
+        <div class="step-item"><div class="step-dot"><span>11</span></div><div class="step-label">Expectations</div></div>
+        <div class="step-item"><div class="step-dot"><span>12</span></div><div class="step-label">Confirm</div></div>
+      </div>
+    </div>
+
+    <div class="form-outer">
+      <div class="error-banner" id="errorBanner">Please complete all required fields before continuing.</div>
+      <form id="intakeForm" novalidate>
+
+        <!-- STEP 1: PERSONAL INFORMATION -->
+        <div class="form-step active form-card" id="step-0">
+          <div class="section-head">
+            <div class="section-tag">Section 1 <span class="req-tag">Required</span></div>
+            <h2>Personal Information</h2>
+            <p>Basic details about you. All fields in this section are required.</p>
+          </div>
+          <div class="form-body">
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label">Full Name</label>
+                <input type="text" name="full_name" required placeholder="e.g. Sarah Johnson">
+              </div>
+              <div class="field">
+                <label class="field-label">Date of Birth</label>
+                <input type="date" name="dob" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label">Address</label>
+              <textarea name="address" required placeholder="Full home address including postcode" style="min-height:72px;"></textarea>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label">Email Address</label>
+                <input type="email" name="email" required placeholder="your@email.com">
+              </div>
+              <div class="field">
+                <label class="field-label">Phone Number</label>
+                <input type="tel" name="phone" required placeholder="+44 7700 000000">
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label">GP Name and Practice <span class="opt">(if known)</span></label>
+              <input type="text" name="gp" placeholder="e.g. Dr. A. Patel — Croydon Health Centre">
+            </div>
+          </div>
+          <div class="form-nav">
+            <span class="step-counter">1 of 10</span>
+            <button type="button" class="btn-next" onclick="go(0,1)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: CONSENT -->
+        <div class="form-step form-card" id="step-1">
+          <div class="section-head">
+            <div class="section-tag">Section 2 <span class="req-tag">Required</span></div>
+            <h2>Consent &amp; Agreement</h2>
+            <p>Please read and tick each item to confirm your understanding before proceeding.</p>
+          </div>
+          <div class="form-body">
+            <label class="consent-item" id="c1" onclick="tick('c1')">
+              <input type="checkbox" name="consent_data" required>
+              <span class="consent-text">I consent to my personal and health information being collected and processed for the purpose of this assessment</span>
+            </label>
+            <label class="consent-item" id="c2" onclick="tick('c2')">
+              <input type="checkbox" name="consent_privacy" required>
+              <span class="consent-text">I have read and understood the <a href="privacy-policy.html" target="_blank" style="color:var(--teal);text-decoration:underline;">Privacy Policy</a></span>
+            </label>
+            <label class="consent-item" id="c3" onclick="tick('c3')">
+              <input type="checkbox" name="consent_terms" required>
+              <span class="consent-text">I have read and agree to the <a href="terms.html" target="_blank" style="color:var(--teal);text-decoration:underline;">Terms &amp; Conditions</a></span>
+            </label>
+            <label class="consent-item" id="c4" onclick="tick('c4')">
+              <input type="checkbox" name="consent_clinical" required>
+              <span class="consent-text">I have read and understood the <a href="clinical-disclaimer.html" target="_blank" style="color:var(--teal);text-decoration:underline;">Clinical Disclaimer</a></span>
+            </label>
+            <label class="consent-item" id="c5" onclick="tick('c5')">
+              <input type="checkbox" name="consent_diagnosis" required>
+              <span class="consent-text">I understand that this assessment does not guarantee a diagnosis</span>
+            </label>
+            <label class="consent-item" id="c6" onclick="tick('c6')">
+              <input type="checkbox" name="consent_fee" required>
+              <span class="consent-text">I understand that the <strong>£99 booking fee is non-refundable</strong> under all circumstances</span>
+            </label>
+
+            <div class="sig-block">
+              <blockquote>"I confirm that all information I provide in this form is accurate to the best of my knowledge."</blockquote>
+              <div class="sig-row">
+                <span class="sig-row-label">Full Name</span>
+                <input type="text" name="sig_name" required placeholder="Type your full name">
+              </div>
+              <div class="sig-row">
+                <span class="sig-row-label">Date</span>
+                <input type="date" name="sig_date" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(1,0)">&larr; Back</button>
+            <span class="step-counter">2 of 10</span>
+            <button type="button" class="btn-next" onclick="go(1,2)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: REASON FOR ASSESSMENT -->
+        <div class="form-step form-card" id="step-2">
+          <div class="section-head">
+            <div class="section-tag">Section 3</div>
+            <h2>Reason for Assessment</h2>
+            <p>Brief answers are fine — 3 to 4 sentences is plenty.</p>
+          </div>
+          <div class="form-body">
+            <div class="field">
+              <label class="field-label">Why are you seeking an ADHD / autism assessment at this time?</label>
+              <textarea name="why_now" placeholder="What has prompted you to seek assessment now?" style="min-height:100px;"></textarea>
+            </div>
+            <hr class="divider">
+            <div class="field">
+              <label class="field-label">Have you previously been assessed or diagnosed?</label>
+              <div class="radio-group">
+                <input type="radio" name="prev_assessed" id="pa_yes" value="yes" class="radio-opt" onchange="showCond('prev-detail')">
+                <label for="pa_yes" class="radio-opt-label">Yes</label>
+                <input type="radio" name="prev_assessed" id="pa_no" value="no" class="radio-opt" onchange="hideCond('prev-detail')">
+                <label for="pa_no" class="radio-opt-label">No</label>
+              </div>
+              <div class="conditional" id="prev-detail">
+                <input type="text" name="prev_detail" placeholder="Please provide brief details">
+              </div>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(2,1)">&larr; Back</button>
+            <span class="step-counter">3 of 10</span>
+            <button type="button" class="btn-next" onclick="go(2,3)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: CHILDHOOD HISTORY -->
+        <div class="form-step form-card" id="step-3">
+          <div class="section-head">
+            <div class="section-tag">Section 4</div>
+            <h2>Childhood History</h2>
+            <p>Before age 12. Answer as best you can — this helps establish early patterns.</p>
+          </div>
+          <div class="form-body">
+            <div class="symptom-block">
+              <div class="symptom-block-head" style="background:var(--navy);">
+                <h4>At school, did you experience&hellip;</h4>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Difficulty concentrating?</span>
+                <div class="radio-group">
+                  <input type="radio" name="ch_concentrate" id="chc1" value="never" class="radio-opt"><label for="chc1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="ch_concentrate" id="chc2" value="sometimes" class="radio-opt"><label for="chc2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="ch_concentrate" id="chc3" value="often" class="radio-opt"><label for="chc3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Easily distracted?</span>
+                <div class="radio-group">
+                  <input type="radio" name="ch_distracted" id="chd1" value="never" class="radio-opt"><label for="chd1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="ch_distracted" id="chd2" value="sometimes" class="radio-opt"><label for="chd2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="ch_distracted" id="chd3" value="often" class="radio-opt"><label for="chd3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Trouble completing tasks or homework?</span>
+                <div class="radio-group">
+                  <input type="radio" name="ch_tasks" id="cht1" value="never" class="radio-opt"><label for="cht1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="ch_tasks" id="cht2" value="sometimes" class="radio-opt"><label for="cht2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="ch_tasks" id="cht3" value="often" class="radio-opt"><label for="cht3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Behavioural issues (e.g. talking excessively, disruptive)?</span>
+                <div class="radio-group">
+                  <input type="radio" name="ch_behaviour" id="chb1" value="yes" class="radio-opt"><label for="chb1" class="radio-opt-label">Yes</label>
+                  <input type="radio" name="ch_behaviour" id="chb2" value="no" class="radio-opt"><label for="chb2" class="radio-opt-label">No</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Did teachers or parents express concerns about your behaviour or attention?</span>
+                <div class="radio-group">
+                  <input type="radio" name="ch_concerns" id="chco1" value="yes" class="radio-opt"><label for="chco1" class="radio-opt-label">Yes</label>
+                  <input type="radio" name="ch_concerns" id="chco2" value="no" class="radio-opt"><label for="chco2" class="radio-opt-label">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="field" style="margin-top:20px;">
+              <label class="field-label">Brief example <span class="opt">(optional)</span></label>
+              <textarea name="ch_example" placeholder="e.g. 'Teacher always said I could do better if I just focused'" style="min-height:72px;"></textarea>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(3,2)">&larr; Back</button>
+            <span class="step-counter">4 of 10</span>
+            <button type="button" class="btn-next" onclick="go(3,4)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: CURRENT SYMPTOMS -->
+        <div class="form-step form-card" id="step-4">
+          <div class="section-head">
+            <div class="section-tag">Section 5</div>
+            <h2>Current Symptoms</h2>
+            <p>How you feel <strong>right now</strong> — over the past 6 months.</p>
+          </div>
+          <div class="form-body">
+            <div class="symptom-block">
+              <div class="symptom-block-head" style="background:var(--navy);">
+                <h4>Inattention</h4>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I struggle to maintain attention on tasks</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_attention" id="sa1" value="never" class="radio-opt"><label for="sa1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_attention" id="sa2" value="sometimes" class="radio-opt"><label for="sa2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_attention" id="sa3" value="often" class="radio-opt"><label for="sa3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I frequently forget important things (appointments, tasks, deadlines)</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_forget" id="sf1" value="never" class="radio-opt"><label for="sf1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_forget" id="sf2" value="sometimes" class="radio-opt"><label for="sf2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_forget" id="sf3" value="often" class="radio-opt"><label for="sf3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I find it difficult to organise tasks or manage time</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_organise" id="so1" value="never" class="radio-opt"><label for="so1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_organise" id="so2" value="sometimes" class="radio-opt"><label for="so2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_organise" id="so3" value="often" class="radio-opt"><label for="so3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I lose or misplace important items</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_lose" id="sl1" value="never" class="radio-opt"><label for="sl1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_lose" id="sl2" value="sometimes" class="radio-opt"><label for="sl2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_lose" id="sl3" value="often" class="radio-opt"><label for="sl3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="symptom-block" style="margin-top:16px;">
+              <div class="symptom-block-head" style="background:var(--teal);">
+                <h4>Hyperactivity &amp; Impulsivity</h4>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I feel restless or unable to sit still</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_restless" id="sr1" value="never" class="radio-opt"><label for="sr1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_restless" id="sr2" value="sometimes" class="radio-opt"><label for="sr2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_restless" id="sr3" value="often" class="radio-opt"><label for="sr3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I interrupt others or speak before thinking</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_interrupt" id="si1" value="never" class="radio-opt"><label for="si1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_interrupt" id="si2" value="sometimes" class="radio-opt"><label for="si2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_interrupt" id="si3" value="often" class="radio-opt"><label for="si3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">I make impulsive decisions I later regret</span>
+                <div class="radio-group">
+                  <input type="radio" name="s_impulsive" id="simp1" value="never" class="radio-opt"><label for="simp1" class="radio-opt-label">Never</label>
+                  <input type="radio" name="s_impulsive" id="simp2" value="sometimes" class="radio-opt"><label for="simp2" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="s_impulsive" id="simp3" value="often" class="radio-opt"><label for="simp3" class="radio-opt-label">Often</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(4,3)">&larr; Back</button>
+            <span class="step-counter">5 of 10</span>
+            <button type="button" class="btn-next" onclick="go(4,5)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 6: FUNCTIONAL IMPACT -->
+        <div class="form-step form-card" id="step-5">
+          <div class="section-head">
+            <div class="section-tag">Section 6 <span class="req-tag">Required</span></div>
+            <h2>Functional Impact</h2>
+            <p>How your difficulties affect daily life. This section is clinically important.</p>
+          </div>
+          <div class="form-body">
+            <!-- Work -->
+            <div class="field">
+              <label class="field-label">Do your difficulties affect your work or studies? <span style="color:var(--error);">*</span></label>
+              <div class="radio-group">
+                <input type="radio" name="imp_work" id="iw_yes" value="yes" class="radio-opt" required onchange="showCond('imp-work-detail')">
+                <label for="iw_yes" class="radio-opt-label">Yes</label>
+                <input type="radio" name="imp_work" id="iw_no" value="no" class="radio-opt" onchange="hideCond('imp-work-detail')">
+                <label for="iw_no" class="radio-opt-label">No</label>
+              </div>
+              <div class="conditional" id="imp-work-detail">
+                <textarea name="imp_work_detail" placeholder="Briefly describe how — e.g. missed deadlines, poor performance, difficulty keeping jobs" style="min-height:80px;"></textarea>
+              </div>
+            </div>
+            <hr class="divider">
+            <!-- Daily Life -->
+            <div class="field">
+              <label class="field-label">Do you struggle with daily organisation? <span style="color:var(--error);">*</span><br><span style="font-weight:400;color:#888;font-size:1.25rem;">(e.g. bills, appointments, keeping a routine)</span></label>
+              <div class="radio-group">
+                <input type="radio" name="imp_daily" id="id_yes" value="yes" class="radio-opt" required>
+                <label for="id_yes" class="radio-opt-label">Yes</label>
+                <input type="radio" name="imp_daily" id="id_no" value="no" class="radio-opt">
+                <label for="id_no" class="radio-opt-label">No</label>
+              </div>
+            </div>
+            <hr class="divider">
+            <!-- Relationships -->
+            <div class="field">
+              <label class="field-label">Do your difficulties affect your relationships? <span style="color:var(--error);">*</span></label>
+              <div class="radio-group">
+                <input type="radio" name="imp_rel" id="ir_yes" value="yes" class="radio-opt" required onchange="showCond('imp-rel-detail')">
+                <label for="ir_yes" class="radio-opt-label">Yes</label>
+                <input type="radio" name="imp_rel" id="ir_no" value="no" class="radio-opt" onchange="hideCond('imp-rel-detail')">
+                <label for="ir_no" class="radio-opt-label">No</label>
+              </div>
+              <div class="conditional" id="imp-rel-detail">
+                <textarea name="imp_rel_detail" placeholder="Briefly describe how — e.g. arguments, forgetting important things, difficulty maintaining friendships" style="min-height:80px;"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(5,4)">&larr; Back</button>
+            <span class="step-counter">6 of 10</span>
+            <button type="button" class="btn-next" onclick="go(5,6)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 7: MENTAL HEALTH -->
+        <div class="form-step form-card" id="step-6">
+          <div class="section-head">
+            <div class="section-tag">Section 7</div>
+            <h2>Mental Health &amp; Other Factors</h2>
+            <p>Some conditions can overlap with ADHD. All answers are confidential.</p>
+          </div>
+          <div class="form-body">
+            <div class="symptom-block">
+              <div class="symptom-block-head" style="background:var(--teal-light);">
+                <h4>Have you experienced any of the following?</h4>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Anxiety</span>
+                <div class="radio-group">
+                  <input type="radio" name="mh_anxiety" id="mha_y" value="yes" class="radio-opt"><label for="mha_y" class="radio-opt-label">Yes</label>
+                  <input type="radio" name="mh_anxiety" id="mha_n" value="no" class="radio-opt"><label for="mha_n" class="radio-opt-label">No</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Depression</span>
+                <div class="radio-group">
+                  <input type="radio" name="mh_depression" id="mhd_y" value="yes" class="radio-opt"><label for="mhd_y" class="radio-opt-label">Yes</label>
+                  <input type="radio" name="mh_depression" id="mhd_n" value="no" class="radio-opt"><label for="mhd_n" class="radio-opt-label">No</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Trauma or significant life events</span>
+                <div class="radio-group">
+                  <input type="radio" name="mh_trauma" id="mht_y" value="yes" class="radio-opt"><label for="mht_y" class="radio-opt-label">Yes</label>
+                  <input type="radio" name="mh_trauma" id="mht_n" value="no" class="radio-opt"><label for="mht_n" class="radio-opt-label">No</label>
+                </div>
+              </div>
+              <div class="symptom-row">
+                <span class="symptom-q">Sleep difficulties</span>
+                <div class="radio-group">
+                  <input type="radio" name="mh_sleep" id="mhs_y" value="yes" class="radio-opt"><label for="mhs_y" class="radio-opt-label">Yes</label>
+                  <input type="radio" name="mh_sleep" id="mhs_n" value="no" class="radio-opt"><label for="mhs_n" class="radio-opt-label">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="field" style="margin-top:20px;">
+              <label class="field-label">Any other relevant mental health conditions? <span class="opt">(optional)</span></label>
+              <input type="text" name="mh_other" placeholder="e.g. OCD, bipolar, eating disorder — or leave blank">
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(6,5)">&larr; Back</button>
+            <span class="step-counter">7 of 12</span>
+            <button type="button" class="btn-next" onclick="go(6,7)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 8: ASRS SCREENING -->
+        <div class="form-step form-card" id="step-7">
+          <div class="section-head">
+            <div class="section-tag">Section 8</div>
+            <h2>Symptom Screening</h2>
+            <p>Rate how often you have experienced each of the following over the past 6 months. There are no right or wrong answers.</p>
+          </div>
+          <div class="form-body">
+
+            <div style="background:rgba(3,24,105,0.04);border-left:4px solid var(--teal);border-radius:4px;padding:14px 18px;margin-bottom:24px;">
+              <p style="font-size:1.35rem;color:var(--navy);margin:0;">This is a standardised screening tool used by clinicians to understand your experience before your assessment. Your answers will be reviewed alongside the rest of your form.</p>
+            </div>
+
+            <div class="symptom-block">
+              <div class="symptom-block-head" style="background:var(--navy);">
+                <h4>Attention &amp; Focus</h4>
+              </div>
+
+              <div class="symptom-row">
+                <span class="symptom-q">How often do you have trouble wrapping up the final details of a project once the challenging parts have been done?</span>
+                <div class="radio-group">
+                  <input type="radio" name="asrs_1" value="0" class="radio-opt" id="a1n"><label for="a1n" class="radio-opt-label">Never</label>
+                  <input type="radio" name="asrs_1" value="0" class="radio-opt" id="a1r"><label for="a1r" class="radio-opt-label">Rarely</label>
+                  <input type="radio" name="asrs_1" value="1" class="radio-opt" id="a1s"><label for="a1s" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="asrs_1" value="1" class="radio-opt" id="a1o"><label for="a1o" class="radio-opt-label">Often</label>
+                  <input type="radio" name="asrs_1" value="1" class="radio-opt" id="a1v"><label for="a1v" class="radio-opt-label">Very Often</label>
+                </div>
+              </div>
+
+              <div class="symptom-row">
+                <span class="symptom-q">How often do you have difficulty getting things in order when you have to do a task that requires organisation?</span>
+                <div class="radio-group">
+                  <input type="radio" name="asrs_2" value="0" class="radio-opt" id="a2n"><label for="a2n" class="radio-opt-label">Never</label>
+                  <input type="radio" name="asrs_2" value="0" class="radio-opt" id="a2r"><label for="a2r" class="radio-opt-label">Rarely</label>
+                  <input type="radio" name="asrs_2" value="1" class="radio-opt" id="a2s"><label for="a2s" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="asrs_2" value="1" class="radio-opt" id="a2o"><label for="a2o" class="radio-opt-label">Often</label>
+                  <input type="radio" name="asrs_2" value="1" class="radio-opt" id="a2v"><label for="a2v" class="radio-opt-label">Very Often</label>
+                </div>
+              </div>
+
+              <div class="symptom-row">
+                <span class="symptom-q">How often do you have problems remembering appointments or obligations?</span>
+                <div class="radio-group">
+                  <input type="radio" name="asrs_3" value="0" class="radio-opt" id="a3n"><label for="a3n" class="radio-opt-label">Never</label>
+                  <input type="radio" name="asrs_3" value="0" class="radio-opt" id="a3r"><label for="a3r" class="radio-opt-label">Rarely</label>
+                  <input type="radio" name="asrs_3" value="1" class="radio-opt" id="a3s"><label for="a3s" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="asrs_3" value="1" class="radio-opt" id="a3o"><label for="a3o" class="radio-opt-label">Often</label>
+                  <input type="radio" name="asrs_3" value="1" class="radio-opt" id="a3v"><label for="a3v" class="radio-opt-label">Very Often</label>
+                </div>
+              </div>
+
+              <div class="symptom-row">
+                <span class="symptom-q">When you have a task that requires a lot of thought, how often do you avoid or delay getting started?</span>
+                <div class="radio-group">
+                  <input type="radio" name="asrs_4" value="0" class="radio-opt" id="a4n"><label for="a4n" class="radio-opt-label">Never</label>
+                  <input type="radio" name="asrs_4" value="0" class="radio-opt" id="a4r"><label for="a4r" class="radio-opt-label">Rarely</label>
+                  <input type="radio" name="asrs_4" value="1" class="radio-opt" id="a4s"><label for="a4s" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="asrs_4" value="1" class="radio-opt" id="a4o"><label for="a4o" class="radio-opt-label">Often</label>
+                  <input type="radio" name="asrs_4" value="1" class="radio-opt" id="a4v"><label for="a4v" class="radio-opt-label">Very Often</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="symptom-block" style="margin-top:20px;">
+              <div class="symptom-block-head" style="background:var(--teal);">
+                <h4>Activity &amp; Impulse Control</h4>
+              </div>
+
+              <div class="symptom-row">
+                <span class="symptom-q">How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?</span>
+                <div class="radio-group">
+                  <input type="radio" name="asrs_5" value="0" class="radio-opt" id="a5n"><label for="a5n" class="radio-opt-label">Never</label>
+                  <input type="radio" name="asrs_5" value="0" class="radio-opt" id="a5r"><label for="a5r" class="radio-opt-label">Rarely</label>
+                  <input type="radio" name="asrs_5" value="1" class="radio-opt" id="a5s"><label for="a5s" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="asrs_5" value="1" class="radio-opt" id="a5o"><label for="a5o" class="radio-opt-label">Often</label>
+                  <input type="radio" name="asrs_5" value="1" class="radio-opt" id="a5v"><label for="a5v" class="radio-opt-label">Very Often</label>
+                </div>
+              </div>
+
+              <div class="symptom-row">
+                <span class="symptom-q">How often do you feel overly active and compelled to do things, like you were driven by a motor?</span>
+                <div class="radio-group">
+                  <input type="radio" name="asrs_6" value="0" class="radio-opt" id="a6n"><label for="a6n" class="radio-opt-label">Never</label>
+                  <input type="radio" name="asrs_6" value="0" class="radio-opt" id="a6r"><label for="a6r" class="radio-opt-label">Rarely</label>
+                  <input type="radio" name="asrs_6" value="1" class="radio-opt" id="a6s"><label for="a6s" class="radio-opt-label">Sometimes</label>
+                  <input type="radio" name="asrs_6" value="1" class="radio-opt" id="a6o"><label for="a6o" class="radio-opt-label">Often</label>
+                  <input type="radio" name="asrs_6" value="1" class="radio-opt" id="a6v"><label for="a6v" class="radio-opt-label">Very Often</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(7,6)">&larr; Back</button>
+            <span class="step-counter">8 of 12</span>
+            <button type="button" class="btn-next" onclick="go(7,8)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 9: SUPPORTING DOCUMENTS -->
+        <div class="form-step form-card" id="step-8">
+          <div class="section-head">
+            <div class="section-tag">Section 9</div>
+            <h2>Supporting Documents</h2>
+            <p>Optional, but strongly recommended.</p>
+          </div>
+          <div class="form-body">
+
+            <div style="background:rgba(79,124,130,0.08);border:1px solid rgba(79,124,130,0.25);border-left:4px solid var(--teal);border-radius:6px;padding:18px 20px;margin-bottom:24px;">
+              <p style="font-size:1.45rem;color:var(--navy);font-weight:700;margin-bottom:6px;">Why does this matter?</p>
+              <p style="font-size:1.4rem;color:var(--charcoal);margin:0;">Providing this information helps us make the most accurate and clinically robust assessment possible. Documents are optional — you will not be refused an assessment for not providing them — but they significantly strengthen the evidence base available to your clinician.</p>
+            </div>
+
+            <div style="background:#fff;border:2px solid var(--teal);border-radius:6px;padding:22px 24px;margin-bottom:8px;">
+              <p style="font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:10px;">&#128221; How to send your documents</p>
+              <p style="font-size:1.4rem;color:var(--charcoal);margin-bottom:14px;">Please email any supporting documents to:</p>
+              <p style="font-size:1.6rem;font-weight:700;color:var(--teal);margin-bottom:14px;">booking@ammcoreassessments.co.uk</p>
+              <p style="font-size:1.4rem;color:var(--charcoal);margin-bottom:14px;">Use your <strong>full name</strong> as the email subject so we can match it to your form.</p>
+              <p style="font-size:1.35rem;color:#777;margin-bottom:6px;font-weight:700;">We can accept any of the following:</p>
+              <ul style="font-size:1.35rem;color:#555;margin:0 0 0 20px;line-height:2.2;">
+                <li>GP records / medical history letters</li>
+                <li>School reports <span style="font-size:1.2rem;font-weight:700;color:var(--teal);background:rgba(79,124,130,0.1);padding:1px 6px;border-radius:3px;margin-left:4px;">Highly Recommended</span></li>
+                <li>Parent or caregiver written account <span style="font-size:1.2rem;font-weight:700;color:var(--teal);background:rgba(79,124,130,0.1);padding:1px 6px;border-radius:3px;margin-left:4px;">Highly Recommended</span></li>
+                <li>Previous ADHD / autism / psychiatric reports</li>
+                <li>Work-related evidence of impairment (HR letters, occupational health reports)</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(3,24,105,0.04);border:1px solid rgba(3,24,105,0.1);border-radius:4px;padding:14px 18px;margin-top:12px;">
+              <p style="font-size:1.3rem;color:#666;margin:0;">&#128274; All documents are handled securely and used solely for the purposes of your clinical assessment in accordance with our <a href="privacy-policy.html" style="color:var(--teal);font-weight:700;">Privacy Policy</a> and UK GDPR.</p>
+            </div>
+
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(8,7)">&larr; Back</button>
+            <span class="step-counter">9 of 12</span>
+            <button type="button" class="btn-next" onclick="go(8,9)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 10: RISK & SAFETY -->
+        <div class="form-step form-card" id="step-9">
+          <div class="section-head">
+            <div class="section-tag">Section 10</div>
+            <h2>Risk &amp; Safety</h2>
+            <p>These questions help ensure your safety and allow us to direct you to the right support.</p>
+          </div>
+          <div class="form-body">
+
+            <!-- Emergency Alert — shown if active risk disclosed -->
+            <div id="riskAlert" style="display:none;background:#fff0f0;border:2px solid #c0392b;border-left:6px solid #c0392b;border-radius:6px;padding:20px 24px;margin-bottom:28px;">
+              <p style="font-size:1.55rem;font-weight:700;color:#c0392b;margin-bottom:10px;">&#9888;&#65039; Immediate support is available</p>
+              <p style="font-size:1.4rem;color:#333;margin-bottom:10px;">If you are in crisis or immediate danger, please contact one of the following right away:</p>
+              <ul style="margin:0 0 12px 20px;font-size:1.4rem;color:#333;line-height:2;">
+                <li>Call <strong>999</strong> or <strong>112</strong> — emergency services</li>
+                <li>Go to your nearest <strong>A&amp;E department</strong></li>
+                <li>Call <strong>Samaritans: 116 123</strong> — free, 24/7</li>
+                <li>Text <strong>SHOUT to 85258</strong> — free crisis text line</li>
+              </ul>
+              <p style="font-size:1.35rem;color:#555;margin:0;">We are not able to proceed with an assessment where there is active risk to life. Please speak to your GP or seek emergency support before continuing with a booking.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label">Do you currently have thoughts of suicide or of ending your life?</label>
+              <div style="display:flex;gap:32px;margin-top:10px;">
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="current_suicidal" value="yes" onchange="checkRisk()"> Yes</label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="current_suicidal" value="no" onchange="checkRisk()"> No</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field-label">Do you currently engage in self-harm?</label>
+              <div style="display:flex;gap:32px;margin-top:10px;">
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="current_selfharm" value="yes" onchange="checkRisk()"> Yes</label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="current_selfharm" value="no" onchange="checkRisk()"> No</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field-label">Have you had thoughts of suicide or self-harm in the past 12 months?</label>
+              <div style="display:flex;gap:32px;margin-top:10px;">
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="past_suicidal" value="yes"> Yes</label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="past_suicidal" value="no"> No</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field-label">Have you ever made an attempt on your life?</label>
+              <div style="display:flex;gap:32px;margin-top:10px;">
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="past_attempt" value="yes"> Yes</label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="past_attempt" value="no"> No</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field-label">Are you currently under the care of a crisis team or mental health service?</label>
+              <div style="display:flex;gap:32px;margin-top:10px;">
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="crisis_team" value="yes"> Yes</label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:1.5rem;cursor:pointer;"><input type="radio" name="crisis_team" value="no"> No</label>
+              </div>
+            </div>
+
+            <div class="field" id="riskDetailsField" style="display:none;">
+              <label class="field-label">Please provide any additional context you are comfortable sharing <span style="font-weight:400;color:#888;">(optional)</span></label>
+              <textarea name="risk_details" placeholder="Any details that would help us understand your current situation and the support you are receiving…" style="min-height:110px;font-size:1.5rem;"></textarea>
+            </div>
+
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(9,8)">&larr; Back</button>
+            <span class="step-counter">10 of 12</span>
+            <button type="button" class="btn-next" onclick="go(9,10)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 11: EXPECTATIONS -->
+        <div class="form-step form-card" id="step-10">
+          <div class="section-head">
+            <div class="section-tag">Section 11</div>
+            <h2>Expectations</h2>
+            <p>One final question before you confirm.</p>
+          </div>
+          <div class="form-body">
+            <div class="field">
+              <label class="field-label" style="font-size:1.55rem;">What are you hoping to gain from this assessment?</label>
+              <textarea name="expectations" placeholder="In your own words — what would a positive outcome look like for you?" style="min-height:120px;font-size:1.5rem;"></textarea>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(10,9)">&larr; Back</button>
+            <span class="step-counter">11 of 12</span>
+            <button type="button" class="btn-next" onclick="go(10,11)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 12: FINAL CONFIRMATION -->
+        <div class="form-step form-card" id="step-11">
+          <div class="section-head">
+            <div class="section-tag">Section 12 <span class="req-tag">Required</span></div>
+            <h2>Final Confirmation</h2>
+            <p>Please confirm the two statements below before submitting.</p>
+          </div>
+          <div class="form-body">
+            <label class="consent-item" id="cf1" onclick="tick('cf1')">
+              <input type="checkbox" name="confirm_accurate" required>
+              <span class="consent-text">I confirm that the information provided in this form is accurate to the best of my knowledge</span>
+            </label>
+            <label class="consent-item" id="cf2" onclick="tick('cf2')">
+              <input type="checkbox" name="confirm_incomplete" required>
+              <span class="consent-text">I understand that incomplete or inaccurate information may affect the outcome of the assessment</span>
+            </label>
+
+            <div style="background:rgba(3,24,105,0.04);border:1px solid rgba(3,24,105,0.1);border-left:4px solid var(--navy);border-radius:4px;padding:18px 20px;margin-top:24px;">
+              <p style="font-size:1.4rem;color:var(--navy);font-weight:700;margin-bottom:4px;">Ready to submit?</p>
+              <p style="font-size:1.35rem;color:#666;margin:0;">Your form will be reviewed by your clinician before your Saturday triage. Remember: your triage <strong>cannot proceed</strong> without this form being received at least 24 hours in advance.</p>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="go(11,10)">&larr; Back</button>
+            <span class="step-counter">12 of 12</span>
+            <button type="button" class="btn-submit" onclick="submitForm()">Submit Form &rarr;</button>
+          </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="form-step form-card" id="step-success">
+          <div class="success-panel">
+            <div class="check-wrap">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h2>Form Submitted</h2>
+            <p>Thank you. Your intake form has been received and will be reviewed before your triage appointment.</p>
+            <p>A confirmation email has been sent to the address you provided.</p>
+            <div class="next-steps">
+              <h4>What Happens Next</h4>
+              <ol>
+                <li>Clinician reviews your form before Saturday triage</li>
+                <li>Attend your Saturday triage (15–20 mins)</li>
+                <li>If suitable, book your Sunday full assessment on the call</li>
+                <li>Full assessment, report, and delivery follows</li>
+              </ol>
+            </div>
+            <a href="index.html" class="btn-home">Return to Home</a>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap-nav">
+      <div class="footer-full">
+        <p>Ammcore Clinical Assessments is a trading name of Ammcore Consulting Ltd, registered in England and Wales. Company Registration Number: 10661995. Registered Office: 73 Park Lane, Croydon, Surrey, England, CR0 1JG. All clinical assessment services are delivered in accordance with applicable UK professional and data protection standards.</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Ammcore Consulting Ltd. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="clinical-disclaimer.html">Clinical Disclaimer</a>
+          <a href="complaints.html">Complaints Procedure</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    if (navLinks) navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Auto-fill today's date
+    document.querySelector('[name="sig_date"]').value = new Date().toISOString().split('T')[0];
+
+    function updateProgress(step) {
+      const items = document.querySelectorAll('.step-item');
+      const fill = document.getElementById('progressFill');
+      fill.style.width = (step / 11 * 100) + '%';
+      items.forEach((el, i) => {
+        el.classList.remove('active','done');
+        if (i < step) el.classList.add('done');
+        else if (i === step) el.classList.add('active');
+      });
+    }
+
+    function checkRisk() {
+      const suicidal = document.querySelector('input[name="current_suicidal"]:checked');
+      const selfharm = document.querySelector('input[name="current_selfharm"]:checked');
+      const activeRisk = (suicidal && suicidal.value === 'yes') || (selfharm && selfharm.value === 'yes');
+      document.getElementById('riskAlert').style.display = activeRisk ? 'block' : 'none';
+      document.getElementById('riskDetailsField').style.display =
+        (suicidal || selfharm) ? 'block' : 'none';
+    }
+
+    function validate(stepIndex) {
+      const section = document.getElementById('step-' + stepIndex);
+      let ok = true;
+      // Text/email/date/textarea
+      section.querySelectorAll('input[required], textarea[required]').forEach(el => {
+        if (el.type === 'radio' || el.type === 'checkbox') return;
+        if (!el.value.trim()) { el.classList.add('err'); ok = false; }
+        else el.classList.remove('err');
+      });
+      // Checkboxes
+      section.querySelectorAll('input[type="checkbox"][required]').forEach(el => {
+        if (!el.checked) ok = false;
+      });
+      // Required radio groups
+      section.querySelectorAll('input[type="radio"][required]').forEach(el => {
+        const group = section.querySelectorAll(`input[name="${el.name}"]`);
+        if (![...group].some(r => r.checked)) ok = false;
+      });
+      return ok;
+    }
+
+    function go(from, to) {
+      // Only validate on required steps (0=section1, 1=section2, 5=section6)
+      const requiredSteps = [0, 1, 5, 8];
+      if (to > from && requiredSteps.includes(from)) {
+        if (!validate(from)) {
+          const banner = document.getElementById('errorBanner');
+          banner.classList.add('show');
+          window.scrollTo({ top: document.querySelector('.form-outer').offsetTop - 80, behavior: 'smooth' });
+          return;
+        }
+      }
+      document.getElementById('errorBanner').classList.remove('show');
+      document.getElementById('step-' + from).classList.remove('active');
+      document.getElementById('step-' + to).classList.add('active');
+      updateProgress(to);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function submitForm() {
+      if (!validate(9)) {
+        document.getElementById('errorBanner').classList.add('show');
+        return;
+      }
+
+      const form = document.getElementById('intakeForm');
+      const data = new FormData(form);
+
+      // ASRS score — count "Sometimes/Often/Very Often" responses (value=1)
+      let asrsScore = 0;
+      for (let i = 1; i <= 6; i++) {
+        const checked = form.querySelector(`input[name="asrs_${i}"]:checked`);
+        if (checked) asrsScore += parseInt(checked.value);
+      }
+      data.append('asrs_score', asrsScore + ' / 6');
+      if (asrsScore >= 4) data.append('asrs_flag', 'HIGH — Score suggests significant ADHD symptom likelihood');
+      else if (asrsScore >= 2) data.append('asrs_flag', 'MODERATE — Some symptoms endorsed');
+      else data.append('asrs_flag', 'LOW — Fewer symptoms endorsed on screening');
+
+      // Flag high-risk submissions clearly in the email
+      const suicidal = form.querySelector('input[name="current_suicidal"]:checked');
+      const selfharm = form.querySelector('input[name="current_selfharm"]:checked');
+      if ((suicidal && suicidal.value === 'yes') || (selfharm && selfharm.value === 'yes')) {
+        data.append('_flagged', 'HIGH RISK — Active suicidal ideation or self-harm disclosed');
+      }
+
+      // Flag for clinician to check documents were emailed separately
+      data.append('collateral_note', 'Patient directed to email supporting documents to booking@ammcoreassessments.co.uk — confirm receipt before assessment.');
+
+      fetch('https://formspree.io/f/xlgoanoy', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('step-11').classList.remove('active');
+          document.getElementById('step-success').classList.add('active');
+          document.getElementById('progressFill').style.width = '100%';
+          document.querySelectorAll('.step-item').forEach(el => { el.classList.remove('active'); el.classList.add('done'); });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          alert('There was a problem submitting your form. Please try again or email us directly at info@ammcoreassessments.co.uk');
+        }
+      })
+      .catch(() => {
+        alert('There was a problem submitting your form. Please check your connection and try again, or email us at info@ammcoreassessments.co.uk');
+      });
+    }
+
+    function tick(id) {
+      const item = document.getElementById(id);
+      const cb = item.querySelector('input[type="checkbox"]');
+      // Toggle happens automatically via label click; just update styling
+      setTimeout(() => {
+        if (cb.checked) item.classList.add('checked');
+        else item.classList.remove('checked');
+      }, 0);
+    }
+
+    function showCond(id) { document.getElementById(id).classList.add('show'); }
+    function hideCond(id) { document.getElementById(id).classList.remove('show'); }
+  </script>
+
+</body>
+</html>

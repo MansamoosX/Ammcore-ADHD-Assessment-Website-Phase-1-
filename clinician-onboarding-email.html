@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinician Onboarding Email — Ammcore Assessments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+      --cream: #faf9f7;
+      --warm-grey: #f4f3f0;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #e8e7e4;
+      color: #1a1a2e;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    /* Page wrapper */
+    .page-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Top label */
+    .page-label {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 24px;
+    }
+
+    /* Email card */
+    .email-card {
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(3,24,105,0.10), 0 1px 4px rgba(3,24,105,0.06);
+    }
+
+    /* Header banner */
+    .email-header {
+      background: linear-gradient(135deg, #020e47 0%, #031869 60%, #0a2890 100%);
+      padding: 40px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .email-header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,190,217,0.15) 0%, transparent 70%);
+    }
+
+    .email-header .logo-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .email-header .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #4F7C82, #2abed9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .email-header .logo-mark span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+    }
+
+    .email-header .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.05em;
+    }
+
+    .email-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .email-header .subtitle {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Body */
+    .email-body {
+      padding: 40px 48px;
+    }
+
+    .salutation {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin: 0 0 20px;
+    }
+
+    .email-body p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0 0 16px;
+    }
+
+    .email-body p strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Section heading */
+    .section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 36px 0 14px;
+    }
+
+    /* Document link cards */
+    .doc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .doc-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--warm-grey);
+      border-radius: 6px;
+      padding: 14px 18px;
+      text-decoration: none;
+      border: 1px solid rgba(3,24,105,0.07);
+      transition: background 0.18s, border-color 0.18s;
+    }
+
+    .doc-card:hover {
+      background: #eef0f7;
+      border-color: rgba(3,24,105,0.18);
+    }
+
+    .doc-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 17px;
+    }
+
+    .doc-icon.blue  { background: rgba(3,24,105,0.10); }
+    .doc-icon.teal  { background: rgba(79,124,130,0.12); }
+    .doc-icon.amber { background: rgba(217,119,6,0.10); }
+    .doc-icon.green { background: rgba(22,163,74,0.10); }
+    .doc-icon.red   { background: rgba(220,38,38,0.10); }
+
+    .doc-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .doc-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 2px;
+    }
+
+    .doc-desc {
+      font-size: 12px;
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .doc-arrow {
+      font-size: 18px;
+      color: var(--teal);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* Key contacts */
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .contact-card {
+      background: var(--warm-grey);
+      border-radius: 6px;
+      padding: 14px 16px;
+      border: 1px solid rgba(3,24,105,0.07);
+    }
+
+    .contact-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 0 0 4px;
+    }
+
+    .contact-email {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0;
+      word-break: break-all;
+    }
+
+    /* Important note box */
+    .note-box {
+      background: linear-gradient(135deg, rgba(3,24,105,0.04), rgba(79,124,130,0.06));
+      border-left: 3px solid var(--teal-bright);
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+    }
+
+    .note-box p {
+      margin: 0;
+      font-size: 13.5px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    .note-box strong {
+      color: var(--navy) !important;
+    }
+
+    /* Warning box */
+    .warn-box {
+      background: rgba(220,38,38,0.04);
+      border-left: 3px solid #dc2626;
+      border-radius: 0 6px 6px 0;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+    }
+
+    .warn-box p {
+      margin: 0;
+      font-size: 13px;
+      color: #7f1d1d;
+      line-height: 1.6;
+    }
+
+    /* Sign-off */
+    .sign-off {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(3,24,105,0.08);
+    }
+
+    .sign-off p {
+      margin: 0 0 4px;
+    }
+
+    .sign-off .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 8px 0 2px;
+    }
+
+    .sign-off .title {
+      font-size: 12px;
+      color: #6b7280;
+      letter-spacing: 0.04em;
+    }
+
+    /* Footer bar */
+    .email-footer {
+      background: var(--warm-grey);
+      padding: 20px 48px;
+      border-top: 1px solid rgba(3,24,105,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .email-footer p {
+      font-size: 11px;
+      color: #9ca3af;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .confidential-badge {
+      background: rgba(3,24,105,0.08);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    /* Print instructions panel */
+    .instructions-panel {
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 24px 32px;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .instructions-panel h3 {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin: 0 0 16px;
+    }
+
+    .step-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.18s, transform 0.12s;
+    }
+
+    .copy-btn:hover { background: var(--navy-deep); transform: translateY(-1px); }
+    .copy-btn:active { transform: translateY(0); }
+
+    .copy-btn.success { background: #16a34a; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page-label, .instructions-panel { display: none; }
+      .email-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <p class="page-label">Clinician Onboarding Email — Internal Use Only</p>
+
+  <!-- EMAIL CARD -->
+  <div class="email-card" id="email-content">
+
+    <!-- Header -->
+    <div class="email-header">
+      <div class="logo-line">
+        <div class="logo-mark"><span>A</span></div>
+        <span class="brand-name">Ammcore Assessments</span>
+      </div>
+      <h1>Welcome to the Team</h1>
+      <p class="subtitle">Clinician Onboarding — Confidential</p>
+    </div>
+
+    <!-- Body -->
+    <div class="email-body">
+
+      <p class="salutation">Dear [Clinician Name],</p>
+
+      <p>
+        Welcome to <strong>Ammcore Assessments</strong>. We are delighted to have you on board as part of our clinical team. This email contains everything you need to get started — please read each document carefully before conducting your first assessment.
+      </p>
+
+      <p>
+        All documents below are <strong>confidential and for internal use only</strong>. Please do not share these links publicly. They are provided here as your direct reference library and will remain accessible from this email at any time.
+      </p>
+
+      <!-- Key Documents -->
+      <p class="section-label">Your Clinical Document Library</p>
+
+      <div class="doc-list">
+
+        <a href="https://ammcoreassessments.co.uk/staff-guidebook.html" class="doc-card" target="_blank">
+          <div class="doc-icon blue">📘</div>
+          <div class="doc-info">
+            <p class="doc-title">Staff Guidebook</p>
+            <p class="doc-desc">Start here — your complete reference for standards, pipeline, data protection, and risk escalation policy</p>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+
+        <a href="https://ammcoreassessments.co.uk/pre-assessment-checklist.html" class="doc-card" target="_blank">
+          <div class="doc-icon teal">✅</div>
+          <div class="doc-info">
+            <p class="doc-title">Pre-Assessment Clinician Checklist</p>
+            <p class="doc-desc">Complete before every assessment session — admin checks, document review, risk screening, and session setup</p>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+
+        <a href="https://ammcoreassessments.co.uk/clinical-interview-guide.html" class="doc-card" target="_blank">
+          <div class="doc-icon amber">🗒️</div>
+          <div class="doc-info">
+            <p class="doc-title">Structured Clinical Interview Guide</p>
+            <p class="doc-desc">DIVA 5.0 / DSM-5 framework — verbatim scripts, probe questions, MSE, and risk screen for the 90-minute session</p>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+
+        <a href="https://ammcoreassessments.co.uk/adhd-report-form.html" class="doc-card" target="_blank">
+          <div class="doc-icon green">📝</div>
+          <div class="doc-info">
+            <p class="doc-title">ADHD Diagnostic Report Form</p>
+            <p class="doc-desc">Auto-saving report form — complete post-session, prints as a professional diagnostic letter to the GP</p>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+
+        <a href="https://ammcoreassessments.co.uk/clinician-triage-guide.html" class="doc-card" target="_blank">
+          <div class="doc-icon red">🔍</div>
+          <div class="doc-info">
+            <p class="doc-title">Clinician Triage Guide</p>
+            <p class="doc-desc">Reference for Saturday triage sessions — suitability criteria, exclusion flags, and post-triage decision process</p>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+
+      </div>
+
+      <!-- Note -->
+      <div class="note-box">
+        <p>
+          <strong>Important — Report Form Auto-Save:</strong> The ADHD Diagnostic Report Form saves your progress automatically in your browser. If you close and reopen the page on the same device, your work will be restored. Always use the same browser and device to maintain continuity. Do not use incognito/private mode.
+        </p>
+      </div>
+
+      <!-- Risk reminder -->
+      <div class="warn-box">
+        <p>
+          <strong>Risk Escalation:</strong> If a patient discloses active suicidal ideation, self-harm, or safeguarding concerns at any point during assessment or triage, follow the escalation process in the Staff Guidebook (Section 8) immediately. Contact <strong>booking@ammcoreassessments.co.uk</strong> to notify administration.
+        </p>
+      </div>
+
+      <!-- Key Contacts -->
+      <p class="section-label">Key Contacts</p>
+
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <p class="contact-role">Bookings &amp; Administration</p>
+          <p class="contact-email">booking@ammcoreassessments.co.uk</p>
+        </div>
+        <div class="contact-card">
+          <p class="contact-role">General Enquiries</p>
+          <p class="contact-email">info@ammcoreassessments.co.uk</p>
+        </div>
+        <div class="contact-card">
+          <p class="contact-role">Crisis — Patient in Immediate Risk</p>
+          <p class="contact-email">999 / 111 / Local Crisis Team</p>
+        </div>
+        <div class="contact-card">
+          <p class="contact-role">Safeguarding Concerns</p>
+          <p class="contact-email">Local Authority MASH / LADO</p>
+        </div>
+      </div>
+
+      <!-- Closing -->
+      <p>
+        If you have any questions before your first session, please do not hesitate to reach out via <strong>booking@ammcoreassessments.co.uk</strong>. We are here to support you.
+      </p>
+
+      <p>
+        We look forward to working with you and delivering excellent, person-centred assessments together.
+      </p>
+
+      <!-- Sign-off -->
+      <div class="sign-off">
+        <p>Warm regards,</p>
+        <p class="name">Ammcore Assessments</p>
+        <p class="title">Clinical Operations · Ammcore Consulting Ltd</p>
+      </div>
+
+    </div><!-- /email-body -->
+
+    <!-- Footer -->
+    <div class="email-footer">
+      <p>This email is strictly confidential and intended solely for the named clinician. The links above are for internal use only — do not share publicly.<br/>© Ammcore Consulting Ltd · ammcoreassessments.co.uk</p>
+      <span class="confidential-badge">Confidential</span>
+    </div>
+
+  </div><!-- /email-card -->
+
+  <!-- Instructions Panel -->
+  <div class="instructions-panel">
+    <h3>How to send this as an email</h3>
+    <ol class="step-list">
+      <li>
+        <span class="step-num">1</span>
+        <span>Open <strong>Gmail</strong> and compose a new email to the clinician's email address</span>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <span>Set subject line: <strong>Welcome to Ammcore Assessments — Your Clinician Onboarding Pack</strong></span>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <span>Click the three-dot menu (⋮) at the bottom of the compose window and select <strong>"Insert from Drive"</strong> or paste the URL of this page into the email body. Alternatively, copy-paste the text content below and add the links manually.</span>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <span>Replace <strong>[Clinician Name]</strong> with the clinician's first name before sending</span>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <span>Send from <strong>booking@ammcoreassessments.co.uk</strong></span>
+      </li>
+    </ol>
+
+    <p style="margin-top:20px; font-size:13px; color:#6b7280; line-height:1.6;">
+      <strong style="color:#374151;">Tip — easiest method:</strong> Forward this page's URL (<code style="background:#f3f4f6; padding:2px 6px; border-radius:3px; font-size:12px;">https://ammcoreassessments.co.uk/clinician-onboarding-email.html</code>) as a link directly in your Gmail. The clinician can open it in their browser and access all documents from one page.
+    </p>
+
+    <button class="copy-btn" onclick="copySubject()">
+      📋 Copy Subject Line
+    </button>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<script>
+  function copySubject() {
+    const subject = 'Welcome to Ammcore Assessments — Your Clinician Onboarding Pack';
+    navigator.clipboard.writeText(subject).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.classList.add('success');
+      btn.innerHTML = '✓ Copied!';
+      setTimeout(() => {
+        btn.classList.remove('success');
+        btn.innerHTML = '📋 Copy Subject Line';
+      }, 2500);
+    });
+  }
+</script>
+
+</body>
+</html>

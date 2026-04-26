@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADHD Diagnostic Report — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ─── VARIABLES ─── */
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+      --grey-bg: #f2f2f2;
+      --grey-light: #F8F9FB;
+      --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c;
+      --white: #ffffff;
+      --red: #c0392b;
+      --green: #1a6b3c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+
+    /* ─── SCREEN STYLES ─── */
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: var(--grey-bg);
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .top-bar-left img {
+      height: 36px;
+      width: auto;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
+    }
+
+    .top-bar-left .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .top-bar-left .subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1px;
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .save-status {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.55);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .save-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4caf50;
+      display: inline-block;
+    }
+
+    .save-dot.saving { background: #ff9800; animation: blink 0.6s infinite; }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .btn-print {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 9px 22px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-print:hover { background: var(--teal-bright); }
+
+    .btn-clear {
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 9px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-clear:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* FORM CONTAINER */
+    .form-container {
+      max-width: 960px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    /* SECTION CARD */
+    .form-section {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--grey-border);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .section-head {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-head .section-num {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section-head h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .section-head.teal { background: var(--teal); }
+    .section-head.deep { background: var(--navy-deep); }
+
+    .section-body { padding: 28px; }
+
+    /* FIELD GROUPS */
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .field-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .field-group {
+      margin-bottom: 18px;
+    }
+
+    .field-group:last-child { margin-bottom: 0; }
+
+    .field-group label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      width: 100%;
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 4px;
+      padding: 11px 14px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      resize: vertical;
+    }
+
+    .field-group input:focus,
+    .field-group select:focus,
+    .field-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(79,124,130,0.12);
+      background: #fff;
+    }
+
+    .field-group textarea { min-height: 120px; line-height: 1.7; }
+    .field-group textarea.tall { min-height: 200px; }
+    .field-group textarea.short { min-height: 80px; }
+
+    /* TOOLS TABLE */
+    .tools-table { width: 100%; border-collapse: collapse; }
+    .tools-table th {
+      background: var(--grey-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 2px solid var(--grey-border);
+    }
+    .tools-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--grey-border);
+      vertical-align: middle;
+    }
+    .tools-table tr:last-child td { border-bottom: none; }
+    .tools-table input {
+      width: 100%;
+      border: 1px solid var(--grey-border);
+      border-radius: 4px;
+      padding: 8px 10px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.4rem;
+      background: var(--grey-light);
+      outline: none;
+    }
+    .tools-table input:focus {
+      border-color: var(--teal);
+      background: #fff;
+    }
+
+    /* RISK GRID */
+    .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .risk-item label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .risk-item textarea {
+      width: 100%;
+      min-height: 90px;
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.45rem;
+      resize: vertical;
+      outline: none;
+    }
+    .risk-item textarea:focus { border-color: var(--teal); background: #fff; }
+
+    /* HINT TEXT */
+    .hint { font-size: 1.25rem; color: #888; margin-top: 4px; font-style: italic; }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--grey-border); margin: 22px 0; }
+
+    /* NEW PATIENT BANNER */
+    .new-patient-notice {
+      background: rgba(79,124,130,0.08);
+      border: 1px solid rgba(79,124,130,0.25);
+      border-radius: 6px;
+      padding: 14px 20px;
+      font-size: 1.35rem;
+      color: var(--teal);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ─── PRINT STYLES ─── */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      body {
+        font-family: 'Times New Roman', serif;
+        font-size: 11pt;
+        color: #000;
+        background: #fff;
+        line-height: 1.5;
+      }
+
+      /* Hide everything screen-only */
+      .top-bar,
+      .form-container,
+      .new-patient-notice { display: none !important; }
+
+      /* Show print letter */
+      .print-letter { display: block !important; }
+
+      .print-letter {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* LETTERHEAD */
+      .letter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid #031869;
+        padding-bottom: 16pt;
+        margin-bottom: 16pt;
+      }
+
+      .letter-logo-block img {
+        height: 50pt;
+        width: auto;
+      }
+
+      .letter-logo-block .clinic-name {
+        font-family: 'Lato', sans-serif;
+        font-size: 13pt;
+        font-weight: 700;
+        color: #031869;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 6pt;
+      }
+
+      .letter-logo-block .clinic-sub {
+        font-family: 'Lato', sans-serif;
+        font-size: 9pt;
+        color: #4F7C82;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .letter-address-block {
+        text-align: right;
+        font-size: 10pt;
+        line-height: 1.6;
+      }
+
+      .letter-address-block strong {
+        display: block;
+        font-size: 11pt;
+        color: #031869;
+        margin-bottom: 4pt;
+      }
+
+      /* REF BLOCK */
+      .letter-ref {
+        font-size: 10pt;
+        margin-bottom: 14pt;
+        line-height: 1.8;
+      }
+
+      .letter-ref strong { font-weight: 700; }
+
+      /* GP ADDRESS */
+      .letter-gp {
+        font-size: 11pt;
+        margin-bottom: 14pt;
+        line-height: 1.7;
+      }
+
+      /* PATIENT RE LINE */
+      .letter-re {
+        font-size: 11pt;
+        margin-bottom: 20pt;
+        padding-bottom: 12pt;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .letter-re strong { font-weight: 700; }
+
+      /* SECTION HEADING */
+      .letter-section-title {
+        font-size: 11pt;
+        font-weight: 700;
+        margin-top: 14pt;
+        margin-bottom: 6pt;
+      }
+
+      /* BODY TEXT */
+      .letter-body {
+        font-size: 11pt;
+        margin-bottom: 10pt;
+        line-height: 1.6;
+      }
+
+      /* BULLET LIST */
+      .letter-list {
+        margin: 6pt 0 10pt 20pt;
+        font-size: 11pt;
+        line-height: 1.7;
+      }
+
+      .letter-list li { margin-bottom: 4pt; }
+
+      /* RISK ITEMS */
+      .letter-risk-label {
+        font-size: 11pt;
+        text-decoration: underline;
+        margin-top: 8pt;
+        margin-bottom: 4pt;
+      }
+
+      /* FOOTER */
+      .letter-footer {
+        margin-top: 30pt;
+        border-top: 2px solid #031869;
+        padding-top: 12pt;
+        font-size: 9pt;
+        color: #666;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .letter-footer img {
+        height: 28pt;
+        width: auto;
+        opacity: 0.7;
+      }
+
+      /* PAGE BREAK */
+      .page-break { page-break-before: always; }
+
+      @page {
+        margin: 18mm 18mm 22mm 18mm;
+        size: A4;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── TOP BAR (screen only) ─── -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+      <div>
+        <div class="title">ADHD Diagnostic Report</div>
+        <div class="subtitle">Clinician form — auto-saving to this browser</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <div class="save-status">
+        <span class="save-dot" id="saveDot"></span>
+        <span id="saveText">All changes saved</span>
+      </div>
+      <button class="btn-clear" onclick="clearForm()">Clear Form</button>
+      <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <!-- ─── SCREEN FORM ─── -->
+  <div class="form-container">
+
+    <div class="new-patient-notice">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
+      Your work is automatically saved to this browser. You can close this tab and return at any time — your data will be here.
+    </div>
+
+    <!-- SECTION 1: REPORT DETAILS -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">1</div>
+        <h2>Report &amp; Referral Details</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-group">
+            <label>Reference Number</label>
+            <input type="text" id="ref_number" placeholder="e.g. AC/001/2025">
+          </div>
+          <div class="field-group">
+            <label>NHS Number</label>
+            <input type="text" id="nhs_number" placeholder="e.g. 601 514 8047">
+          </div>
+          <div class="field-group">
+            <label>Referral Date</label>
+            <input type="date" id="referral_date">
+          </div>
+          <div class="field-group">
+            <label>Clinic / Assessment Date</label>
+            <input type="date" id="clinic_date">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: GP DETAILS -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">2</div>
+        <h2>GP / Referrer Details</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-group">
+            <label>GP Name</label>
+            <input type="text" id="gp_name" placeholder="e.g. Dr J Smith">
+          </div>
+          <div class="field-group">
+            <label>Practice Name</label>
+            <input type="text" id="gp_practice" placeholder="e.g. Abbey Grange Medical Practice">
+          </div>
+          <div class="field-group">
+            <label>GP Telephone</label>
+            <input type="text" id="gp_tel" placeholder="e.g. 0113 295 1844">
+          </div>
+          <div class="field-group">
+            <label>GP / Surgery Email</label>
+            <input type="text" id="gp_email" placeholder="e.g. j.smith@nhs.net">
+          </div>
+        </div>
+        <div class="field-group" style="margin-top:18px;">
+          <label>GP Address</label>
+          <textarea id="gp_address" class="short" placeholder="Street&#10;Town&#10;County&#10;Postcode"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: PATIENT DETAILS -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">3</div>
+        <h2>Patient Details</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-group">
+            <label>Full Name</label>
+            <input type="text" id="patient_name" placeholder="e.g. Mr Isa Luqman">
+          </div>
+          <div class="field-group">
+            <label>Date of Birth</label>
+            <input type="date" id="patient_dob">
+          </div>
+          <div class="field-group">
+            <label>Telephone</label>
+            <input type="text" id="patient_tel" placeholder="e.g. 07400 000000">
+          </div>
+          <div class="field-group">
+            <label>Email</label>
+            <input type="text" id="patient_email" placeholder="e.g. patient@email.com">
+          </div>
+        </div>
+        <div class="field-group" style="margin-top:18px;">
+          <label>Address</label>
+          <textarea id="patient_address" class="short" placeholder="Street&#10;Town&#10;County&#10;Postcode"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: DIAGNOSIS -->
+    <div class="form-section">
+      <div class="section-head teal">
+        <div class="section-num">4</div>
+        <h2>Diagnoses &amp; Medication</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Diagnosis / Diagnoses</label>
+          <textarea id="diagnoses" class="short" placeholder="e.g. 1. Attention-Deficit/Hyperactivity Disorder, Combined Presentation"></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Current Medication</label>
+          <textarea id="medication" class="short" placeholder="e.g. None / List medications"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: TREATMENT & CONTINGENCY -->
+    <div class="form-section">
+      <div class="section-head teal">
+        <div class="section-num">5</div>
+        <h2>Treatment Plan &amp; Contingency Plans</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Treatment Plan</label>
+          <textarea id="treatment_plan" placeholder="List treatment plan items. e.g.&#10;1. Patient will be provided with information on treatment options including medications, resources and support.&#10;2. Patient will be enrolled in titration clinic if they choose to pursue medication.&#10;3. Patient has been advised to contact us with any concerns."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Contingency Plans</label>
+          <textarea id="contingency_plans" placeholder="e.g.&#10;1. Ammcore Clinical Assessments aims to respond to any query or concern within 24 hours. If the patient needs urgent help regarding a mental health crisis, they are advised to call NHS 111 and select the mental health option.&#10;2. For immediate support for serious or life-threatening mental health emergencies, the patient is advised to go to the nearest A&amp;E or call 999."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: OPENING NARRATIVE -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">6</div>
+        <h2>Opening Narrative</h2>
+      </div>
+      <div class="section-body">
+        <p class="hint" style="margin-bottom:16px;">Describe how the assessment was conducted, who was present, identity verification, and any pre-assessment forms completed.</p>
+        <div class="field-group">
+          <label>Opening Statement</label>
+          <textarea id="opening_narrative" placeholder="e.g. On [DATE], I met with [PATIENT NAME] online to conduct a diagnostic assessment for ADHD. They attended the session on their own. They confirmed their identity by showing a picture of their passport as photo ID. Prior to the assessment, they completed the necessary pre-assessment forms. An informant form was also completed by [INFORMANT / N/A]."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 7: TOOLS & SCALES -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">7</div>
+        <h2>Tools &amp; Scales Used</h2>
+      </div>
+      <div class="section-body">
+        <p class="hint" style="margin-bottom:16px;">Enter each tool used, the score, and the interpretation.</p>
+        <table class="tools-table">
+          <thead>
+            <tr>
+              <th style="width:40%;">Tool / Scale</th>
+              <th style="width:20%;">Score</th>
+              <th>Interpretation / Finding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" id="tool1_name" placeholder="e.g. DIVA 5.0"></td>
+              <td><input type="text" id="tool1_score" placeholder="e.g. IA 7/9; H/I 7/9"></td>
+              <td><input type="text" id="tool1_interp" placeholder="e.g. ADHD Combined type"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool2_name" placeholder="e.g. ASRS v1.1"></td>
+              <td><input type="text" id="tool2_score" placeholder="e.g. 39"></td>
+              <td><input type="text" id="tool2_interp" placeholder="e.g. High symptoms of ADHD"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool3_name" placeholder="e.g. WURS-25"></td>
+              <td><input type="text" id="tool3_score" placeholder="e.g. 57"></td>
+              <td><input type="text" id="tool3_interp" placeholder="e.g. Clinically significant childhood ADHD symptoms"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool4_name" placeholder="e.g. WFIRS"></td>
+              <td><input type="text" id="tool4_score" placeholder="e.g. 56"></td>
+              <td><input type="text" id="tool4_interp" placeholder="e.g. Moderate to severe functional impairment"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool5_name" placeholder="e.g. AQ-10"></td>
+              <td><input type="text" id="tool5_score" placeholder="e.g. 3"></td>
+              <td><input type="text" id="tool5_interp" placeholder="e.g. Some ASD traits"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool6_name" placeholder="e.g. Beck Depression Inventory"></td>
+              <td><input type="text" id="tool6_score" placeholder="e.g. 13"></td>
+              <td><input type="text" id="tool6_interp" placeholder="e.g. Minimal range for depression"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool7_name" placeholder="e.g. Beck Anxiety Inventory"></td>
+              <td><input type="text" id="tool7_score" placeholder="e.g. 8"></td>
+              <td><input type="text" id="tool7_interp" placeholder="e.g. Minimal range for anxiety"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="tool8_name" placeholder="Additional tool (if applicable)"></td>
+              <td><input type="text" id="tool8_score"></td>
+              <td><input type="text" id="tool8_interp"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 8: PRESENTING COMPLAINT -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">8</div>
+        <h2>Presenting Complaint</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Presenting Complaint</label>
+          <textarea id="presenting_complaint" class="tall" placeholder="Describe why the patient sought assessment, who referred or encouraged them, their main concerns, and the functional impact of their symptoms."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 9: HISTORY OF PRESENTING COMPLAINT -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">9</div>
+        <h2>History of Presenting Complaint</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Attention &amp; Focus</label>
+          <textarea id="history_attention" placeholder="Describe inattention symptoms, distractibility, hyperfocus, task avoidance, reading difficulties etc."></textarea>
+        </div>
+        <div class="field-group">
+          <label>Organisation &amp; Planning</label>
+          <textarea id="history_organisation" placeholder="Describe difficulties with planning, scheduling, procrastination, time management etc."></textarea>
+        </div>
+        <div class="field-group">
+          <label>Hyperactivity</label>
+          <textarea id="history_hyperactivity" placeholder="Describe childhood and adult hyperactivity — restlessness, fidgeting, excessive talking, interrupting etc."></textarea>
+        </div>
+        <div class="field-group">
+          <label>Impulsivity</label>
+          <textarea id="history_impulsivity" placeholder="Describe impulsive behaviours — spending, risk-taking, acting without thinking etc."></textarea>
+        </div>
+        <div class="field-group">
+          <label>Emotional Regulation</label>
+          <textarea id="history_emotion" placeholder="Describe emotional dysregulation, rejection sensitivity, anger, sensitivity to criticism etc."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 10: PSYCHIATRIC & MEDICAL HISTORY -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">10</div>
+        <h2>Psychiatric, Medical &amp; Other History</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Past Psychiatric History</label>
+          <textarea id="psych_history" class="short" placeholder="Previous diagnoses, treatments, hospitalisations, self-harm, suicidal ideation, eating disorders etc."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Current and Past Medical / Surgical History</label>
+          <textarea id="medical_history" class="short" placeholder="Medical conditions, surgeries, regular medications etc."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-grid">
+          <div class="field-group">
+            <label>Allergies</label>
+            <input type="text" id="allergies" placeholder="e.g. No known drug allergies">
+          </div>
+          <div class="field-group">
+            <label>Forensic History</label>
+            <input type="text" id="forensic_history" placeholder="e.g. No known forensic history">
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Alcohol &amp; Illicit Substances</label>
+          <textarea id="substance_history" class="short" placeholder="Describe alcohol and drug use — frequency, type, impact on functioning."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 11: FAMILY & DEVELOPMENTAL HISTORY -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">11</div>
+        <h2>Family, Developmental &amp; Social History</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Family Structure, Dynamics &amp; History</label>
+          <textarea id="family_history" placeholder="Heritage, living situation, family history of ADHD/ASD/mental health, children, relationships."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Personal, Social &amp; Developmental History</label>
+          <textarea id="developmental_history" class="tall" placeholder="Birth and early development, primary school, secondary school, further education, occupational history, relationships."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Current Social Circumstances</label>
+          <textarea id="social_circumstances" placeholder="Living situation, employment, social life, friendships, relationships."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 12: SLEEP & DRIVING -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">12</div>
+        <h2>Sleep &amp; Driving</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Sleep</label>
+          <textarea id="sleep" placeholder="Sleep initiation, quality, duration, patterns, compensatory strategies."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Driving</label>
+          <textarea id="driving" class="short" placeholder="Does ADHD impact their driving? Any incidents, points, or concerns?"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 13: MENTAL STATE EXAMINATION -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">13</div>
+        <h2>Mental State at Examination</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Mental State Examination</label>
+          <textarea id="mental_state" class="tall" placeholder="Appearance, behaviour, rapport, speech, mood, affect, thought process, thought content, perceptual disturbances, insight, cognition."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 14: CAPACITY, CONSENT & RISK -->
+    <div class="form-section">
+      <div class="section-head deep">
+        <div class="section-num">14</div>
+        <h2>Capacity, Consent &amp; Risk Screen</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Capacity &amp; Consent</label>
+          <textarea id="capacity_consent" class="short" placeholder="e.g. [Patient name] demonstrated full capacity to understand the nature and purpose of the assessment and to provide informed consent for participation and potential future treatment."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="risk-grid">
+          <div class="risk-item">
+            <label>Risk to Self</label>
+            <textarea id="risk_self" placeholder="e.g. No reported history or current evidence of suicidal ideation or self-harm."></textarea>
+          </div>
+          <div class="risk-item">
+            <label>Risk to Others</label>
+            <textarea id="risk_others" placeholder="e.g. No reported concerns regarding aggression, violence, or risk of harm to others."></textarea>
+          </div>
+          <div class="risk-item">
+            <label>Other Risk Factors</label>
+            <textarea id="risk_other" placeholder="e.g. No other significant risks identified."></textarea>
+          </div>
+          <div class="risk-item">
+            <label>Safeguarding</label>
+            <textarea id="risk_safeguarding" placeholder="e.g. No safeguarding concerns identified."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 15: STRENGTHS & FORMULATION -->
+    <div class="form-section">
+      <div class="section-head teal">
+        <div class="section-num">15</div>
+        <h2>Strengths, Formulation &amp; Summary</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-group">
+          <label>Patient's Strengths, Needs &amp; Expectations</label>
+          <textarea id="strengths" placeholder="Describe the patient's self-awareness, motivation, strengths and what they are hoping for from the assessment."></textarea>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Summary / Formulation / List of Problems</label>
+          <textarea id="formulation" class="tall" placeholder="Provide a clinical summary: symptom pattern, DSM-5 criteria met, functional impairment, rating scale support, co-morbidity screening, treatment recommendation."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 16: SIGN-OFF -->
+    <div class="form-section">
+      <div class="section-head">
+        <div class="section-num">16</div>
+        <h2>Clinician Sign-Off</h2>
+      </div>
+      <div class="section-body">
+        <div class="field-grid">
+          <div class="field-group">
+            <label>Clinician Full Name</label>
+            <input type="text" id="clinician_name" placeholder="e.g. Dr A Williams">
+          </div>
+          <div class="field-group">
+            <label>Role / Title</label>
+            <input type="text" id="clinician_role" placeholder="e.g. Associate Specialist in Psychiatry">
+          </div>
+          <div class="field-group">
+            <label>Qualifications</label>
+            <input type="text" id="clinician_quals" placeholder="e.g. MBChB, MRCPsych">
+          </div>
+          <div class="field-group">
+            <label>Date of Report</label>
+            <input type="date" id="report_date">
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="field-group">
+          <label>Cc (copy to)</label>
+          <input type="text" id="cc" placeholder="e.g. Patient's GP, Patient">
+        </div>
+        <div class="field-group">
+          <label>Additional Notes / Note to Patient</label>
+          <textarea id="additional_notes" class="short" placeholder="e.g. Note to Patient: If any errors have been made in this letter regarding information you have provided, please contact us and we will promptly make corrections."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /form-container -->
+
+
+  <!-- ─── PRINT LETTER (hidden on screen, shown on print) ─── -->
+  <div class="print-letter" style="display:none;">
+
+    <!-- LETTERHEAD -->
+    <div class="letter-header">
+      <div class="letter-logo-block">
+        <img src="brand_assets/ammcore_logo.png" alt="Ammcore Clinical Assessments">
+        <div class="clinic-name">Ammcore Clinical Assessments</div>
+        <div class="clinic-sub">A clinical subsidiary of Ammcore Consulting Ltd</div>
+      </div>
+      <div class="letter-address-block">
+        <strong>Ammcore Clinical Assessments</strong>
+        booking@ammcoreassessments.co.uk<br>
+        www.ammcoreassessments.co.uk<br>
+        info@ammcoreassessments.co.uk
+      </div>
+    </div>
+
+    <!-- REF / DATE BLOCK -->
+    <div class="letter-ref">
+      <strong>Reference:</strong> <span id="p_ref_number"></span><br>
+      <strong>NHS:</strong> <span id="p_nhs_number"></span><br>
+      <strong>GP Tel:</strong> <span id="p_gp_tel"></span><br>
+      <strong>Surgery Email:</strong> <span id="p_gp_email"></span><br>
+      <br>
+      <strong>Referral Date:</strong> <span id="p_referral_date"></span><br>
+      <strong>Clinic Date:</strong> <span id="p_clinic_date"></span>
+    </div>
+
+    <!-- GP ADDRESS -->
+    <div class="letter-gp" id="p_gp_address_block"></div>
+
+    <!-- PATIENT RE LINE -->
+    <div class="letter-re">
+      <strong>Re:</strong> <span id="p_patient_name"></span> &nbsp;&nbsp;&nbsp; <strong>DoB:</strong> <span id="p_patient_dob"></span><br>
+      <strong>Address:</strong> <span id="p_patient_address_inline"></span><br>
+      <strong>Tel:</strong> <span id="p_patient_tel"></span> &nbsp;&nbsp;&nbsp; <strong>Email:</strong> <span id="p_patient_email"></span>
+    </div>
+
+    <!-- DIAGNOSES -->
+    <div class="letter-section-title">Diagnoses:</div>
+    <div class="letter-body" id="p_diagnoses"></div>
+
+    <!-- MEDICATION -->
+    <div class="letter-section-title">Current Medication:</div>
+    <div class="letter-body" id="p_medication"></div>
+
+    <!-- TREATMENT PLAN -->
+    <div class="letter-section-title">Treatment plan:</div>
+    <div class="letter-body" id="p_treatment_plan"></div>
+
+    <!-- CONTINGENCY -->
+    <div class="letter-section-title">Contingency plans:</div>
+    <div class="letter-body" id="p_contingency_plans"></div>
+
+    <!-- OPENING NARRATIVE -->
+    <div class="letter-body" id="p_opening_narrative"></div>
+
+    <!-- TOOLS -->
+    <div class="letter-section-title">Tools and Scales used in the diagnostic assessment:</div>
+    <ul class="letter-list" id="p_tools_list"></ul>
+
+    <!-- PRESENTING COMPLAINT -->
+    <div class="letter-section-title">Presenting Complaint:</div>
+    <div class="letter-body" id="p_presenting_complaint"></div>
+
+    <!-- HISTORY -->
+    <div class="letter-section-title">History of Presenting Complaint:</div>
+    <div class="letter-body" id="p_history_attention"></div>
+    <div class="letter-body" id="p_history_organisation"></div>
+    <div class="letter-body" id="p_history_hyperactivity"></div>
+    <div class="letter-body" id="p_history_impulsivity"></div>
+    <div class="letter-body" id="p_history_emotion"></div>
+
+    <!-- PAST PSYCHIATRIC -->
+    <div class="letter-section-title">Past Psychiatric History:</div>
+    <div class="letter-body" id="p_psych_history"></div>
+
+    <!-- MEDICAL -->
+    <div class="letter-section-title">Current and Past Medical/Surgical History:</div>
+    <div class="letter-body" id="p_medical_history"></div>
+
+    <!-- ALLERGIES / FORENSIC -->
+    <div class="letter-body"><strong>Allergies:</strong> <span id="p_allergies"></span></div>
+    <div class="letter-body"><strong>Forensic History:</strong> <span id="p_forensic_history"></span></div>
+
+    <!-- SUBSTANCES -->
+    <div class="letter-section-title">Alcohol/Illicit Drugs:</div>
+    <div class="letter-body" id="p_substance_history"></div>
+
+    <!-- FAMILY -->
+    <div class="letter-section-title">Family Structure, Dynamics, and History:</div>
+    <div class="letter-body" id="p_family_history"></div>
+
+    <!-- DEVELOPMENTAL -->
+    <div class="letter-section-title">Personal, Social, and Developmental History:</div>
+    <div class="letter-body" id="p_developmental_history"></div>
+
+    <!-- SOCIAL -->
+    <div class="letter-section-title">Current Social Circumstances:</div>
+    <div class="letter-body" id="p_social_circumstances"></div>
+
+    <!-- SLEEP -->
+    <div class="letter-section-title">Sleep:</div>
+    <div class="letter-body" id="p_sleep"></div>
+
+    <!-- DRIVING -->
+    <div class="letter-section-title">Driving:</div>
+    <div class="letter-body" id="p_driving"></div>
+
+    <!-- MENTAL STATE -->
+    <div class="letter-section-title">Mental State at Examination:</div>
+    <div class="letter-body" id="p_mental_state"></div>
+
+    <!-- CAPACITY -->
+    <div class="letter-section-title">Capacity and Consent:</div>
+    <div class="letter-body" id="p_capacity_consent"></div>
+
+    <!-- RISK -->
+    <div class="letter-section-title">Risk Screen:</div>
+    <div class="letter-risk-label">Risk to Self:</div>
+    <div class="letter-body" id="p_risk_self"></div>
+    <div class="letter-risk-label">Risk to Others:</div>
+    <div class="letter-body" id="p_risk_others"></div>
+    <div class="letter-risk-label">Other Risk Factors:</div>
+    <div class="letter-body" id="p_risk_other"></div>
+    <div class="letter-risk-label">Safeguarding:</div>
+    <div class="letter-body" id="p_risk_safeguarding"></div>
+
+    <!-- STRENGTHS -->
+    <div class="letter-section-title">Patient's strengths, needs and expectations:</div>
+    <div class="letter-body" id="p_strengths"></div>
+
+    <!-- FORMULATION -->
+    <div class="letter-section-title">Summary/formulation/list of problems:</div>
+    <div class="letter-body" id="p_formulation"></div>
+
+    <!-- STANDARD CLOSING CONTENT -->
+    <div class="letter-section-title">Driving Information:</div>
+    <div class="letter-body">The DVLA states "You must tell DVLA if your attention deficit hyperactivity disorder (ADHD) affects your ability to drive safely." Further information is available from https://www.gov.uk/adhd-and-driving.</div>
+
+    <div class="letter-section-title">Additional Resources which may be helpful:</div>
+    <ul class="letter-list">
+      <li>https://www.ukaan.org/</li>
+      <li>https://aadduk.org/</li>
+      <li>http://addiss.co.uk/</li>
+    </ul>
+
+    <div class="letter-section-title">Access to Work:</div>
+    <div class="letter-body">Access To Work allows people to get support in work if they have a disability or health condition, which includes ADHD. This service can offer support based on your needs, which could include adaptations and ADHD coaching. Please see the link for more information: https://www.gov.uk/access-to-work</div>
+
+    <div class="letter-body" style="margin-top:12pt;" id="p_patient_name_close"></div>
+
+    <div class="letter-body" style="margin-top:20pt;">If you have any queries about this report, please do not hesitate to contact our service.</div>
+
+    <div class="letter-body" style="margin-top:16pt;">Yours sincerely</div>
+    <div style="margin-top:40pt;"></div><!-- signature space -->
+    <div class="letter-body">
+      <strong id="p_clinician_name"></strong><br>
+      <span id="p_clinician_role"></span><br>
+      <span id="p_clinician_quals"></span><br>
+      Ammcore Clinical Assessments
+    </div>
+
+    <div class="letter-body" style="margin-top:14pt;">Cc: <span id="p_cc"></span></div>
+
+    <div class="letter-body" style="margin-top:10pt;font-style:italic;" id="p_additional_notes"></div>
+
+    <!-- FOOTER -->
+    <div class="letter-footer">
+      <div>Ammcore Clinical Assessments &nbsp;|&nbsp; booking@ammcoreassessments.co.uk &nbsp;|&nbsp; www.ammcoreassessments.co.uk</div>
+      <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+    </div>
+
+  </div><!-- /print-letter -->
+
+
+  <script>
+    // ─── FIELD IDS TO SAVE ───
+    const FIELDS = [
+      'ref_number','nhs_number','referral_date','clinic_date',
+      'gp_name','gp_practice','gp_tel','gp_email','gp_address',
+      'patient_name','patient_dob','patient_tel','patient_email','patient_address',
+      'diagnoses','medication',
+      'treatment_plan','contingency_plans',
+      'opening_narrative',
+      'tool1_name','tool1_score','tool1_interp',
+      'tool2_name','tool2_score','tool2_interp',
+      'tool3_name','tool3_score','tool3_interp',
+      'tool4_name','tool4_score','tool4_interp',
+      'tool5_name','tool5_score','tool5_interp',
+      'tool6_name','tool6_score','tool6_interp',
+      'tool7_name','tool7_score','tool7_interp',
+      'tool8_name','tool8_score','tool8_interp',
+      'presenting_complaint',
+      'history_attention','history_organisation','history_hyperactivity',
+      'history_impulsivity','history_emotion',
+      'psych_history','medical_history','allergies','forensic_history','substance_history',
+      'family_history','developmental_history','social_circumstances',
+      'sleep','driving','mental_state',
+      'capacity_consent',
+      'risk_self','risk_others','risk_other','risk_safeguarding',
+      'strengths','formulation',
+      'clinician_name','clinician_role','clinician_quals','report_date',
+      'cc','additional_notes'
+    ];
+
+    const STORAGE_KEY = 'ammcore_report_v1';
+
+    // ─── DEFAULT TEXT ─── (pre-fills on first load; stays unless manually deleted)
+    const DEFAULTS = {
+      opening_narrative:
+        'On [DATE], I met with [PATIENT NAME] via video call / in person to conduct a comprehensive diagnostic assessment for ADHD. The patient attended the session alone / accompanied by [NAME]. They confirmed their identity by providing [PHOTO ID]. Prior to the assessment, they completed the necessary pre-assessment questionnaires. An informant report was also completed by [INFORMANT / N/A].',
+      treatment_plan:
+        '1. [PATIENT NAME] will be provided with information on treatment options including medication, psychological support, and community resources.\n2. The patient will be referred to a titration clinic if they wish to pursue medication treatment.\n3. The patient has been advised to contact our service with any questions or concerns.\n4. A copy of this report will be shared with their GP.',
+      contingency_plans:
+        '1. Ammcore Clinical Assessments aims to respond to any query or concern within 24 hours.\n2. If the patient requires urgent mental health support, they are advised to call NHS 111 and select the mental health option, or attend their nearest A&E department.\n3. For life-threatening emergencies, the patient should call 999.',
+      capacity_consent:
+        '[PATIENT NAME] demonstrated full capacity to understand the nature and purpose of the assessment and to provide informed consent for participation and potential future treatment. The consent process was completed prior to the session commencing.',
+      risk_self:
+        'No reported history or current evidence of suicidal ideation or self-harm at the time of assessment.',
+      risk_others:
+        'No reported concerns regarding aggression, violence, or risk of harm to others at the time of assessment.',
+      risk_other:
+        'No other significant risk factors identified at the time of assessment.',
+      risk_safeguarding:
+        'No safeguarding concerns identified at the time of assessment.',
+      allergies: 'No known drug allergies',
+      forensic_history: 'No known forensic history',
+      cc: "Patient's GP, Patient",
+      additional_notes:
+        'Note to Patient: If any errors have been made in this letter regarding information you have provided, please contact us and we will promptly make corrections.',
+      tool1_name: 'DIVA 5.0',
+      tool2_name: 'ASRS v1.1',
+      tool3_name: 'WURS-25',
+      tool4_name: 'WFIRS',
+      tool5_name: 'AQ-10',
+      tool6_name: 'Beck Depression Inventory (BDI)',
+      tool7_name: 'Beck Anxiety Inventory (BAI)'
+    };
+
+    // ─── LOAD FROM STORAGE ───
+    function loadSaved() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        FIELDS.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          if (saved[id] !== undefined) {
+            el.value = saved[id];          // saved data takes priority
+          } else if (DEFAULTS[id] !== undefined) {
+            el.value = DEFAULTS[id];       // fall back to default template text
+          }
+        });
+      } catch(e) {}
+    }
+
+    // ─── SAVE TO STORAGE ───
+    let saveTimer;
+    function scheduleSave() {
+      const dot = document.getElementById('saveDot');
+      const txt = document.getElementById('saveText');
+      dot.className = 'save-dot saving';
+      txt.textContent = 'Saving...';
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        const data = {};
+        FIELDS.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) data[id] = el.value;
+        });
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          dot.className = 'save-dot';
+          txt.textContent = 'All changes saved';
+        } catch(e) {
+          dot.className = 'save-dot saving';
+          txt.textContent = 'Save failed';
+        }
+      }, 800);
+    }
+
+    // ─── CLEAR FORM ───
+    function clearForm() {
+      if (!confirm('Clear all fields and start a new report? This cannot be undone.')) return;
+      FIELDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+      localStorage.removeItem(STORAGE_KEY);
+      document.getElementById('saveDot').className = 'save-dot';
+      document.getElementById('saveText').textContent = 'All changes saved';
+    }
+
+    // ─── FORMAT DATE FOR PRINT ───
+    function fmtDate(val) {
+      if (!val) return '';
+      const d = new Date(val);
+      return d.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    }
+
+    // ─── POPULATE PRINT LETTER ───
+    function populatePrint() {
+      const v = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      const setHtml = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
+
+      // Ref block
+      set('p_ref_number', v('ref_number'));
+      set('p_nhs_number', v('nhs_number'));
+      set('p_gp_tel', v('gp_tel'));
+      set('p_gp_email', v('gp_email'));
+      set('p_referral_date', fmtDate(v('referral_date')));
+      set('p_clinic_date', fmtDate(v('clinic_date')));
+
+      // GP address block
+      const gpLines = [v('gp_name'), v('gp_practice'), ...v('gp_address').split('\n').filter(Boolean)];
+      setHtml('p_gp_address_block', gpLines.filter(Boolean).join('<br>'));
+
+      // Patient
+      set('p_patient_name', v('patient_name'));
+      set('p_patient_dob', fmtDate(v('patient_dob')));
+      set('p_patient_address_inline', v('patient_address').replace(/\n/g, ', '));
+      set('p_patient_tel', v('patient_tel'));
+      set('p_patient_email', v('patient_email'));
+
+      // Simple text fields
+      const simple = [
+        ['p_diagnoses','diagnoses'],['p_medication','medication'],
+        ['p_treatment_plan','treatment_plan'],['p_contingency_plans','contingency_plans'],
+        ['p_opening_narrative','opening_narrative'],
+        ['p_presenting_complaint','presenting_complaint'],
+        ['p_history_attention','history_attention'],
+        ['p_history_organisation','history_organisation'],
+        ['p_history_hyperactivity','history_hyperactivity'],
+        ['p_history_impulsivity','history_impulsivity'],
+        ['p_history_emotion','history_emotion'],
+        ['p_psych_history','psych_history'],
+        ['p_medical_history','medical_history'],
+        ['p_substance_history','substance_history'],
+        ['p_family_history','family_history'],
+        ['p_developmental_history','developmental_history'],
+        ['p_social_circumstances','social_circumstances'],
+        ['p_sleep','sleep'],['p_driving','driving'],
+        ['p_mental_state','mental_state'],
+        ['p_capacity_consent','capacity_consent'],
+        ['p_risk_self','risk_self'],['p_risk_others','risk_others'],
+        ['p_risk_other','risk_other'],['p_risk_safeguarding','risk_safeguarding'],
+        ['p_strengths','strengths'],['p_formulation','formulation'],
+        ['p_cc','cc'],['p_additional_notes','additional_notes']
+      ];
+      simple.forEach(([pid, fid]) => set(pid, v(fid)));
+
+      // Inline fields
+      set('p_allergies', v('allergies'));
+      set('p_forensic_history', v('forensic_history'));
+
+      // Clinician sign-off
+      set('p_clinician_name', v('clinician_name'));
+      set('p_clinician_role', v('clinician_role'));
+      set('p_clinician_quals', v('clinician_quals'));
+
+      // Closing sentence
+      const pname = v('patient_name') || 'The patient';
+      set('p_patient_name_close', `${pname} engaged well in the assessment. It was a pleasure to meet with them and I wish them the best of luck with their future.`);
+
+      // Tools list
+      const toolsList = document.getElementById('p_tools_list');
+      toolsList.innerHTML = '';
+      for (let i = 1; i <= 8; i++) {
+        const name = v(`tool${i}_name`);
+        const score = v(`tool${i}_score`);
+        const interp = v(`tool${i}_interp`);
+        if (name) {
+          const li = document.createElement('li');
+          li.textContent = [name, score, interp].filter(Boolean).join(' — ');
+          toolsList.appendChild(li);
+        }
+      }
+      // Always add informant input and self-reporting
+      ['Informant input', 'Self-Reporting form'].forEach(t => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        toolsList.appendChild(li);
+      });
+    }
+
+    // ─── BEFORE PRINT: populate letter ───
+    window.addEventListener('beforeprint', populatePrint);
+
+    // ─── INIT ───
+    loadSaved();
+    FIELDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', scheduleSave);
+    });
+  </script>
+
+</body>
+</html>

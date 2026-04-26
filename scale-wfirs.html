@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WFIRS — Functional Impairment — Ammcore Clinical Assessments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy: #031869; --navy-deep: #020e47; --teal: #4F7C82; --teal-bright: #2abed9; --grey-bg: #f2f2f2; --grey-border: #e0e4ef; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+    body { font-family: 'Lato', sans-serif; font-size: 1.6rem; background: var(--grey-bg); color: #2c2c2c; }
+
+    .top-bar { background: var(--navy); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .top-bar-left { display: flex; align-items: center; gap: 12px; }
+    .top-bar-left img { height: 32px; background: #fff; border-radius: 5px; padding: 3px; }
+    .top-bar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; }
+    .top-bar-sub { font-size: 1.2rem; color: rgba(255,255,255,0.6); }
+    .btn-print { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #fff; border-radius: 4px; padding: 8px 18px; font-family: 'Lato', sans-serif; font-size: 1.3rem; font-weight: 700; cursor: pointer; }
+
+    .container { max-width: 780px; margin: 32px auto 80px; padding: 0 20px; }
+
+    .intro-card { background: var(--navy); border-radius: 10px; padding: 32px 36px; color: #fff; margin-bottom: 24px; }
+    .intro-card h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+    .intro-card p { font-size: 1.5rem; line-height: 1.75; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .badge { background: rgba(42,190,217,0.15); border: 1px solid rgba(42,190,217,0.3); color: var(--teal-bright); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+
+    .card { background: #fff; border: 1px solid var(--grey-border); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .card-head { padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
+    .card-head.navy { background: var(--navy); }
+    .card-head.teal { background: var(--teal); }
+    .card-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; }
+    .card-head .domain-label { font-size: 1.2rem; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; margin-left: auto; }
+    .card-body { padding: 24px; }
+
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field-group label { display: block; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .field-group input { width: 100%; padding: 10px 14px; border: 1px solid var(--grey-border); border-radius: 6px; font-family: 'Lato', sans-serif; font-size: 1.5rem; }
+    .field-group input:focus { outline: none; border-color: var(--teal); }
+
+    .scale-instructions { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 6px; padding: 14px 18px; font-size: 1.4rem; line-height: 1.6; color: #78350f; margin-bottom: 20px; }
+    .na-note { background: #f0f4ff; border: 1px solid #c7d2fe; border-radius: 6px; padding: 10px 16px; font-size: 1.35rem; color: #3730a3; margin-bottom: 20px; }
+
+    .rating-header { display: grid; grid-template-columns: 1fr repeat(5, 72px); gap: 6px; padding: 10px 0; border-bottom: 2px solid var(--grey-border); margin-bottom: 4px; }
+    .rating-header .q-head { font-size: 1.2rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.07em; }
+    .rating-header span { font-size: 1.15rem; font-weight: 700; color: #6b7280; text-align: center; line-height: 1.3; }
+
+    .item-row { display: grid; grid-template-columns: 1fr repeat(5, 72px); gap: 6px; align-items: center; padding: 11px 0; border-bottom: 1px solid #f0f0f0; }
+    .item-row:last-child { border-bottom: none; }
+    .item-q { font-size: 1.4rem; line-height: 1.5; }
+    .item-num { color: #9ca3af; font-weight: 700; font-size: 1.25rem; }
+    .item-radio { display: flex; justify-content: center; }
+    .item-radio input[type="radio"] { width: 17px; height: 17px; accent-color: var(--navy); cursor: pointer; }
+
+    /* Domain score bars */
+    .domain-scores { background: #fff; border: 1px solid var(--grey-border); border-radius: 8px; padding: 24px; margin-bottom: 16px; }
+    .domain-scores h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--navy); margin-bottom: 18px; }
+    .domain-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .domain-name { font-size: 1.3rem; font-weight: 700; color: #374151; min-width: 140px; }
+    .domain-bar-wrap { flex: 1; background: #e5e7eb; border-radius: 4px; height: 10px; overflow: hidden; }
+    .domain-bar { height: 100%; background: var(--navy); border-radius: 4px; transition: width 0.3s; width: 0%; }
+    .domain-val { font-size: 1.3rem; font-weight: 700; color: var(--navy); min-width: 48px; text-align: right; }
+
+    .score-card { background: var(--navy); border-radius: 10px; padding: 28px 32px; text-align: center; margin: 24px 0; }
+    .score-number { font-family: 'Cormorant Garamond', serif; font-size: 5.5rem; font-weight: 700; color: #fff; line-height: 1; }
+    .score-label { font-size: 1.3rem; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    .score-max { font-size: 1.2rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+    .score-interp { margin-top: 14px; font-size: 1.5rem; font-weight: 700; padding: 8px 20px; border-radius: 20px; display: inline-block; }
+    .interp-low { background: rgba(22,163,74,0.2); color: #4ade80; }
+    .interp-mod { background: rgba(251,146,60,0.2); color: #fb923c; }
+    .interp-high { background: rgba(239,68,68,0.2); color: #fca5a5; }
+
+    .submit-area { text-align: center; margin-top: 28px; }
+    .btn-submit { background: var(--teal); color: #fff; border: none; border-radius: 8px; padding: 16px 48px; font-family: 'Lato', sans-serif; font-size: 1.6rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+    .btn-submit:hover { background: var(--teal-bright); }
+    .submit-note { font-size: 1.3rem; color: #9ca3af; margin-top: 10px; }
+
+    .success-card { background: #fff; border-radius: 10px; border: 2px solid #16a34a; padding: 40px; text-align: center; display: none; }
+    .success-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; color: var(--navy); margin-bottom: 12px; }
+    .success-card p { font-size: 1.5rem; color: #4b5563; line-height: 1.7; margin-bottom: 12px; }
+    .back-link { display: inline-block; margin-top: 16px; background: var(--navy); color: #fff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.4rem; }
+
+    @media (max-width: 620px) {
+      .detail-grid { grid-template-columns: 1fr; }
+      .rating-header, .item-row { grid-template-columns: 1fr repeat(5, 48px); gap: 3px; }
+      .rating-header span { font-size: 1rem; }
+      .domain-name { min-width: 90px; font-size: 1.2rem; }
+    }
+    @media print { .top-bar, .domain-scores, .score-card, .submit-area, .btn-print { display: none !important; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+    <div>
+      <div class="top-bar-title">WFIRS</div>
+      <div class="top-bar-sub">Weiss Functional Impairment Rating Scale</div>
+    </div>
+  </div>
+  <button class="btn-print" onclick="window.print()">Print</button>
+</div>
+
+<div class="container">
+
+  <div class="intro-card">
+    <h1>Functional Impairment Scale</h1>
+    <p>This questionnaire asks about how <strong>ADHD-related difficulties</strong> have affected your daily life across different areas — at home, at work, socially, and in everyday tasks.</p>
+    <p>Please think about how you have been over the <strong>past month</strong> and answer honestly. If a section does not apply to you (for example, if you are not currently working or studying), select "N/A" for those items.</p>
+    <div class="badges">
+      <span class="badge">54 questions</span>
+      <span class="badge">~10 minutes</span>
+      <span class="badge">Past month</span>
+    </div>
+  </div>
+
+  <form id="scaleForm">
+    <input type="hidden" id="_subject" name="_subject" value="WFIRS Submission">
+    <input type="hidden" name="scale" value="WFIRS — Weiss Functional Impairment Rating Scale (Self-Report)">
+
+    <!-- Patient Details -->
+    <div class="card">
+      <div class="card-head navy"><h2>Your Details</h2></div>
+      <div class="card-body">
+        <div class="detail-grid">
+          <div class="field-group">
+            <label>Full Name *</label>
+            <input type="text" id="patient_name" name="patient_name" placeholder="Your full name" required>
+          </div>
+          <div class="field-group">
+            <label>Date of Birth *</label>
+            <input type="text" name="patient_dob" placeholder="DD/MM/YYYY" required>
+          </div>
+          <div class="field-group">
+            <label>Assessment Date</label>
+            <input type="text" name="assessment_date" placeholder="DD/MM/YYYY">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Domains injected by JS -->
+    <div id="domainsContainer"></div>
+
+    <!-- Domain scores display -->
+    <div class="domain-scores" id="domainScores">
+      <h3>Domain Scores</h3>
+      <div id="domainBars"></div>
+    </div>
+
+    <!-- Total score -->
+    <div class="score-card">
+      <div class="score-number" id="scoreDisplay">—</div>
+      <div class="score-label">Overall Average</div>
+      <div class="score-max">out of 3.00</div>
+      <div class="score-interp" id="scoreInterp"></div>
+    </div>
+
+    <input type="hidden" id="total_score" name="total_score">
+    <input type="hidden" id="interpretation" name="interpretation">
+    <input type="hidden" id="domain_scores_summary" name="domain_scores_summary">
+
+    <div class="submit-area">
+      <button type="submit" class="btn-submit">Submit Questionnaire →</button>
+      <div class="submit-note">Your responses will be sent securely to the Ammcore clinical team.</div>
+    </div>
+  </form>
+
+  <div class="success-card" id="successCard">
+    <h2>Thank you — questionnaire received.</h2>
+    <p>Your WFIRS responses have been sent securely to the Ammcore clinical team. This was the last questionnaire — you're all done!</p>
+    <p>Your clinician will review all your responses before your assessment.</p>
+    <a class="back-link" href="scales.html">← Back to all questionnaires</a>
+  </div>
+
+</div>
+
+<script>
+  const ENDPOINT = 'https://formspree.io/f/xdayzkwb';
+
+  const DOMAINS = [
+    {
+      key: 'family',
+      label: 'A — Family',
+      items: [
+        'Having arguments or conflicts with family members',
+        'Losing your temper with family members',
+        'Not completing family tasks or chores',
+        'Not doing your share of household responsibilities',
+        'Unable to manage family finances',
+        'Not keeping your home clean or organised',
+        'Spending more money than you can afford',
+        'Not paying bills or important tasks on time',
+        'Having difficulty managing children or dependants'
+      ]
+    },
+    {
+      key: 'work',
+      label: 'B — Work',
+      items: [
+        'Not meeting deadlines at work',
+        'Unable to complete work tasks to the required standard',
+        'Making careless mistakes at work',
+        'Difficulty prioritising or organising tasks',
+        'Having conflicts or difficulties with colleagues',
+        'Forgetting meetings, appointments, or commitments',
+        'Having to stay late or work overtime to catch up',
+        'Being reprimanded or warned about your performance',
+        'Missing or losing things needed for work'
+      ],
+      naOption: true,
+      naLabel: '(Select N/A if not currently working)'
+    },
+    {
+      key: 'school',
+      label: 'C — Education / Study',
+      items: [
+        'Not completing assignments or coursework on time',
+        'Missing classes, lectures, or study sessions',
+        'Difficulty concentrating or staying focused during study',
+        'Struggling to keep up with the workload'
+      ],
+      naOption: true,
+      naLabel: '(Select N/A if not currently studying)'
+    },
+    {
+      key: 'lifeskills',
+      label: 'D — Life Skills',
+      items: [
+        'Forgetting important appointments or commitments',
+        'Difficulty getting to places on time',
+        'Keeping up with household chores and tidying',
+        'Managing paperwork, post, bills, or admin tasks',
+        'Maintaining your car, home, or belongings',
+        'Getting enough sleep',
+        'Maintaining personal hygiene and grooming',
+        'Eating regular, balanced meals',
+        'Preparing meals for yourself',
+        'Managing any medications you take'
+      ]
+    },
+    {
+      key: 'selfconcept',
+      label: 'E — Self-Concept',
+      items: [
+        'Feeling overwhelmed by everyday demands',
+        'Feeling frustrated with yourself',
+        'Having low self-esteem or confidence',
+        'Feeling criticised or judged by others',
+        'Feeling like you are not reaching your potential'
+      ]
+    },
+    {
+      key: 'social',
+      label: 'F — Social',
+      items: [
+        'Not following through on social commitments',
+        'Forgetting social plans or arrangements',
+        'Difficulty starting or maintaining conversations',
+        'Not keeping up with friendships or relationships',
+        'Being late for social events',
+        'Difficulty controlling your emotions in social situations',
+        'Avoiding social situations due to anxiety or discomfort',
+        'Having conflicts or difficulties with friends'
+      ]
+    },
+    {
+      key: 'risky',
+      label: 'G — Risky Activities',
+      items: [
+        'Driving too fast or recklessly',
+        'Forgetting to wear a seatbelt',
+        'Having accidents or near-misses',
+        'Getting into trouble with the law',
+        'Using tobacco products',
+        'Drinking alcohol more than you intended',
+        'Using recreational or illicit substances',
+        'Engaging in risky sexual behaviour',
+        'Spending or gambling more than you can afford'
+      ]
+    }
+  ];
+
+  let globalItemIndex = 1;
+  const container = document.getElementById('domainsContainer');
+  const barContainer = document.getElementById('domainBars');
+
+  DOMAINS.forEach(domain => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const headColor = domain.key === 'family' || domain.key === 'lifeskills' || domain.key === 'social' ? 'teal' : 'navy';
+    card.innerHTML = `<div class="card-head ${headColor}"><h2>${domain.label}</h2>${domain.naLabel ? `<span class="domain-label">${domain.naLabel}</span>` : ''}</div>`;
+
+    const body = document.createElement('div');
+    body.className = 'card-body';
+
+    if (globalItemIndex === 1) {
+      body.innerHTML = `<div class="scale-instructions"><strong>Rating:</strong> 0 = Never / Not at all &nbsp;·&nbsp; 1 = Sometimes &nbsp;·&nbsp; 2 = Often &nbsp;·&nbsp; 3 = Very Often${domain.naOption ? ' &nbsp;·&nbsp; N/A = Does not apply to me' : ''}</div>`;
+    } else if (domain.naOption) {
+      body.innerHTML = `<div class="na-note">If this section doesn't apply to you, select <strong>N/A</strong> for each item.</div>`;
+    }
+
+    const hasNA = domain.naOption;
+    const cols = hasNA ? 6 : 5;
+    const colTemplate = hasNA ? '1fr repeat(4, 60px) 54px' : '1fr repeat(4, 66px)';
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'rating-header';
+    hdr.style.gridTemplateColumns = colTemplate;
+    hdr.innerHTML = `<span class="q-head">Item</span><span>0<br>Never</span><span>1<br>Sometimes</span><span>2<br>Often</span><span>3<br>Very Often</span>${hasNA ? '<span>N/A</span>' : ''}`;
+    body.appendChild(hdr);
+
+    domain.items.forEach(text => {
+      const num = globalItemIndex;
+      const row = document.createElement('div');
+      row.className = 'item-row';
+      row.style.gridTemplateColumns = colTemplate;
+      let html = `<div class="item-q"><span class="item-num">${num}. </span>${text}</div>`;
+      for (let v = 0; v <= 3; v++) {
+        html += `<div class="item-radio"><input type="radio" name="wfirs_q${num}" value="${v}" data-domain="${domain.key}" required></div>`;
+      }
+      if (hasNA) {
+        html += `<div class="item-radio"><input type="radio" name="wfirs_q${num}" value="N/A" data-domain="${domain.key}" data-na="true"></div>`;
+      }
+      row.innerHTML = html;
+      body.appendChild(row);
+      globalItemIndex++;
+    });
+
+    card.appendChild(body);
+    container.appendChild(card);
+
+    // Bar for domain
+    const barRow = document.createElement('div');
+    barRow.className = 'domain-row';
+    barRow.innerHTML = `<div class="domain-name">${domain.label}</div><div class="domain-bar-wrap"><div class="domain-bar" id="bar_${domain.key}"></div></div><div class="domain-val" id="val_${domain.key}">—</div>`;
+    barContainer.appendChild(barRow);
+  });
+
+  const totalItems = globalItemIndex - 1;
+
+  function calcScore() {
+    let grandTotal = 0, grandCount = 0;
+    const domainSummary = [];
+
+    DOMAINS.forEach(domain => {
+      let dTotal = 0, dCount = 0;
+      domain.items.forEach((_, i) => {
+        const idx = DOMAINS.slice(0, DOMAINS.indexOf(domain)).reduce((a, d) => a + d.items.length, 0) + i + 1;
+        const sel = document.querySelector(`input[name="wfirs_q${idx}"]:checked`);
+        if (!sel || sel.dataset.na) return;
+        dTotal += parseInt(sel.value);
+        dCount++;
+      });
+      const avg = dCount > 0 ? (dTotal / dCount) : null;
+      const bar = document.getElementById('bar_' + domain.key);
+      const val = document.getElementById('val_' + domain.key);
+      if (avg !== null) {
+        bar.style.width = ((avg / 3) * 100) + '%';
+        val.textContent = avg.toFixed(2);
+        grandTotal += dTotal;
+        grandCount += dCount;
+        domainSummary.push(`${domain.label}: ${avg.toFixed(2)}`);
+      } else {
+        bar.style.width = '0%';
+        val.textContent = '—';
+        domainSummary.push(`${domain.label}: N/A`);
+      }
+    });
+
+    const overall = grandCount > 0 ? (grandTotal / grandCount) : null;
+    const disp = document.getElementById('scoreDisplay');
+    const interp = document.getElementById('scoreInterp');
+
+    if (overall === null) { disp.textContent = '—'; interp.textContent = ''; return; }
+    disp.textContent = overall.toFixed(2);
+    document.getElementById('total_score').value = overall.toFixed(2);
+    document.getElementById('domain_scores_summary').value = domainSummary.join(' | ');
+
+    let text = '', cls = '';
+    if (overall < 1) { text = 'Minimal functional impairment'; cls = 'interp-low'; }
+    else if (overall < 2) { text = 'Moderate functional impairment'; cls = 'interp-mod'; }
+    else { text = 'Significant functional impairment'; cls = 'interp-high'; }
+    interp.textContent = text; interp.className = 'score-interp ' + cls;
+    document.getElementById('interpretation').value = text + ' (Overall avg: ' + overall.toFixed(2) + '/3.00 | ' + domainSummary.join(', ') + ')';
+  }
+
+  document.addEventListener('change', e => { if (e.target.type === 'radio') calcScore(); });
+
+  document.getElementById('scaleForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('patient_name').value || 'Unknown';
+    document.getElementById('_subject').value = `WFIRS — ${name}`;
+    const data = new FormData(this);
+    try {
+      const res = await fetch(ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) {
+        document.getElementById('scaleForm').style.display = 'none';
+        document.getElementById('domainScores').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+        window.scrollTo(0, 0);
+      } else { alert('Submission failed. Please try again or contact booking@ammcoreassessments.co.uk'); }
+    } catch { alert('Could not connect. Please check your internet connection.'); }
+  });
+</script>
+</body>
+</html>

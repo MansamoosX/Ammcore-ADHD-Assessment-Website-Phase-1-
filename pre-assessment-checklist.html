@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Assessment Clinician Checklist — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+      --grey-bg: #f2f2f2;
+      --grey-light: #F8F9FB;
+      --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c;
+      --white: #ffffff;
+      --green: #1a6b3c;
+      --green-light: #eaf5ee;
+      --red: #c0392b;
+      --red-light: #fdf0ee;
+      --amber: #b45309;
+      --amber-light: #fef9ee;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: var(--grey-bg);
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .top-bar-left img {
+      height: 36px;
+      width: auto;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
+    }
+
+    .top-bar-left .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .top-bar-left .subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1px;
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .save-status {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.55);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .save-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4caf50;
+      display: inline-block;
+    }
+
+    .save-dot.saving { background: #ff9800; animation: blink 0.6s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .btn-print {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 9px 22px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-print:hover { background: var(--teal-bright); }
+
+    .btn-clear {
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 9px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-clear:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* ─── CONTAINER ─── */
+    .container {
+      max-width: 860px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    /* ─── PATIENT HEADER CARD ─── */
+    .patient-card {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+
+    .patient-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--teal-bright);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .patient-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .patient-field label {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 4px;
+    }
+
+    .patient-field input {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.45rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .patient-field input::placeholder { color: rgba(255,255,255,0.3); }
+    .patient-field input:focus {
+      border-color: var(--teal-bright);
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ─── SECTION CARD ─── */
+    .checklist-section {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--grey-border);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .section-head {
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-head.navy { background: var(--navy); }
+    .section-head.teal { background: var(--teal); }
+    .section-head.deep { background: var(--navy-deep); }
+    .section-head.red { background: var(--red); }
+
+    .section-head h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .section-num {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      width: 28px; height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .section-body { padding: 8px 0; }
+
+    /* ─── CHECKLIST ITEM ─── */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--grey-border);
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+
+    .check-item:last-child { border-bottom: none; }
+    .check-item:hover { background: var(--grey-light); }
+
+    .check-item.checked { background: var(--green-light); }
+    .check-item.flagged { background: var(--red-light); }
+    .check-item.noted { background: var(--amber-light); }
+
+    /* Custom checkbox */
+    .check-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 2px solid var(--grey-border);
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+      background: #fff;
+    }
+
+    .check-item.checked .check-box {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .check-item.checked .check-box::after {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 9px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .check-item.flagged .check-box {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .check-item.flagged .check-box::after {
+      content: '✕';
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .check-content { flex: 1; }
+
+    .check-label {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+
+    .check-desc {
+      font-size: 1.35rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .check-item.checked .check-label { color: var(--green); }
+    .check-item.flagged .check-label { color: var(--red); }
+
+    /* BADGE */
+    .badge {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .badge-required { background: rgba(192,57,43,0.1); color: var(--red); border: 1px solid rgba(192,57,43,0.25); }
+    .badge-recommended { background: rgba(79,124,130,0.1); color: var(--teal); border: 1px solid rgba(79,124,130,0.25); }
+    .badge-risk { background: rgba(192,57,43,0.15); color: var(--red); border: 1px solid rgba(192,57,43,0.3); }
+
+    /* NOTES FIELD */
+    .check-notes {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .check-notes.visible { display: block; }
+
+    .check-notes textarea {
+      width: 100%;
+      min-height: 70px;
+      border: 1px solid var(--grey-border);
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.4rem;
+      color: var(--charcoal);
+      resize: vertical;
+      outline: none;
+      background: rgba(255,255,255,0.8);
+    }
+
+    .check-notes textarea:focus { border-color: var(--teal); }
+
+    .notes-toggle {
+      display: inline-block;
+      font-size: 1.2rem;
+      color: var(--teal);
+      cursor: pointer;
+      margin-top: 6px;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: 'Lato', sans-serif;
+    }
+
+    /* ─── PROGRESS BAR ─── */
+    .progress-card {
+      background: var(--white);
+      border: 1px solid var(--grey-border);
+      border-radius: 8px;
+      padding: 20px 28px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .progress-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .progress-bar-wrap {
+      flex: 1;
+      background: var(--grey-border);
+      border-radius: 20px;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--teal-bright));
+      border-radius: 20px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .progress-count {
+      font-size: 1.3rem;
+      color: #888;
+      white-space: nowrap;
+    }
+
+    /* ─── RISK ALERT ─── */
+    .risk-alert {
+      display: none;
+      background: var(--red-light);
+      border: 2px solid var(--red);
+      border-radius: 8px;
+      padding: 18px 24px;
+      margin-bottom: 20px;
+    }
+
+    .risk-alert.visible { display: flex; gap: 14px; align-items: flex-start; }
+
+    .risk-alert svg { flex-shrink: 0; margin-top: 2px; }
+
+    .risk-alert-text strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+
+    .risk-alert-text p {
+      font-size: 1.4rem;
+      color: var(--red);
+      line-height: 1.6;
+    }
+
+    /* ─── PRINT STYLES ─── */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      body { font-family: 'Lato', sans-serif; font-size: 10pt; color: #000; background: #fff; }
+
+      .top-bar, .btn-print, .btn-clear, .notes-toggle,
+      .progress-card { display: none !important; }
+
+      .container { max-width: 100%; margin: 0; padding: 0; }
+
+      /* PRINT HEADER */
+      .print-header {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2pt solid #031869;
+        padding-bottom: 10pt;
+        margin-bottom: 14pt;
+      }
+
+      .print-header img { height: 36pt; width: auto; }
+
+      .print-header-right {
+        text-align: right;
+        font-size: 9pt;
+        color: #444;
+      }
+
+      .print-header-right strong {
+        display: block;
+        font-size: 12pt;
+        color: #031869;
+        font-weight: 700;
+        margin-bottom: 2pt;
+      }
+
+      /* Patient card */
+      .patient-card {
+        background: #031869 !important;
+        color: #fff !important;
+        padding: 12pt 16pt !important;
+        border-radius: 4pt !important;
+        margin-bottom: 14pt !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10pt;
+      }
+
+      .patient-card h2 { display: none; }
+
+      .patient-field label {
+        font-size: 8pt;
+        color: rgba(255,255,255,0.6) !important;
+        display: block;
+        margin-bottom: 2pt;
+      }
+
+      .patient-field input {
+        background: transparent !important;
+        border: none !important;
+        color: #fff !important;
+        font-size: 10pt;
+        padding: 0 !important;
+        font-weight: 700;
+      }
+
+      /* Section */
+      .checklist-section {
+        margin-bottom: 10pt;
+        border: 1pt solid #e0e4ef;
+        border-radius: 4pt;
+        page-break-inside: avoid;
+      }
+
+      .section-head {
+        padding: 8pt 14pt !important;
+      }
+
+      .section-head h2 {
+        font-size: 9pt !important;
+      }
+
+      /* Items */
+      .check-item {
+        padding: 8pt 14pt !important;
+        display: flex !important;
+        gap: 10pt;
+      }
+
+      .check-box {
+        width: 14pt; height: 14pt;
+        border: 1.5pt solid #999;
+        border-radius: 2pt;
+        flex-shrink: 0;
+      }
+
+      .check-item.checked .check-box {
+        background: #1a6b3c !important;
+        border-color: #1a6b3c !important;
+      }
+
+      .check-item.flagged .check-box {
+        background: #c0392b !important;
+        border-color: #c0392b !important;
+      }
+
+      .check-label { font-size: 10pt !important; }
+      .check-desc { font-size: 9pt !important; }
+
+      .check-notes { display: block !important; }
+      .check-notes textarea {
+        border: 1pt solid #ccc !important;
+        font-size: 9pt !important;
+        min-height: 40pt !important;
+      }
+
+      .risk-alert {
+        display: flex !important;
+        border: 2pt solid #c0392b !important;
+        background: #fdf0ee !important;
+        padding: 10pt 14pt !important;
+        margin-bottom: 10pt !important;
+      }
+
+      @page { margin: 15mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+      <div>
+        <div class="title">Pre-Assessment Clinician Checklist</div>
+        <div class="subtitle">Complete before every assessment — auto-saving to this browser</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <div class="save-status">
+        <span class="save-dot" id="saveDot"></span>
+        <span id="saveText">All changes saved</span>
+      </div>
+      <button class="btn-clear" onclick="clearForm()">New Patient</button>
+      <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <!-- PRINT HEADER (hidden on screen) -->
+  <div class="print-header" style="display:none;">
+    <img src="brand_assets/ammcore_logo.png" alt="Ammcore Clinical Assessments">
+    <div class="print-header-right">
+      <strong>Pre-Assessment Clinician Checklist</strong>
+      Ammcore Clinical Assessments<br>
+      booking@ammcoreassessments.co.uk<br>
+      www.ammcoreassessments.co.uk
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- PROGRESS -->
+    <div class="progress-card">
+      <div class="progress-label">Checklist Progress</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-count" id="progressCount">0 of 0 complete</div>
+    </div>
+
+    <!-- RISK ALERT -->
+    <div class="risk-alert" id="riskAlert">
+      <svg width="22" height="22" fill="none" stroke="#c0392b" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+      </svg>
+      <div class="risk-alert-text">
+        <strong>Risk Flag Active — Do Not Proceed Without Review</strong>
+        <p>One or more risk items have been flagged. Review the patient's risk profile from their intake form and ASRS before commencing the assessment. Escalate to the clinical lead if any concern regarding immediate safety is identified.</p>
+      </div>
+    </div>
+
+    <!-- PATIENT DETAILS -->
+    <div class="patient-card">
+      <h2>Patient Details</h2>
+      <div class="patient-fields">
+        <div class="patient-field">
+          <label>Patient Full Name</label>
+          <input type="text" id="p_name" placeholder="Full name">
+        </div>
+        <div class="patient-field">
+          <label>Date of Birth</label>
+          <input type="date" id="p_dob">
+        </div>
+        <div class="patient-field">
+          <label>Assessment Date</label>
+          <input type="date" id="p_date">
+        </div>
+        <div class="patient-field">
+          <label>Assessment Type</label>
+          <input type="text" id="p_type" placeholder="Standard / Express">
+        </div>
+        <div class="patient-field">
+          <label>Clinician Name</label>
+          <input type="text" id="p_clinician" placeholder="Your name">
+        </div>
+        <div class="patient-field">
+          <label>Triage Date</label>
+          <input type="date" id="p_triage_date">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION A: ADMINISTRATIVE -->
+    <div class="checklist-section">
+      <div class="section-head navy">
+        <div class="section-num">A</div>
+        <h2>Administrative — Before the Session</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="check-item" data-id="admin_payment">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Full assessment payment confirmed <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Verify the £600 (Standard) or £800 (Express) balance has been received in Stripe before proceeding. Do not commence the assessment if payment has not cleared.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_admin_payment" placeholder="Payment reference, date confirmed etc."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="admin_intake">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Intake form submitted <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Confirm the patient's intake form has been received via Formspree (booking@ammcoreassessments.co.uk). The assessment cannot proceed without this.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_admin_intake" placeholder="Date received, any issues noted."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="admin_disclaimer">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Clinical disclaimer read and signed <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Confirm the patient has read, signed, and returned the clinical disclaimer. If not received, obtain verbal confirmation at the start of the session and document below.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_admin_disclaimer" placeholder="Date received / verbal confirmation noted here."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="admin_id">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Identity verified <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Patient must confirm their identity at the start of the session by showing photo ID (passport, driving licence, or equivalent) to the camera.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_admin_id" placeholder="Type of ID shown, any concerns."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION B: DOCUMENTS -->
+    <div class="checklist-section">
+      <div class="section-head navy">
+        <div class="section-num">B</div>
+        <h2>Supporting Documents</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="check-item" data-id="doc_gp">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">GP records / referral letter <span class="badge badge-recommended">Recommended</span></div>
+            <div class="check-desc">Check booking@ammcoreassessments.co.uk for emailed documents. GP records or referral letter provide clinical context and corroborate presenting history.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_doc_gp" placeholder="Received / not received. Notes on content."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="doc_school">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">School reports <span class="badge badge-recommended">Recommended</span></div>
+            <div class="check-desc">School reports provide strong evidence of childhood symptom onset — a key DSM-5 criterion. Highly valuable if available.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_doc_school" placeholder="Received / not received. Age range covered, key observations."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="doc_informant">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Informant / collateral information <span class="badge badge-recommended">Recommended</span></div>
+            <div class="check-desc">Parent, partner, or carer input significantly strengthens the assessment. Check if an informant form or email has been received from a third party.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_doc_informant" placeholder="Who provided information, relationship to patient, key points."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="doc_previous">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Previous assessments or psychiatric reports</div>
+            <div class="check-desc">Any prior ADHD, ASD, or mental health assessment reports that may affect the clinical picture or diagnostic outcome.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_doc_previous" placeholder="Source, date, key findings."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="doc_work">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Work / occupational evidence</div>
+            <div class="check-desc">Performance reviews, HR correspondence, or occupational health reports evidencing functional impairment in the workplace.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_doc_work" placeholder="Type of evidence, employer, key points."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION C: INTAKE FORM REVIEW -->
+    <div class="checklist-section">
+      <div class="section-head teal">
+        <div class="section-num">C</div>
+        <h2>Intake Form Review — Before the Session</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="check-item" data-id="intake_asrs">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ASRS score reviewed <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Review the patient's ASRS v1.1 score from the Formspree submission. Score ≥4 = HIGH. Note the score and flag before the session begins.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_intake_asrs" placeholder="ASRS score: ___ / 6. Flag: HIGH / LOW. Any notable answers."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="intake_scales">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Pre-assessment rating scales received &amp; reviewed <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Confirm the patient has submitted all five questionnaires via the scales portal (ammcoreassessments.co.uk/scales.html). Check booking@ammcoreassessments.co.uk inbox for Formspree submissions. Required: WURS-25 · AQ-10 · BDI · BAI · WFIRS. Note each score below before the session begins.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_intake_scales" placeholder="WURS-25: ___ / 100 (threshold ≥36)&#10;AQ-10: ___ / 10 (threshold ≥6)&#10;BDI: ___ / 63 (0–13 minimal · 14–19 mild · 20–28 moderate · 29+ severe)&#10;BAI: ___ / 63 (0–7 minimal · 8–15 mild · 16–25 moderate · 26+ severe)&#10;WFIRS: ___ / 3.00 avg (domain breakdown noted)&#10;&#10;Outstanding (not yet received):"></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="intake_risk">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Risk & safety responses reviewed <span class="badge badge-risk">Risk Item</span></div>
+            <div class="check-desc">Check the patient's responses to the Risk & Safety section of the intake form. Note any disclosures of current or historical suicidal ideation, self-harm, or harm to others.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_intake_risk" placeholder="Summary of risk disclosures. Actions taken if applicable."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="intake_history">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Presenting history and background read</div>
+            <div class="check-desc">Familiarise yourself with the patient's self-reported history, developmental background, and main concerns prior to the session. Do not go in cold.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_intake_history" placeholder="Key themes to explore. Areas requiring clarification."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="intake_medication">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Current medications and health conditions noted</div>
+            <div class="check-desc">Note any medications or health conditions that may affect presentation, contraindicate treatment, or require consideration in the report.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_intake_medication" placeholder="Medications noted. Health conditions noted."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION D: SESSION SETUP -->
+    <div class="checklist-section">
+      <div class="section-head navy">
+        <div class="section-num">D</div>
+        <h2>Session Setup</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="check-item" data-id="setup_video">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Video platform tested and ready <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Confirm Google Meet link is active, camera and microphone are functioning, and you are in a quiet, private location.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_setup_video" placeholder="Any technical issues noted."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="setup_diva">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">DIVA 5.0 interview guide open and ready <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">Ensure the structured clinical interview guide (DIVA 5.0) is open and accessible before starting. Do not conduct the interview from memory.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_setup_diva" placeholder="Notes."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="setup_report">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Diagnostic report form open and ready</div>
+            <div class="check-desc">Open the Ammcore ADHD Diagnostic Report form before starting the session so you can capture notes in real time.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_setup_report" placeholder="Notes."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="setup_time">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">90 minutes blocked — no interruptions</div>
+            <div class="check-desc">Confirm your calendar is clear for the full assessment duration. The session should not be interrupted or cut short.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_setup_time" placeholder="Notes."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION E: RISK & ESCALATION -->
+    <div class="checklist-section">
+      <div class="section-head red">
+        <div class="section-num">E</div>
+        <h2>Risk &amp; Escalation — Review Before Every Session</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="check-item" data-id="risk_current_si" data-risk="true">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">No current suicidal ideation disclosed <span class="badge badge-risk">Risk Item</span></div>
+            <div class="check-desc">If the patient disclosed current suicidal ideation in the intake form or at any point during the session, do not proceed. Follow the risk escalation protocol immediately.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_risk_current_si" placeholder="If flagged: document disclosure, action taken, who was notified."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="risk_current_sh" data-risk="true">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">No current self-harm disclosed <span class="badge badge-risk">Risk Item</span></div>
+            <div class="check-desc">If the patient disclosed current self-harm, assess severity and frequency. Escalate to the clinical lead before concluding the session. Provide crisis resources directly to the patient.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_risk_current_sh" placeholder="If flagged: nature of self-harm, frequency, action taken."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="risk_safeguarding" data-risk="true">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">No safeguarding concerns identified <span class="badge badge-risk">Risk Item</span></div>
+            <div class="check-desc">Consider vulnerability, capacity, and any concerns regarding the welfare of the patient or others. Escalate immediately if a safeguarding concern arises.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_risk_safeguarding" placeholder="If flagged: nature of concern, action taken, who was notified."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="risk_escalation_contact">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Clinical lead contact details to hand</div>
+            <div class="check-desc">Ensure you have the clinical lead's contact details available before the session begins in case escalation is required during the assessment.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_risk_escalation_contact" placeholder="Clinical lead name and contact number confirmed."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION F: POST-ASSESSMENT -->
+    <div class="checklist-section">
+      <div class="section-head deep">
+        <div class="section-num">F</div>
+        <h2>Post-Assessment — After the Session</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="check-item" data-id="post_report">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Diagnostic report drafted</div>
+            <div class="check-desc">Complete the Ammcore ADHD Diagnostic Report form while the session is fresh. Aim to draft within 24 hours of the assessment.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_post_report" placeholder="Date drafted. Any outstanding sections."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="post_review">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Report submitted for consultant review <span class="badge badge-required">Required</span></div>
+            <div class="check-desc">All reports must be reviewed by a consultant clinician before being sent to the patient. Do not send the report directly without this step.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_post_review" placeholder="Submitted to: ___ Date: ___"></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="post_gp">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">GP letter — if contact details available</div>
+            <div class="check-desc">If the patient's GP details are known, a GP letter should be included with or following the report. If GP details are not held, the patient should be asked to either provide their GP's email so we can send it on their behalf, or to forward the report to their GP themselves.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_post_gp" placeholder="GP details known: Yes / No. If yes — GP name, practice, date sent. If no — patient instructed to forward / provide GP details."></textarea></div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="post_records">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Record keeping completed</div>
+            <div class="check-desc">Confirm all session notes, rating scale scores, and the final report have been stored securely in accordance with UK GDPR and Ammcore's data retention policy.</div>
+            <button class="notes-toggle" onclick="toggleNote(this)">+ Add note</button>
+            <div class="check-notes"><textarea data-id="note_post_records" placeholder="Where stored, date filed."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /container -->
+
+  <script>
+    const STORAGE_KEY = 'ammcore_checklist_v1';
+
+    // ─── ALL CHECKABLE ITEMS ───
+    const CHECK_IDS = [
+      'admin_payment','admin_intake','admin_disclaimer','admin_id',
+      'doc_gp','doc_school','doc_informant','doc_previous','doc_work',
+      'intake_asrs','intake_scales','intake_risk','intake_history','intake_medication',
+      'setup_video','setup_diva','setup_report','setup_time',
+      'risk_current_si','risk_current_sh','risk_safeguarding','risk_escalation_contact',
+      'post_report','post_review','post_gp','post_records'
+    ];
+
+    const NOTE_IDS = CHECK_IDS.map(id => 'note_' + id);
+    const PATIENT_IDS = ['p_name','p_dob','p_date','p_type','p_clinician','p_triage_date'];
+
+    // ─── LOAD ───
+    function loadSaved() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+        // Patient fields
+        PATIENT_IDS.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && saved[id]) el.value = saved[id];
+        });
+
+        // Checkboxes
+        CHECK_IDS.forEach(id => {
+          if (saved['check_' + id]) {
+            const item = document.querySelector(`[data-id="${id}"]`);
+            if (item) item.classList.add('checked');
+          }
+          if (saved['flag_' + id]) {
+            const item = document.querySelector(`[data-id="${id}"]`);
+            if (item) item.classList.add('flagged');
+          }
+        });
+
+        // Notes
+        NOTE_IDS.forEach(id => {
+          const el = document.querySelector(`[data-id="${id}"]`);
+          if (el && saved[id]) {
+            el.value = saved[id];
+            const notesDiv = el.closest('.check-notes');
+            if (notesDiv) notesDiv.classList.add('visible');
+          }
+        });
+
+        updateProgress();
+        updateRiskAlert();
+      } catch(e) {}
+    }
+
+    // ─── SAVE ───
+    let saveTimer;
+    function scheduleSave() {
+      const dot = document.getElementById('saveDot');
+      const txt = document.getElementById('saveText');
+      dot.className = 'save-dot saving';
+      txt.textContent = 'Saving...';
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        const data = {};
+        PATIENT_IDS.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) data[id] = el.value;
+        });
+        CHECK_IDS.forEach(id => {
+          const item = document.querySelector(`[data-id="${id}"]`);
+          if (item) {
+            data['check_' + id] = item.classList.contains('checked');
+            data['flag_' + id] = item.classList.contains('flagged');
+          }
+        });
+        NOTE_IDS.forEach(id => {
+          const el = document.querySelector(`[data-id="${id}"]`);
+          if (el) data[id] = el.value;
+        });
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          dot.className = 'save-dot';
+          txt.textContent = 'All changes saved';
+        } catch(e) {
+          txt.textContent = 'Save failed';
+        }
+      }, 600);
+    }
+
+    // ─── TOGGLE CHECK ───
+    function toggleCheck(item) {
+      const isChecked = item.classList.contains('checked');
+      const isFlagged = item.classList.contains('flagged');
+      const isRisk = item.dataset.risk === 'true';
+
+      if (!isChecked && !isFlagged) {
+        item.classList.add('checked');
+      } else if (isChecked && isRisk) {
+        // Risk items: checked → flagged (meaning concern identified)
+        item.classList.remove('checked');
+        item.classList.add('flagged');
+      } else {
+        item.classList.remove('checked', 'flagged');
+      }
+
+      updateProgress();
+      updateRiskAlert();
+      scheduleSave();
+    }
+
+    // ─── TOGGLE NOTE ───
+    function toggleNote(btn) {
+      const notesDiv = btn.nextElementSibling;
+      notesDiv.classList.toggle('visible');
+      btn.textContent = notesDiv.classList.contains('visible') ? '- Hide note' : '+ Add note';
+    }
+
+    // ─── PROGRESS ───
+    function updateProgress() {
+      const total = CHECK_IDS.length;
+      const done = CHECK_IDS.filter(id => {
+        const item = document.querySelector(`[data-id="${id}"]`);
+        return item && (item.classList.contains('checked') || item.classList.contains('flagged'));
+      }).length;
+      const pct = total ? Math.round(done / total * 100) : 0;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressCount').textContent = `${done} of ${total} reviewed`;
+    }
+
+    // ─── RISK ALERT ───
+    function updateRiskAlert() {
+      const RISK_IDS = ['risk_current_si','risk_current_sh','risk_safeguarding'];
+      const anyFlagged = RISK_IDS.some(id => {
+        const item = document.querySelector(`[data-id="${id}"]`);
+        return item && item.classList.contains('flagged');
+      });
+      document.getElementById('riskAlert').classList.toggle('visible', anyFlagged);
+    }
+
+    // ─── CLEAR ───
+    function clearForm() {
+      if (!confirm('Clear all data and start a new patient checklist?')) return;
+      localStorage.removeItem(STORAGE_KEY);
+      location.reload();
+    }
+
+    // ─── INIT ───
+    loadSaved();
+
+    // Bind check items
+    document.querySelectorAll('.check-item').forEach(item => {
+      item.addEventListener('click', e => {
+        if (e.target.closest('.check-notes') || e.target.classList.contains('notes-toggle')) return;
+        toggleCheck(item);
+      });
+    });
+
+    // Bind patient fields
+    PATIENT_IDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', scheduleSave);
+    });
+
+    // Bind note textareas
+    document.querySelectorAll('.check-notes textarea').forEach(ta => {
+      ta.addEventListener('input', scheduleSave);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinician Triage Guide — Ammcore Clinical Assessments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-light: #6A9BA2;
+      --grey-bg: #f2f2f2;
+      --grey-border: #e0e4ef;
+      --charcoal: #2c2c2c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: var(--grey-bg);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--navy);
+    }
+
+    a { color: var(--teal); }
+
+    /* PRINT BAR */
+    .print-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.4rem;
+    }
+
+    .print-btn {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+
+    .print-btn:hover { background: #3d6268; }
+
+    /* DOCUMENT */
+    .document {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(3,24,105,0.1);
+    }
+
+    /* COVER */
+    .doc-cover {
+      background: var(--navy);
+      padding: 60px 60px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(42,190,217,0.1) 0%, transparent 70%);
+    }
+
+    .doc-cover-inner { position: relative; z-index: 2; }
+
+    .doc-cover img {
+      height: 52px;
+      width: auto;
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .doc-cover h1 {
+      font-size: 3.6rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .doc-cover .subtitle {
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 28px;
+    }
+
+    .doc-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .doc-meta-item {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .doc-meta-item strong {
+      display: block;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.35rem;
+      margin-bottom: 2px;
+    }
+
+    .confidential-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    /* CONTENT */
+    .doc-body { padding: 50px 60px; }
+
+    .section { margin-bottom: 48px; }
+
+    .section-label {
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--grey-border);
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 28px 0 10px;
+    }
+
+    .section h4 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 20px 0 8px;
+      color: var(--navy);
+    }
+
+    p { margin-bottom: 14px; font-size: 1.5rem; line-height: 1.8; }
+
+    ul, ol {
+      margin: 10px 0 16px 24px;
+      font-size: 1.5rem;
+      line-height: 2;
+    }
+
+    li { margin-bottom: 4px; }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 1.4rem;
+    }
+
+    th {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    tr:nth-child(even) td { background: rgba(3,24,105,0.02); }
+
+    /* CALLOUT BOXES */
+    .callout {
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 1.45rem;
+    }
+
+    .callout-navy {
+      background: rgba(3,24,105,0.05);
+      border-left: 4px solid var(--navy);
+    }
+
+    .callout-teal {
+      background: rgba(79,124,130,0.07);
+      border-left: 4px solid var(--teal);
+    }
+
+    .callout-red {
+      background: #fff0f0;
+      border-left: 4px solid #c0392b;
+    }
+
+    .callout-green {
+      background: #f0faf4;
+      border-left: 4px solid #27ae60;
+    }
+
+    .callout p { margin-bottom: 6px; font-size: 1.4rem; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout strong { color: var(--navy); }
+
+    /* EMAIL TEMPLATE BLOCKS */
+    .email-block {
+      background: #fafafa;
+      border: 1px solid var(--grey-border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 20px 0 32px;
+    }
+
+    .email-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 22px;
+      font-size: 1.3rem;
+    }
+
+    .email-header span {
+      display: inline-block;
+      margin-right: 24px;
+    }
+
+    .email-header span strong {
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+      margin-right: 6px;
+    }
+
+    .email-body {
+      padding: 24px 28px;
+      font-size: 1.45rem;
+      line-height: 1.9;
+      white-space: pre-wrap;
+      font-family: 'Lato', sans-serif;
+      color: var(--charcoal);
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--grey-border);
+      margin: 40px 0;
+    }
+
+    /* FOOTER */
+    .doc-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 24px 60px;
+      font-size: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* PRINT */
+    @media print {
+      body { background: #fff; font-size: 10pt; }
+      .print-bar { display: none; }
+      .document { box-shadow: none; margin: 0; border-radius: 0; max-width: 100%; }
+      .doc-cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .doc-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .email-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .callout { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .section { page-break-inside: avoid; }
+      .email-block { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <span>Clinician Triage Guide — Internal Document</span>
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="document">
+
+    <!-- COVER -->
+    <div class="doc-cover">
+      <div class="doc-cover-inner">
+        <img src="brand_assets/ammcore_logo.png" alt="Ammcore Clinical Assessments">
+        <div class="confidential-badge">Confidential — Internal Use Only</div>
+        <h1>Clinician Triage Guide</h1>
+        <p class="subtitle">Standardised decision framework and outcome email templates for ADHD triage appointments</p>
+        <div class="doc-meta">
+          <div class="doc-meta-item"><strong>Version</strong>1.0</div>
+          <div class="doc-meta-item"><strong>Service</strong>Ammcore Clinical Assessments</div>
+          <div class="doc-meta-item"><strong>Applies To</strong>All triage clinicians</div>
+          <div class="doc-meta-item"><strong>Review Date</strong>To be confirmed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="doc-body">
+
+      <!-- SECTION 1: PURPOSE -->
+      <div class="section">
+        <div class="section-label">Section 1</div>
+        <h2>Purpose of This Document</h2>
+        <p>This guide sets out the standardised framework for conducting ADHD triage appointments at Ammcore Clinical Assessments. It covers the clinical parameters used to determine patient suitability, and provides ready-to-use outcome email templates for both suitable and not suitable decisions.</p>
+        <p>All clinicians are expected to apply this framework consistently to ensure every patient receives a fair, evidence-based, and compassionate outcome.</p>
+        <div class="callout callout-navy">
+          <p><strong>Important:</strong> The triage session is a clinical screening appointment, not a diagnostic assessment. Its purpose is to determine whether a full ADHD diagnostic assessment is the appropriate next step for this patient at this time.</p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- SECTION 2: PATIENT JOURNEY -->
+      <div class="section">
+        <div class="section-label">Section 2</div>
+        <h2>Patient Journey Overview</h2>
+        <table>
+          <tr><th>Stage</th><th>Action</th><th>Responsibility</th></tr>
+          <tr><td>1. Booking fee paid</td><td>Patient pays £99 via Stripe</td><td>Patient / System</td></tr>
+          <tr><td>2. Triage booked</td><td>Patient books Saturday triage via Calendly</td><td>Patient / System</td></tr>
+          <tr><td>3. Intake form submitted</td><td>Patient submits 12-section intake form (min. 24hrs before triage)</td><td>Patient</td></tr>
+          <tr><td>4. Clinician review</td><td>Clinician reviews intake form before triage session</td><td>Clinician</td></tr>
+          <tr><td>5. Triage conducted</td><td>Saturday appointment — 20–30 minutes via Google Meet</td><td>Clinician</td></tr>
+          <tr><td>6. Outcome decision</td><td>Clinician determines suitability using this framework</td><td>Clinician</td></tr>
+          <tr><td>7. Outcome email sent</td><td>Suitable or not suitable email sent within 24 hours of triage</td><td>Clinician</td></tr>
+          <tr><td>8. Full payment</td><td>Suitable patients pay Full Diagnostic Assessment Fee via Stripe</td><td>Patient / System</td></tr>
+          <tr><td>9. Assessment booked</td><td>Booking link released only after full payment confirmed</td><td>System</td></tr>
+          <tr><td>10. Assessment conducted</td><td>Sunday appointment — 90 minutes via Google Meet</td><td>Clinician</td></tr>
+          <tr><td>11. Report delivered</td><td>Standard: 7 working days / Express: 3 working days</td><td>Clinician</td></tr>
+        </table>
+
+        <div class="callout callout-red">
+          <p><strong>Payment gate rule:</strong> Full assessment time must never be used without full payment secured first. The Calendly assessment booking link is only released after Stripe confirms receipt of the Full Diagnostic Assessment Fee.</p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- SECTION 3: PRE-TRIAGE REVIEW -->
+      <div class="section">
+        <div class="section-label">Section 3</div>
+        <h2>Pre-Triage Clinician Review</h2>
+        <p>Before each triage session, the clinician must review the patient's completed intake form. The following fields are of highest clinical relevance:</p>
+
+        <table>
+          <tr><th>Intake Section</th><th>What to Look For</th></tr>
+          <tr><td>Section 4 — Childhood History</td><td>Evidence of symptoms before age 12. This is essential for ADHD diagnosis under DSM-5/ICD-11. Note if absent — may need collateral.</td></tr>
+          <tr><td>Section 5 — Symptoms</td><td>Frequency and pattern of inattention and hyperactivity/impulsivity symptoms in current daily life.</td></tr>
+          <tr><td>Section 6 — Functional Impact</td><td>Evidence of impairment across multiple settings (work, relationships, daily life). Required for diagnosis.</td></tr>
+          <tr><td>Section 7 — Mental Health</td><td>Presence of anxiety, depression, trauma, or other conditions that may better explain the presentation.</td></tr>
+          <tr><td>Section 8 — ASRS Score</td><td>Auto-calculated score (0–6). Score ≥ 4 suggests high symptom likelihood. Score provided in Formspree submission.</td></tr>
+          <tr><td>Section 9 — Supporting Documents</td><td>Check booking@ inbox for documents emailed by patient. Note if absent — request collateral during triage.</td></tr>
+          <tr><td>Section 10 — Risk &amp; Safety</td><td>Any active risk flags. If HIGH RISK flag is present in email, follow risk escalation protocol before proceeding.</td></tr>
+        </table>
+      </div>
+
+      <hr class="divider">
+
+      <!-- SECTION 4: DECISION PARAMETERS -->
+      <div class="section">
+        <div class="section-label">Section 4</div>
+        <h2>Suitability Decision Parameters</h2>
+        <p>The triage outcome must be based on a holistic clinical judgement across all available information. The following indicators should guide — but not mechanically determine — the decision.</p>
+
+        <h3>Indicators Supporting NOT SUITABLE</h3>
+        <div class="callout callout-red">
+          <ul>
+            <li>Symptoms are better explained by another condition (anxiety, depression, PTSD, sleep disorder)</li>
+            <li>No evidence of childhood onset and no corroborating collateral available</li>
+            <li>Active, unmanaged risk to life — defer until patient has appropriate crisis support in place</li>
+            <li>Patient is currently under a crisis team or acute mental health service — defer to existing service</li>
+            <li>Presentation does not meet clinical threshold for ADHD diagnostic assessment</li>
+            <li>Diagnosis would rely entirely on self-report with no corroboration and significant differential indicators present</li>
+          </ul>
+        </div>
+
+        <h3>Indicators Supporting SUITABLE</h3>
+        <div class="callout callout-green">
+          <ul>
+            <li>ASRS score ≥ 4 with consistent symptom endorsement across intake form</li>
+            <li>Childhood onset evidenced or strongly suggested by patient history</li>
+            <li>Functional impairment documented across multiple settings</li>
+            <li>Symptoms not fully explained by differential diagnosis</li>
+            <li>Collateral evidence available or obtainable to corroborate self-report</li>
+            <li>No active unmanaged risk that would preclude assessment</li>
+          </ul>
+        </div>
+
+        <div class="callout callout-teal">
+          <p><strong>Clinical note on collateral:</strong> Where supporting documents are absent, the clinician should use the triage session to request collateral — school reports, parent/caregiver account, or GP letter. If self-report is the only available evidence and significant differential indicators are present, document this and consider deferring the assessment until collateral is obtained.</p>
+        </div>
+
+        <h3>Timeframe for Outcome Communication</h3>
+        <p>The outcome email must be sent to the patient within <strong>24 hours</strong> of the triage appointment. Do not leave patients waiting beyond this window.</p>
+      </div>
+
+      <hr class="divider">
+
+      <!-- SECTION 5: EMAIL TEMPLATES -->
+      <div class="section">
+        <div class="section-label">Section 5</div>
+        <h2>Outcome Email Templates</h2>
+        <p>The following templates are to be used verbatim, with only the fields in square brackets personalised. Do not alter the clinical guidance, signposting, or payment-related content without approval from the service lead.</p>
+
+        <h3>Template A — NOT SUITABLE</h3>
+
+        <div class="email-block">
+          <div class="email-header">
+            <span><strong>From:</strong> booking@ammcoreassessments.co.uk</span>
+            <span><strong>Subject:</strong> Your Ammcore Triage Outcome — [Patient Full Name]</span>
+          </div>
+          <div class="email-body">Dear [Patient First Name],
+
+Thank you for attending your triage appointment with us and for the time and openness you brought to the session. We understand that getting to this point takes courage, and we want you to know that your experience was heard and taken seriously.
+
+Following your triage, your clinician has carefully considered everything discussed alongside your intake form. On this occasion, we do not feel that a full ADHD diagnostic assessment is the most appropriate next step for you at this time.
+
+This is not a reflection of the validity of your difficulties. The challenges you have described are real. However, based on what emerged in your session, your clinician believes your presentation may be better supported through a different pathway.
+
+We would recommend the following:
+
+- Contact your GP and share the outcome of this triage. Ask for a referral to the appropriate service based on what was discussed
+- Community Mental Health Team (CMHT) — if your GP agrees, a referral to your local CMHT may provide more tailored support
+- If you are ever in crisis, please contact NHS 111 (option 2), attend your nearest A&E, or call 999
+
+We are not able to offer a refund of the £99 booking fee as this covered the clinical triage time already provided. This was made clear at the point of booking and we hope you understand.
+
+If you have any questions about this outcome or would like further clarification, please do not hesitate to contact us at info@ammcoreassessments.co.uk. We are happy to speak with you.
+
+We wish you all the best on your journey towards the right support.
+
+Warm regards,
+
+[Clinician Name]
+On behalf of The Ammcore Clinical Assessments Team</div>
+        </div>
+
+        <h3>Template B — SUITABLE</h3>
+
+        <div class="email-block">
+          <div class="email-header">
+            <span><strong>From:</strong> booking@ammcoreassessments.co.uk</span>
+            <span><strong>Subject:</strong> Your Ammcore Triage Outcome — Next Steps — [Patient Full Name]</span>
+          </div>
+          <div class="email-body">Dear [Patient First Name],
+
+Thank you for attending your triage appointment. It was a pleasure speaking with you, and we want to acknowledge the step you have taken in seeking clarity about your experiences.
+
+Following your triage, your clinician has reviewed everything discussed alongside your intake form. We are pleased to confirm that you are suitable for a full ADHD diagnostic assessment with Ammcore Clinical Assessments.
+
+YOUR NEXT STEP — FULL DIAGNOSTIC ASSESSMENT FEE
+
+To secure your assessment, please complete payment using the link below. Your assessment appointment will only be released once payment has been received — this ensures your clinician's time is fully protected for you.
+
+Please choose the service that is right for you:
+
+Standard Assessment — £700
+Report delivered within 7 working days
+https://buy.stripe.com/aFa14n2yt9yJc6A2Bp6sw04
+
+Express Assessment — £800
+Priority booking, report delivered within 3 working days
+https://buy.stripe.com/7sYbJ14GBcKV0nSdg36sw03
+
+Once payment is made you will receive a booking link to schedule your full assessment at a time that suits you.
+
+Please note: This offer is valid for 14 days from the date of this email. If payment is not received within this period your triage outcome will be reviewed and you may be required to attend a further triage session.
+
+If you have any questions or would like to discuss which service is right for you, please contact us at info@ammcoreassessments.co.uk — we are happy to help.
+
+We look forward to completing this journey with you.
+
+Warm regards,
+
+[Clinician Name]
+On behalf of The Ammcore Clinical Assessments Team</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- SECTION 6: RECORD KEEPING -->
+      <div class="section">
+        <div class="section-label">Section 6</div>
+        <h2>Record Keeping</h2>
+        <p>Following each triage, the clinician must record the following:</p>
+        <ul>
+          <li>Patient name and date of triage</li>
+          <li>Outcome decision (suitable / not suitable)</li>
+          <li>Brief clinical rationale (2–3 sentences minimum)</li>
+          <li>ASRS score from intake form</li>
+          <li>Whether collateral was available, requested, or absent</li>
+          <li>Any risk factors identified and action taken</li>
+          <li>Date and time outcome email was sent</li>
+        </ul>
+        <div class="callout callout-navy">
+          <p><strong>Data protection:</strong> All patient records must be handled in accordance with UK GDPR and our Privacy Policy. Patient data must not be stored on personal devices. Contact the service lead if you are unsure about data handling procedures.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <span>Ammcore Clinical Assessments — Confidential Internal Document</span>
+      <span>Version 1.0 — Subject to review</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

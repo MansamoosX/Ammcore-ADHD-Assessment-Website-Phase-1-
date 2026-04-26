@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Assessment Questionnaires — Ammcore Clinical Assessments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lato', sans-serif; background: #f2f2f2; color: #2c2c2c; }
+
+    .top-bar {
+      background: var(--navy);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .top-bar img { height: 34px; background: #fff; border-radius: 6px; padding: 3px; }
+    .top-bar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: #fff; }
+
+    .container { max-width: 720px; margin: 40px auto 80px; padding: 0 20px; }
+
+    .intro-card {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 36px 40px;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .intro-card h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .intro-card p { font-size: 1.5rem; line-height: 1.75; color: rgba(255,255,255,0.85); margin-bottom: 12px; }
+    .intro-card p:last-child { margin-bottom: 0; }
+
+    .notice {
+      background: rgba(42,190,217,0.12);
+      border: 1px solid rgba(42,190,217,0.3);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .section-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .scale-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .scale-card {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #e0e4ef;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .scale-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 2px 12px rgba(3,24,105,0.08);
+    }
+
+    .scale-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .scale-info { flex: 1; min-width: 0; }
+    .scale-name { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .scale-desc { font-size: 1.3rem; color: #6b7280; line-height: 1.4; }
+    .scale-time { font-size: 1.2rem; color: var(--teal); font-weight: 700; white-space: nowrap; margin-left: auto; }
+
+    .arrow { font-size: 2rem; color: var(--teal); opacity: 0.5; }
+
+    .footer-note {
+      margin-top: 28px;
+      font-size: 1.3rem;
+      color: #9ca3af;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @media (max-width: 540px) {
+      .intro-card { padding: 24px 20px; }
+      .scale-time { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+    <span class="top-bar-title">Ammcore Clinical Assessments</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="intro-card">
+    <h1>Pre-Assessment Questionnaires</h1>
+    <p>Before your upcoming assessment, please complete all five questionnaires below. They help your clinician understand your symptoms and experiences more fully before the session begins.</p>
+    <p>Each questionnaire is short and straightforward. Please answer honestly — there are no right or wrong answers. Your responses go directly and securely to our clinical team.</p>
+    <div class="notice">
+      <strong>Please complete all five questionnaires at least 48 hours before your assessment.</strong><br>
+      Your clinician will review your responses before the session. If you have any difficulty, contact us at <strong>booking@ammcoreassessments.co.uk</strong>.
+    </div>
+  </div>
+
+  <p class="section-label">Your Questionnaires</p>
+
+  <div class="scale-grid">
+
+    <a class="scale-card" href="scale-wurs25.html">
+      <div class="scale-num">1</div>
+      <div class="scale-info">
+        <div class="scale-name">WURS-25 — Childhood Symptoms</div>
+        <div class="scale-desc">Wender Utah Rating Scale — how you felt and behaved as a child (before age 12)</div>
+      </div>
+      <div class="scale-time">~5 mins</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="scale-card" href="scale-aq10.html">
+      <div class="scale-num">2</div>
+      <div class="scale-info">
+        <div class="scale-name">AQ-10 — Autism Traits Screen</div>
+        <div class="scale-desc">Autism Spectrum Quotient (10-item version) — current social and communication experiences</div>
+      </div>
+      <div class="scale-time">~2 mins</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="scale-card" href="scale-bdi.html">
+      <div class="scale-num">3</div>
+      <div class="scale-info">
+        <div class="scale-name">BDI — Depression Screen</div>
+        <div class="scale-desc">Beck Depression Inventory — how you have been feeling over the past two weeks</div>
+      </div>
+      <div class="scale-time">~5 mins</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="scale-card" href="scale-bai.html">
+      <div class="scale-num">4</div>
+      <div class="scale-info">
+        <div class="scale-name">BAI — Anxiety Screen</div>
+        <div class="scale-desc">Beck Anxiety Inventory — physical and psychological anxiety symptoms in the past week</div>
+      </div>
+      <div class="scale-time">~5 mins</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="scale-card" href="scale-wfirs.html">
+      <div class="scale-num">5</div>
+      <div class="scale-info">
+        <div class="scale-name">WFIRS — Functional Impairment</div>
+        <div class="scale-desc">Weiss Functional Impairment Rating Scale — how ADHD symptoms affect your daily life across different areas</div>
+      </div>
+      <div class="scale-time">~10 mins</div>
+      <div class="arrow">→</div>
+    </a>
+
+  </div>
+
+  <p class="footer-note">
+    All information is kept strictly confidential and used solely for the purpose of your clinical assessment.<br>
+    Ammcore Clinical Assessments · A subsidiary of Ammcore Consulting Ltd
+  </p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18120179407"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18120179407');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultant Opportunity Brief — Ammcore Clinical Assessments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #031869;
+      --navy-deep: #020e47;
+      --teal: #4F7C82;
+      --teal-bright: #2abed9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #e8e6e1;
+      padding: 32px 16px;
+      color: #1a1a2e;
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-bar {
+      max-width: 780px;
+      margin: 0 auto 20px;
+      text-align: right;
+    }
+    .btn-print {
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 24px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .btn-print:hover { background: var(--navy-deep); }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(3,24,105,0.14), 0 2px 8px rgba(3,24,105,0.08);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #020e47 0%, #031869 55%, #0a2890 100%);
+      padding: 44px 52px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,190,217,0.12) 0%, transparent 70%);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,124,130,0.10) 0%, transparent 70%);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-block img {
+      height: 40px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 5px;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+    }
+
+    .logo-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .confidential-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── BODY ── */
+    .body {
+      padding: 40px 52px 36px;
+    }
+
+    /* intro paragraph */
+    .intro {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e8eaf2;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .block {
+      background: #f8f9fb;
+      border-radius: 8px;
+      padding: 22px 24px;
+      border: 1px solid #e8eaf2;
+    }
+
+    .block.full { grid-column: 1 / -1; }
+    .block.navy { background: var(--navy); border-color: var(--navy); }
+    .block.teal-light { background: rgba(79,124,130,0.06); border-color: rgba(79,124,130,0.2); }
+
+    .block-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .block.navy .block-label { color: rgba(255,255,255,0.5); }
+
+    .block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .block.navy h3 { color: #fff; }
+
+    .block p {
+      font-size: 13px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    .block.navy p { color: rgba(255,255,255,0.8); }
+
+    /* bullet list */
+    .bullet-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .bullet-list li {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      padding: 5px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .bullet-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .block.navy .bullet-list li { color: rgba(255,255,255,0.85); }
+    .block.navy .bullet-list li::before { background: var(--teal-bright); }
+
+    /* role cards */
+    .role-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .role-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .role-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .role-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    /* fee row */
+    .fee-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .fee-item {
+      flex: 1;
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 14px 10px;
+    }
+
+    .fee-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .fee-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #f2f3f7;
+      border-top: 1px solid #e0e4ef;
+      padding: 18px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-left p {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .footer-left strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .footer-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .footer-right p {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .footer-right .web {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 620px) {
+      body { padding: 0; background: #fff; }
+
+      .print-bar { padding: 12px 16px; margin-bottom: 0; text-align: center; background: #f2f3f7; border-bottom: 1px solid #e0e4ef; }
+
+      .page { border-radius: 0; box-shadow: none; }
+
+      .header { padding: 28px 20px 24px; }
+      .header-top { flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+      .logo-text { font-size: 14px; }
+      .logo-sub { font-size: 9px; }
+      .logo-block img { height: 32px; }
+      .confidential-badge { font-size: 9px; padding: 4px 10px; }
+      .header h1 { font-size: 26px; }
+      .header-sub { font-size: 10px; }
+
+      .body { padding: 24px 16px 20px; }
+
+      .intro { font-size: 13.5px; margin-bottom: 24px; padding-bottom: 20px; }
+
+      /* Stack all grid blocks to single column */
+      .grid { grid-template-columns: 1fr; gap: 14px; }
+      .block.full { grid-column: 1; }
+
+      .block { padding: 18px 16px; }
+      .block h3 { font-size: 17px; }
+      .block p { font-size: 13px; }
+      .bullet-list li { font-size: 13px; }
+
+      /* Role cards stack */
+      .role-grid { grid-template-columns: 1fr; gap: 10px; }
+      .role-card { padding: 14px; }
+      .role-title { font-size: 15px; }
+      .role-desc { font-size: 12px; }
+
+      /* Fee row — 2x2 grid on mobile */
+      .fee-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .fee-amount { font-size: 24px; }
+      .fee-label { font-size: 9px; letter-spacing: 0.04em; }
+
+      /* Footer stack */
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+        gap: 8px;
+      }
+      .footer-right { text-align: left; }
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      body { background: #fff; padding: 0; }
+      .print-bar { display: none; }
+
+      .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .header { padding: 36px 44px 30px; }
+      .body { padding: 32px 44px 28px; }
+      .footer { padding: 16px 44px; }
+
+      /* Force dark text everywhere in print */
+      .bullet-list li { color: #1a1a2e !important; }
+      .block p { color: #1a1a2e !important; }
+      .intro { color: #1a1a2e !important; }
+      .block-label { color: var(--teal) !important; }
+      .block h3 { color: var(--navy) !important; }
+      .block.teal-light .bullet-list li { color: #1a1a2e !important; }
+
+      /* Navy block — keep white text */
+      .block.navy .bullet-list li { color: #fff !important; }
+      .block.navy p { color: rgba(255,255,255,0.9) !important; }
+      .block.navy h3 { color: #fff !important; }
+      .block.navy .block-label { color: rgba(255,255,255,0.6) !important; }
+      .role-desc { color: rgba(255,255,255,0.85) !important; }
+      .fee-label { color: rgba(255,255,255,0.6) !important; }
+
+      /* Footer text */
+      .footer-left p { color: #374151 !important; }
+      .footer-right p { color: #374151 !important; }
+
+      /* Push navy "Two Ways" block to start of page 2 */
+      .block.navy.full { page-break-before: always; page-break-inside: avoid; }
+
+      /* Prevent other blocks breaking mid-content */
+      .block { page-break-inside: avoid; }
+      .grid { page-break-inside: avoid; }
+      .role-card { page-break-inside: avoid; }
+      .fee-row { page-break-inside: avoid; }
+      .footer { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button class="btn-print" onclick="window.print()">Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-block">
+        <img src="brand_assets/ammcore_logo.png" alt="Ammcore">
+        <div>
+          <div class="logo-text">Ammcore Clinical Assessments</div>
+          <div class="logo-sub">A subsidiary of Ammcore Consulting Ltd</div>
+        </div>
+      </div>
+      <span class="confidential-badge">Confidential</span>
+    </div>
+    <h1>Consultant Opportunity Brief</h1>
+    <p class="header-sub">Private ADHD Diagnostic Assessment Service · 2026</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <p class="intro">
+      Ammcore Clinical Assessments is a private adult ADHD diagnostic service operating under Ammcore Consulting Ltd. We provide structured, consultant-reviewed assessments delivered entirely online, with a clear clinical framework and a fully managed administrative pipeline. We are seeking experienced consultant psychiatrists to join our clinical team on a flexible, per-assessment basis.
+    </p>
+
+    <div class="grid">
+
+      <!-- About the service -->
+      <div class="block">
+        <div class="block-label">The Service</div>
+        <h3>What We Offer</h3>
+        <ul class="bullet-list">
+          <li>Private adult ADHD diagnostic assessments</li>
+          <li>Structured 90-minute clinical interviews</li>
+          <li>DSM-5 / DIVA 5.0 clinical framework</li>
+          <li>Pre-submitted validated rating scales (ASRS, WURS-25, WFIRS, AQ-10, BDI, BAI)</li>
+          <li>Standard pathway — report within 7 working days</li>
+          <li>Express pathway — report within 3 working days</li>
+          <li>All sessions conducted via secure video platform</li>
+        </ul>
+      </div>
+
+      <!-- What admin handles -->
+      <div class="block teal-light">
+        <div class="block-label">Admin — Fully Managed</div>
+        <h3>What You Don't Handle</h3>
+        <ul class="bullet-list">
+          <li>All patient communication and coordination</li>
+          <li>Booking, scheduling, and payment collection</li>
+          <li>Intake forms and pre-assessment documentation</li>
+          <li>Report formatting and delivery to patients</li>
+          <li>GP correspondence coordination</li>
+          <li>Triage and suitability screening</li>
+        </ul>
+      </div>
+
+      <!-- Roles -->
+      <div class="block navy full">
+        <div class="block-label">Clinical Roles</div>
+        <h3>Two Ways to Work With Us</h3>
+        <div class="role-grid">
+          <div class="role-card">
+            <div class="role-title">Assessing Clinician</div>
+            <div class="role-desc">Conducts the structured 90-minute clinical interview with the patient. Completes the diagnostic report form immediately post-session using our pre-built documentation. Report is then submitted for consultant review before delivery.</div>
+          </div>
+          <div class="role-card">
+            <div class="role-title">Consultant Reviewer</div>
+            <div class="role-desc">Reviews completed diagnostic reports submitted by the assessing clinician. Signs off on clinical accuracy and diagnostic conclusions before the report is released to the patient. No direct patient contact required.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;">
+          <div class="block-label" style="margin-bottom:12px;">Remuneration — Per Assessment</div>
+          <div class="fee-row">
+            <div class="fee-item">
+              <div class="fee-amount">£200</div>
+              <div class="fee-label">Assessing Clinician<br>Standard pathway</div>
+            </div>
+            <div class="fee-item">
+              <div class="fee-amount">£225</div>
+              <div class="fee-label">Assessing Clinician<br>Express pathway</div>
+            </div>
+            <div class="fee-item">
+              <div class="fee-amount">£300</div>
+              <div class="fee-label">Consultant Reviewer<br>Standard pathway</div>
+            </div>
+            <div class="fee-item">
+              <div class="fee-amount">£325</div>
+              <div class="fee-label">Consultant Reviewer<br>Express pathway</div>
+            </div>
+          </div>
+          <p style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:14px;">No minimum commitment required. All sessions conducted remotely via secure video platform.</p>
+        </div>
+      </div>
+
+      <!-- Clinical framework -->
+      <div class="block">
+        <div class="block-label">Clinical Standards</div>
+        <h3>Our Framework</h3>
+        <ul class="bullet-list">
+          <li>Structured Clinical Interview Guide (DIVA 5.0 / DSM-5)</li>
+          <li>Pre-built diagnostic report form with auto-save</li>
+          <li>Pre-assessment checklist for every session</li>
+          <li>Risk escalation protocol in place</li>
+          <li>All reports reviewed before patient delivery</li>
+          <li>Full staff documentation and onboarding pack</li>
+        </ul>
+      </div>
+
+      <!-- Next steps -->
+      <div class="block">
+        <div class="block-label">Next Steps</div>
+        <h3>Getting Started</h3>
+        <p>We would welcome a short introductory call to discuss whether there is a fit. There is no obligation and no minimum commitment is required at the outset.</p>
+        <p style="margin-top:10px;">For any questions or to arrange a call, please contact:</p>
+        <p style="margin-top:10px;font-weight:700;color:var(--navy);">booking@ammcoreassessments.co.uk</p>
+        <p style="margin-top:4px;color:var(--teal);font-weight:700;">ammcoreassessments.co.uk</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <p><strong>Ammcore Clinical Assessments</strong> · A clinical subsidiary of Ammcore Consulting Ltd</p>
+      <p>This document is confidential and intended solely for the named recipient. Not for distribution.</p>
+    </div>
+    <div class="footer-right">
+      <p class="web">ammcoreassessments.co.uk</p>
+      <p>booking@ammcoreassessments.co.uk</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
