@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+temporary screenshots/
+*.png
+!brand_assets/*.png
+!apple-touch-icon.png
+!favicon-16.png
+!favicon-32.png
+ammcore.com_.png
+serve.mjs
+screenshot.mjs
+package.json
+package-lock.json
