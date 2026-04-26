@@ -46,6 +46,18 @@
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
+## Deployment Workflow
+- **Hosting:** Vercel — auto-deploys from GitHub on every push (no manual Vercel step needed)
+- **Repository:** https://github.com/MansamoosX/Ammcore-ADHD-Assessment-Website-Phase-1-
+- **GitHub user:** MansamoosX
+- **Branch:** main
+- **After every change:** commit and push to GitHub → Vercel deploys automatically within ~60 seconds
+- **To deploy:** `cd "/Users/kennetheme/Documents/Claude/Website builder " && git add *.html && git commit -m "message" && git push`
+- **Token:** stored in git remote URL — no need to re-authenticate each session
+- **.gitignore** excludes: node_modules, .DS_Store, temporary screenshots, serve.mjs, screenshot.mjs, package.json
+- **Live site:** https://ammcoreassessments.co.uk
+- **Google Ads tag:** AW-18120179407 — installed on all HTML pages
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
